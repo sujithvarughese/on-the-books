@@ -1,0 +1,17 @@
+.content {
+    padding: 0 2rem;
+    color: white;
+    background-color: var(--COLOR-DARK);
+    margin: .5rem;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    width: 125px;
+    margin: auto;
+}
