@@ -1,0 +1,14 @@
+.results {
+    color: var(--COLOR-LIGHT);
+}
+
+.text {
+    padding-left: 2rem;
+}
+
+@media (min-width: 450px) {
+    .text {
+        padding-left: 4rem;
+    }
+
+}

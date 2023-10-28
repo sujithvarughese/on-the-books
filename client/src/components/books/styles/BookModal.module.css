@@ -1,0 +1,52 @@
+.modal {
+    z-index: 50;
+}
+
+.details {
+    padding: 2rem 0;
+    margin: auto;
+    text-align: center;
+    color: whitesmoke;
+    z-index: 30;
+}
+a {
+    color: whitesmoke;
+}
+
+
+.coverImage {
+
+}
+.title {
+    font-size: 20px;
+    color: white;
+}
+.author {
+    font-size: 16px;
+    color: white;
+}
+
+.year {
+
+}
+.getInfo {
+    display: flex;
+    justify-content: space-around;
+}
+.statusRating {
+    display: flex;
+    justify-content: space-around;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.btn {
+    width: 125px
+}
+@media (min-width: 450px) {
+    .details {
+
+    }
+
+}

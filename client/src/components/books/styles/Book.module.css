@@ -1,0 +1,64 @@
+.book {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    color: var(--COLOR-LIGHT);
+}
+
+.cover {
+    width: 150px;
+    height: 220px;
+}
+.title {
+    font-size: 16px;
+    text-align: left;
+}
+
+.title:hover {
+    text-decoration: underline;
+}
+
+.author {
+    font-size: 12px;
+    text-align: left;
+}
+.year {
+    display: none;
+}
+.status {
+    display: none;
+}
+
+.rating {
+    display: none;
+}
+.options {
+    display: none;
+}
+@media (min-width: 450px) {
+    .book {
+        width: 200px;
+        height: 450px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+    .author {
+        font-size: 18px;
+    }
+    .year {
+        display: block;
+        font-size: 16px;
+    }
+    .status {
+        display: block;
+    }
+    .preview {
+        display: block;
+    }
+    .rating {
+        display: block;
+    }
+}

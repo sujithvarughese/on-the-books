@@ -1,0 +1,45 @@
+.details {
+    margin: 4rem auto;
+    text-align: center;
+    color: whitesmoke;
+}
+a {
+    color: whitesmoke;
+}
+
+.cover {
+
+}
+.coverImage {
+    width: 150px;
+}
+.link:hover {
+    color: var(--COLOR);
+}
+
+.title {
+    font-size: 20px;
+    color: white;
+}
+.author {
+    font-size: 16px;
+    color: white;
+}
+.year {
+
+}
+
+
+.statusRating {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (min-width: 450px) {
+    .details {
+
+    }
+    .coverImage {
+        width: 300px;
+    }
+}

@@ -1,0 +1,14 @@
+.bookList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: .2rem;
+    justify-content: center;
+}
+
+@media (min-width: 450px) {
+    .bookList {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 3rem;
+    }
+}
