@@ -27,6 +27,10 @@
 @media (min-width: 600px) {
     .container {
         margin: auto;
+
+    }
+    .card {
         max-width: 620px;
+        margin: auto;
     }
 }

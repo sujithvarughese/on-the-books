@@ -27,6 +27,7 @@ const Register = () => {
 
 	return (
 		<div className={classes.container}>
+			<div className={classes.card}>
 			<Card>
 			<div className={classes.content}>
 				<Form onSubmit={handleSubmit} title="Register">
@@ -70,6 +71,7 @@ const Register = () => {
 				</Form>
 			</div>
 			</Card>
+			</div>
 		</div>
 
 	);

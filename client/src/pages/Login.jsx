@@ -25,6 +25,7 @@ const Login = () => {
 
 	return (
 		<div className={classes.container}>
+			<div className={classes.card}>
 			<Card>
 			<div className={classes.content}>
 
@@ -55,6 +56,7 @@ const Login = () => {
 
 			</div>
 			</Card>
+			</div>
 		</div>
 
 	);
