@@ -1,4 +1,13 @@
 :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -webkit-background-size: calc(100vw) calc(100vh);
+    -moz-background-size: calc(100vw) calc(100vh);
+    -o-background-size: calc(100vw) calc(100vh);
+    background-size: calc(100vw) calc(100vh);
     --COLOR-LIGHT: #B0A8B9;
     --COLOR: #845EC2;
     --COLOR-ALT: #FF8066;
@@ -6,22 +15,28 @@
     --COLOR-GRADIENT: radial-gradient(var(--COLOR), var(--COLOR-LIGHT))
 
 }
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: "pastiche-brush", sans-serif;
 }
-
-body {
-    background: linear-gradient(to right, #434343 0%, black 100%);
-    height: 100vh;
-    max-width: 1200px;
-    margin: auto;
-
+html {
+    font-family: sans-serif;
+    font-size: 16px;
+    display: block;
+    box-sizing: border-box;
+    line-height: 20px;
+    scroll-padding: 120px 0 0;
 }
-
+body {
+    margin: 0;
+    background: linear-gradient(to right, #434343 0%, black 100%);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-transform: none;
+    display: block;
+}
 a {
     text-decoration: none;
 }
+

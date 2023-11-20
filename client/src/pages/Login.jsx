@@ -1,6 +1,6 @@
 import classes from "./styles/Login.module.css";
 import { useState } from "react";
-import { Form, Input, Button } from "../UI"
+import { Form, Input, Button, Card } from "../UI"
 import { useGlobalContext } from "../context/GlobalContext.jsx";
 
 const initialState = {
@@ -24,29 +24,37 @@ const Login = () => {
 	}
 
 	return (
-		<div className={classes.login}>
-			<Form onSubmit={handleSubmit} title="Login">
-				<Input
-					htmlFor="email"
-					label="Email: "
-					type="email"
-					name="email"
-					value={values.email}
-					onChange={handleChange}
-				></Input>
-				<Input
-					htmlFor="password"
-					label="Password: "
-					type="password"
-					name="password"
-					value={values.password}
-					onChange={handleChange}
-				></Input>
-				<div className={classes.btn}>
-					<Button type="submit">Login</Button>
-				</div>
+		<div className={classes.container}>
+			<Card>
+			<div className={classes.content}>
 
-			</Form>
+					<Form onSubmit={handleSubmit} title="Login">
+						<div className={classes.form}>
+							<Input
+								htmlFor="email"
+								label="Email: "
+								type="email"
+								name="email"
+								value={values.email}
+								onChange={handleChange}
+							></Input>
+							<Input
+								htmlFor="password"
+								label="Password: "
+								type="password"
+								name="password"
+								value={values.password}
+								onChange={handleChange}
+							></Input>
+						</div>
+						<div className={classes.button}>
+							<Button type="submit">Login</Button>
+						</div>
+					</Form>
+
+
+			</div>
+			</Card>
 		</div>
 
 	);

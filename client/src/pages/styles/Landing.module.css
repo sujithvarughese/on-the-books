@@ -1,69 +1,49 @@
-.landing {
+.container {
     background-image: url("../../assets/images/landing/AdobeStock_241739395.jpeg");
-    height: 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #fff;
     -webkit-background-size: calc(100vw) calc(100vh);
     -moz-background-size: calc(100vw) calc(100vh);
     -o-background-size: calc(100vw) calc(100vh);
     background-size: calc(100vw) calc(100vh);
-
+    padding: 0.5rem;
+}
+.content {
+    margin: 0.5rem 0;
+}
+.card {
+    display: flex;
+    background: linear-gradient(to right, #434343 0%, black 100%);
 }
 
 .text {
-    position: absolute;
-    top: 215%;
-    width: 100%;
-    font-family: "pastiche-brush", sans-serif;
-    font-weight: bolder;
-    text-align: center;
-    color: var(--COLOR-ALT);
-    font-size: 42px;
-    border: transparent;
-    border-radius: 8px;
-    padding: 8px;
+    color: var(--COLOR-LIGHT);
     margin: auto;
-    box-shadow: 0 4px 6px -1px;
-    text-shadow: 4px 8px 5px var(--COLOR);
-    transition: 0.3s ease-in-out all;
-    z-index: 10;
-
-}
-
-.about {
-    z-index: 40;
+    text-align: center;
+    font-size: 16px;
 }
 
 .image {
-    background-image: url("../../assets/images/landing/AdobeStock_298028330.jpeg");
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: #fff;
-    -webkit-background-size: calc(100vw) calc(100vh);
-    -moz-background-size: calc(100vw) calc(100vh);
-    -o-background-size: calc(100vw) calc(100vh);
-    background-size: calc(100vw) calc(100vh);
+    width: 50%;
 }
 
-@media (min-width: 450px) {
-    .landing {
-        background-image: url("../../assets/images/landing/AdobeStock_241739395.jpeg");
-        height: 100vh;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-color: #fff;
-        -webkit-background-size: calc(100vw) calc(100vh);
-        -moz-background-size: calc(100vw) calc(100vh);
-        -o-background-size: calc(100vw) calc(100vh);
-        background-size: calc(100vw) calc(100vh);
+.about {
+    background: linear-gradient(to right, #434343 0%, black 100%);
+    z-index: 1000;
+
+}
+
+@media (min-width: 600px) {
+    .content {
+        margin: 2rem;
     }
     .about {
         height: auto
     }
     .text {
-        top: 325%;
-        font-size: 64px;
+        color: var(--COLOR-LIGHT);
+        margin: auto;
+        text-align: center;
+        font-size: 28px;
     }
 }

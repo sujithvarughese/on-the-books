@@ -1,7 +1,7 @@
 import classes from "./styles/InfoBar.module.css"
 import { useGlobalContext } from "../../context/GlobalContext.jsx";
 import { Button } from "../../UI";
-import { useNavigate, useLocation } from "react-router-dom";
+import {useNavigate, useLocation, NavLink} from "react-router-dom";
 import { HeaderLogo } from "../../components"
 import { useEffect, useState } from "react";
 
@@ -29,17 +29,15 @@ const InfoBar = () => {
 						<Button>◁ Back</Button>
 					</div>
 			}
-			{/*
 			{
 				!user &&
-					<div className={classes.logo}>
-						<HeaderLogo />
-					</div>
+				<NavLink
+					to="/"
+					className={classes.link}
+				>
+					<h3 className={classes.title}>On the Books</h3>
+				</NavLink>
 			}
-			{
-				!user && <h3 className={classes.title}>On the Books</h3>
-			}
-			 */}
 
 			{
 				user &&

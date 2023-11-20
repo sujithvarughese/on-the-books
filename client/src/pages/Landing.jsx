@@ -1,17 +1,71 @@
 import classes from "./styles/Landing.module.css"
 import { About } from "../components";
-import img from "../assets/images/landing/AdobeStock_298028330.jpeg"
+import {Card} from "../UI/index.js";
+import img1 from "../assets/images/landing/AdobeStock_223259229.jpeg";
+import img2 from "../assets/images/landing/AdobeStock_96515336.jpeg";
+import img3 from "../assets/images/landing/AdobeStock_370157316.jpeg";
+import img4 from "../assets/images/landing/AdobeStock_190212505.jpeg";
+import img5 from "../assets/images/landing/AdobeStock_241739395.jpeg";
+
 
 const Landing = () => {
+
+
 	return (
-		<div>
-
-			<div className={classes.landing}>
-
+		<div className={classes.container}>
+			<div className={classes.content}>
+				<Card>
+					<div className={classes.card}>
+						<div className={classes.text}>
+							Discover new reading.
+						</div>
+						<img src={img1} alt="img1" className={classes.image}/>
+					</div>
+				</Card>
 			</div>
 
-			<div className={classes.about}>
-				<About />
+			<div className={classes.content}>
+				<Card>
+					<div className={classes.card}>
+						<img src={img2} alt="img2" className={classes.image}/>
+						<div className={classes.text}>
+							Create effective notes.
+						</div>
+					</div>
+				</Card>
+			</div>
+
+			<div className={classes.content}>
+				<Card>
+					<div className={classes.card}>
+						<div className={classes.text}>
+							Retain more information.
+						</div>
+						<img src={img3} alt="img3" className={classes.image}/>
+					</div>
+				</Card>
+			</div>
+
+			<div className={classes.content}>
+				<Card>
+					<div className={classes.card}>
+						<img src={img4} alt="img4" className={classes.image}/>
+						<div className={classes.text}>
+							Organize your collection.
+						</div>
+					</div>
+				</Card>
+			</div>
+
+			<div className={classes.content}>
+				<Card>
+					<div className={classes.card}>
+						<div className={classes.text}>
+							Expand your horizons.
+						</div>
+						<img src={img5} alt="img5" className={classes.image}/>
+					</div>
+				</Card>
 			</div>
 
 		</div>

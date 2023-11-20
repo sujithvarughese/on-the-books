@@ -1,9 +1,31 @@
-.register {
-    margin: auto;
-    max-width: 620px;
+.container {
+    background-image: url("../../assets/images/landing/AdobeStock_241739395.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: calc(100vw) calc(100vh);
+    -moz-background-size: calc(100vw) calc(100vh);
+    -o-background-size: calc(100vw) calc(100vh);
+    background-size: calc(100vw) calc(100vh);
+    padding: 2rem 1rem;
+    height: 84vh;
 }
-
-.btn {
+.content {
+    padding: 2rem;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+.button {
     margin: auto;
     width: 125px;
+}
+
+@media (min-width: 600px) {
+    .container {
+        margin: auto;
+        max-width: 620px;
+    }
 }
