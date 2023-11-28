@@ -1,9 +1,9 @@
-
-
+.container {
+    padding: 0.3rem;
+}
 .search {
     padding: 1rem 3rem;
 }
-
 .bookContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -11,8 +11,6 @@
     justify-content: center;
     align-items: center;
 }
-
-
 @media (min-width: 600px) {
     .bookContainer {
         display: flex;
@@ -21,5 +19,4 @@
         gap: 1rem;
         margin: 3rem 2rem;
     }
-
 }

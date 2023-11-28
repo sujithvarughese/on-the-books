@@ -31,16 +31,16 @@ const Discover = () => {
 	}
 
 	return (
-		<div className={classes.discover}>
+		<div className={classes.container}>
 
-			<div className={classes.searchbar}>
+			<div className={classes.search}>
 				<SearchBar setSearch={setSearch} searchBooks={searchBooks} />
 			</div>
+			<div className={classes.contents}>
 
-			{searchResults.length > 0 && <SearchResults search={search} books={searchResults} />}
-
-			<div className={classes.recommended}>
+				{searchResults.length > 0 && <SearchResults search={search} books={searchResults} />}
 				<RecommendedBooks books={recommendedBooks} />
+
 			</div>
 
 

@@ -6,7 +6,7 @@ import {Fragment} from "react";
 const Auth = () => {
 
 	const { user, logout } = useGlobalContext()
-
+	console.log(user)
 	return (
 		<Fragment>
 

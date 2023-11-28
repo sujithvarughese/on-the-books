@@ -21,7 +21,7 @@
 }
 
 .active {
-    background-color: var(--COLOR-LIGHT);
+    background-color: var(--COLOR-LIGHTER);
     color: var(--COLOR);
 }
 

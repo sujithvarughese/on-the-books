@@ -5,10 +5,10 @@ import { NavLink } from "react-router-dom";
 const MobileNavbar = ({ userLoggedIn }) => {
 
 	return (
-		<Fragment>
+		<div className={classes.container}>
 			{
 				userLoggedIn ?
-					<div className={classes.container}>
+					<>
 						<NavLink
 							to="/library"
 							className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
@@ -24,9 +24,9 @@ const MobileNavbar = ({ userLoggedIn }) => {
 						>
 							Discover
 						</NavLink>
-					</div>
+					</>
 					:
-					<div className={classes.container}>
+					<>
 						<NavLink
 							to="/login"
 							className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
@@ -41,9 +41,9 @@ const MobileNavbar = ({ userLoggedIn }) => {
 						>
 							Register
 						</NavLink>
-					</div>
+					</>
 			}
-		</Fragment>
+		</div>
 	);
 };
 

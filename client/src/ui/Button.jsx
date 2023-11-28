@@ -9,7 +9,7 @@ const Button = styled.button`
 	border: none;
 	border-radius: 6px;
 	letter-spacing: 1px;
-	padding: 17px 11px;
+	padding: 11px;
 	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
 	0 2px 4px -1px rgba(0, 0, 0, 0.06);
 	transition: 0.2s ease-in-out all;

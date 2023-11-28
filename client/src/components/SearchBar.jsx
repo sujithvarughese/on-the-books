@@ -1,5 +1,5 @@
-import classes from "./styles/SearchBar.module.css";
-import { Input, Button } from "../ui";
+import classes from "../pages/styles/Discover.module.css";
+import {Input, Button, Form, FormRow} from "../ui";
 import { useState } from "react";
 
 const SearchBar = ({ searchBooks, setSearch }) => {
@@ -15,26 +15,19 @@ const SearchBar = ({ searchBooks, setSearch }) => {
 	};
 
 	return (
-		<form className={classes.form} onSubmit={handleSubmit}>
-
-			<div className={classes.input}>
+		<Form onSubmit={handleSubmit}>
+			<div className={classes.form}>
 				<Input
 					htmlFor="search"
-					label="Search Book by Genre: "
+					placeholder="Search Book by Genre"
 					type="text"
 					name="search"
 					value={searchInput}
 					onChange={e=>setSearchInput(e.target.value)}
 				></Input>
-			</div>
-
-			<div className={classes.btn}>
 				<Button type="submit">Search</Button>
 			</div>
-
-
-
-		</form>
+		</Form>
 	);
 };
 
