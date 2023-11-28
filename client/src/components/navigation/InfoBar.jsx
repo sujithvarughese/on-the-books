@@ -1,6 +1,6 @@
 import classes from "./styles/InfoBar.module.css"
 import { useGlobalContext } from "../../context/GlobalContext.jsx";
-import { Button } from "../../UI";
+import { Button } from "../../ui";
 import {useNavigate, useLocation, NavLink} from "react-router-dom";
 import { HeaderLogo } from "../../components"
 import { useEffect, useState } from "react";

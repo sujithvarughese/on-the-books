@@ -1,5 +1,5 @@
 import classes from "./styles/SearchBar.module.css";
-import { Input, Button } from "../UI";
+import { Input, Button } from "../ui";
 import { useState } from "react";
 
 const SearchBar = ({ searchBooks, setSearch }) => {

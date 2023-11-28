@@ -1,5 +1,5 @@
 import classes from "./styles/Register.module.css";
-import { Input, Form, Button, Card } from "../UI";
+import { Input, Form, Button, Card } from "../ui";
 import { useState } from "react";
 import { useGlobalContext } from "../context/GlobalContext.jsx";
 

@@ -23,7 +23,7 @@ const addBookToLibrary = async (req, res) => {
 	// check if book is already in library, if so send error is response
 	const duplicate = library.find(book => book.title === title)
 	if (duplicate) {
-		throw new BadRequestError("BookMobile already in Library!");
+		throw new BadRequestError("Book already in Library!");
 	}
 
 	// create new mongo document for new book
@@ -48,7 +48,7 @@ const getBookDetails = async (req, res) => {
 		throw new BadRequestError("Book not found");
 	}
 	res.status(StatusCodes.OK).json({
-		message: "BookMobile retrieved successfully",
+		message: "Book retrieved successfully",
 		bookDetails: book
 	});
 

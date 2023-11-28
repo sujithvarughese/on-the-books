@@ -1,5 +1,5 @@
 import classes from "./styles/BookModal.module.css"
-import { Button, Modal, Card } from "../../UI";
+import { Button, Modal, Card } from "../../ui";
 import { useEffect } from "react";
 import { axiosAPI, axiosDB } from "../../utils/axios.js";
 

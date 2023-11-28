@@ -1,6 +1,6 @@
 import classes from "./styles/BookNotesList.module.css"
 import { BookNoteItem, AddBookNoteForm } from "../../";
-import { Button } from "../../../UI"
+import { Button } from "../../../ui"
 import { useEffect, useState } from "react";
 import { axiosDB } from "../../../utils/axios.js";
 

@@ -1,6 +1,7 @@
 .infoBar {
     display: flex;
     position: fixed;
+    top: 0;
     background: linear-gradient(to right, #434343 0%, black 100%);
     justify-content: space-between;
     align-items: center;

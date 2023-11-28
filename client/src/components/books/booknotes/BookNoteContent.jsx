@@ -1,5 +1,5 @@
 import classes from "./styles/BookNoteContent.module.css"
-import { Button, Form, Input, Modal, Card } from "../../../UI";
+import { Button, Form, Input, Modal, Card } from "../../../ui";
 import { useState } from "react";
 
 const BookNoteContent = ({ content, editBookNote, deleteBookNote }) => {

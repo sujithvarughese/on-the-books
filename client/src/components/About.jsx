@@ -4,7 +4,7 @@ import img2 from "../assets/images/landing/AdobeStock_96515336.jpeg"
 import img3 from "../assets/images/landing/AdobeStock_370157316.jpeg"
 import img4 from "../assets/images/landing/AdobeStock_190212505.jpeg"
 import img5 from "../assets/images/landing/AdobeStock_241739395.jpeg"
-import {Card} from "../UI/index.js";
+import {Card} from "../ui/index.js";
 const About = () => {
 
 	return (

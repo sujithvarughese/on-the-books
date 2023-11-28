@@ -1,6 +1,6 @@
 import classes from "./styles/Landing.module.css"
 import { About } from "../components";
-import {Card} from "../UI/index.js";
+import {Card} from "../ui/index.js";
 import img1 from "../assets/images/landing/AdobeStock_223259229.jpeg";
 import img2 from "../assets/images/landing/AdobeStock_96515336.jpeg";
 import img3 from "../assets/images/landing/AdobeStock_370157316.jpeg";

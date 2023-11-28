@@ -2,7 +2,7 @@ import classes from "./styles/BookDetails.module.css";
 import { axiosDB } from "../utils/axios.js";
 import { useLoaderData } from "react-router-dom";
 import { BookNotesList } from "../components";
-import { BookDetailsCard, FormSelect } from "../UI";
+import { Card, FormRow, Select } from "../ui";
 import { useState } from "react";
 
 const BookDetails = () => {
@@ -42,7 +42,7 @@ const BookDetails = () => {
 
 
 
-			<BookDetailsCard>
+			<Card>
 					<div>
 						<a href={infoURL} className={classes.link} target="_blank" rel="noreferrer">
 							More Info
@@ -63,7 +63,7 @@ const BookDetails = () => {
 								<p>No Preview Available</p>
 						}
 					</div>
-			</BookDetailsCard>
+			</Card>
 
 
 
@@ -72,34 +72,32 @@ const BookDetails = () => {
 		<h4 className={classes.year}>{yearPublished}</h4>
 
 		<div className={classes.statusRating}>
-			<FormSelect
-				labelText="status: "
-				type="text"
-				name="content"
-				value={statusState}
-				onChange={(e) => {
-					updateBookDetails({ status: e.target.value })
-					setStatusState(e.target.value)
-				}}
-				list={["unread", "read", "reading"]}
-			></FormSelect>
+			<FormRow label="Status">
+				<Select
+					type="text"
+					name="content"
+					value={statusState}
+					onChange={(e) => {
+						updateBookDetails({ status: e.target.value })
+						setStatusState(e.target.value)
+					}}
+					list={["unread", "read", "reading"]}
+				/>
+			</FormRow>
 
-			<FormSelect
-				labelText="rating: "
-				type="number"
-				name="rating"
-				value={ratingState}
-				onChange={(e) => {
-					updateBookDetails({ rating: Number(e.target.value) })
-					setRatingState(e.target.value)
-				}}
-				list={[0,1,2,3,4,5,6,7,8,9,10]}
-			></FormSelect>
+			<FormRow label="Rating">
+				<Select
+					type="number"
+					name="rating"
+					value={ratingState}
+					onChange={(e) => {
+						updateBookDetails({ rating: Number(e.target.value) })
+						setRatingState(e.target.value)
+					}}
+					list={[0,1,2,3,4,5,6,7,8,9,10]}
+				/>
+			</FormRow>
 		</div>
-
-
-
-
 
 		<div>
 			<BookNotesList

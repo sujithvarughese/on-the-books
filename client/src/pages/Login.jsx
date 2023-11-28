@@ -1,6 +1,6 @@
 import classes from "./styles/Login.module.css";
 import { useState } from "react";
-import { Form, Input, Button, Card } from "../UI"
+import { Form, Input, Button, Card } from "../ui"
 import { useGlobalContext } from "../context/GlobalContext.jsx";
 
 const initialState = {

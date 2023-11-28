@@ -1,66 +1,31 @@
-.book {
-    width: 200px;
+.container {
     display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-    color: var(--COLOR-LIGHT);
+    gap: 1rem;
 }
 
 .cover {
-    width: 150px;
-    height: 220px;
-}
-.title {
-    font-size: 16px;
-    text-align: left;
+    width: 56px;
+    height: 80px;
 }
 
-.title:hover {
-    text-decoration: underline;
+.title {
+    font-size: 18px;
 }
 
 .author {
-    font-size: 12px;
-    text-align: left;
+    font-size: 14px;
 }
 .year {
-    display: none;
+    font-size: 12px;
 }
-.status {
-    display: none;
-}
-
-.rating {
-    display: none;
-}
-.options {
-    display: none;
-}
-@media (min-width: 450px) {
-    .book {
-        width: 200px;
-        height: 450px;
+@media (min-width: 600px) {
+    .container {
+        flex-direction: column;
+        width: 150px;
+    }
+    .cover {
+        width: 150px;
+        height: 225px;
     }
 
-    .title {
-        font-size: 18px;
-    }
-    .author {
-        font-size: 16px;
-    }
-    .year {
-        display: block;
-        font-size: 14px;
-        white-space: nowrap;
-        text-overflow: clip;
-    }
-    .status {
-        display: block;
-    }
-    .preview {
-        display: block;
-    }
-    .rating {
-        display: block;
-    }
 }

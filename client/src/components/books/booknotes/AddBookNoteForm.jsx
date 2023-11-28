@@ -1,5 +1,5 @@
 import classes from "./styles/AddBookNoteForm.moudule.css?inline";
-import { Input, Button, Form, Modal, Card } from "../../../UI";
+import { Input, Button, Form, Modal, Card } from "../../../ui";
 import { useState } from "react";
 import iconX from "../../../assets/images/x_icon.svg"
 
