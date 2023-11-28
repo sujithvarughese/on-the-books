@@ -38,10 +38,7 @@ const BookDetails = () => {
 	}
 
 	return (
-		<div className={classes.details}>
-
-
-
+		<div className={classes.container}>
 			<Card>
 					<div>
 						<a href={infoURL} className={classes.link} target="_blank" rel="noreferrer">
@@ -106,9 +103,7 @@ const BookDetails = () => {
 				updateBookDetails={updateBookDetails}
 			/>
 		</div>
-
 	</div>
-
 	);
 };
 
