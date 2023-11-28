@@ -22,7 +22,7 @@ const app = express()
 dotenv.config();
 
 app.use(cors({
-	origin: ["http://localhost:5173", "http://localhost:5175", "https://on-the-books.netlify.app"],
+	origin: ["http://localhost:5173", "https://on-the-books.netlify.app"],
 	credentials: true
 }));
 

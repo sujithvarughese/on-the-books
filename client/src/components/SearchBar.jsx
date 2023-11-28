@@ -2,7 +2,7 @@ import classes from "./styles/SearchBar.module.css";
 import { Input, Button } from "../UI";
 import { useState } from "react";
 
-const SearchBar = ({ searchBooks }) => {
+const SearchBar = ({ searchBooks, setSearch }) => {
 
 	const [searchInput, setSearchInput] = useState("")
 
@@ -10,6 +10,7 @@ const SearchBar = ({ searchBooks }) => {
 		e.preventDefault();
 		console.log(`Searching for ${searchInput}...`);
 		setSearchInput("")
+		setSearch(searchInput)
 		searchBooks(searchInput)
 	};
 

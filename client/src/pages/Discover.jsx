@@ -8,6 +8,7 @@ const Discover = () => {
 	const recommendedBooks = useLoaderData()
 
 	const [searchResults, setSearchResults] = useState([])
+	const [search, setSearch] = useState("")
 
 	const searchBooks = async (searchString) => {
 		try {
@@ -33,10 +34,10 @@ const Discover = () => {
 		<div className={classes.discover}>
 
 			<div className={classes.searchbar}>
-				<SearchBar searchBooks={searchBooks} />
+				<SearchBar setSearch={setSearch} searchBooks={searchBooks} />
 			</div>
 
-			{searchResults.length > 0 && <SearchResults books={searchResults} />}
+			{searchResults.length > 0 && <SearchResults search={search} books={searchResults} />}
 
 			<div className={classes.recommended}>
 				<RecommendedBooks books={recommendedBooks} />
@@ -52,7 +53,7 @@ const Discover = () => {
 export const discoverLoader = async () => {
 
 	try {
-		const response = await axiosAPI("/subjects/Open_Library_Staff_Picks.json")
+		const response = await axiosAPI("/subjects/open_library_staff_picks.json")
 		const { works } = response.data
 
 		// array containing book objects with basic info
