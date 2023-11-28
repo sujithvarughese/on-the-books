@@ -1,17 +1,34 @@
 import classes from "./styles/MyLibrary.module.css";
+import { useState } from "react";
 import { axiosDB } from "../utils/axios.js";
 import { useLoaderData } from "react-router-dom";
-import { BookList } from "../components"
+import { Book, SearchLibrary } from "../components"
 
 const MyLibrary = () => {
 	const books = useLoaderData()
 
+	// state for search function
+	const [query, setQuery] = useState("")
+
+	// -convert query to lower case and check if any part of the book title, author, and year
+	const queriedBooks = books.filter(book => {
+		return (
+			book.title.toLowerCase().includes(query.toLowerCase())  ||
+			book.author.toLowerCase().includes(query.toLowerCase()) ||
+			book.yearPublished.includes(query)
+		)
+	})
+
 	return (
-		<div>
+		<div className={classes.container}>
+			<div className={classes.search}>
+				<SearchLibrary query={query} setQuery={setQuery} />
+			</div>
+
 			{  // display text if user library is empty, with link to Discover
 				!books.length &&
 				<div>
-					<div className={classes.text}>
+					<div className={classes.textContainer}>
 						You dont have any books in your library yet.
 					</div>
 					<div className={classes.textLink}>
@@ -19,7 +36,13 @@ const MyLibrary = () => {
 					</div>
 				</div>
 			}
-			<BookList books={books} />
+			<div className={classes.bookContainer}>
+				{
+					queriedBooks.map((book, index) =>
+						<Book key={index} {...book} />
+					)
+				}
+			</div>
 		</div>
 	);
 };

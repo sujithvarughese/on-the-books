@@ -8,18 +8,19 @@
     -moz-background-size: calc(100vw) calc(100vh);
     -o-background-size: calc(100vw) calc(100vh);
     background-size: calc(100vw) calc(100vh);
+    --COLOR-LIGHTER: #DFD3E3;
     --COLOR-LIGHT: #B0A8B9;
     --COLOR: #845EC2;
     --COLOR-ALT: #FF8066;
     --COLOR-DARK: #4B4453;
-    --COLOR-GRADIENT: radial-gradient(var(--COLOR), var(--COLOR-LIGHT))
+    --COLOR-GRADIENT: radial-gradient(var(--COLOR), var(--COLOR-LIGHT));
+    --BACKGROUND: linear-gradient(to right, #434343 0%, black 100%);
 
 }
 *, :after, :before {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    color: var(--COLOR-DARK);
 }
 
 body {
@@ -28,8 +29,11 @@ body {
     scroll-padding: 120px 0 0;
     transition: color 0.3s, background-color 0.3s;
     min-height: 100vh;
-    margin: 0;
-    background: linear-gradient(to right, #434343 0%, black 100%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)), url("./assets/images/adobe-bg-portrait.jpeg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: repeat-y;
 }
 
 a {
@@ -47,6 +51,15 @@ img {
 }
 
 p, h1, h2, h3, h4, h5, h6 {
+    display: block;
     overflow-wrap: break-word;
     hyphens: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    text-align: justify;
+    width: 100%;
+}
+@media (min-width: 600px) {
+    background-image: url("./assets/images/adobe-bg.jpeg");
 }

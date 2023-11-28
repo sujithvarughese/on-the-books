@@ -8,7 +8,7 @@ const MobileNavbar = ({ userLoggedIn }) => {
 		<Fragment>
 			{
 				userLoggedIn ?
-					<div className={classes.navbar}>
+					<div className={classes.container}>
 						<NavLink
 							to="/library"
 							className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
@@ -24,13 +24,9 @@ const MobileNavbar = ({ userLoggedIn }) => {
 						>
 							Discover
 						</NavLink>
-
-
-
 					</div>
 					:
-					<div className={classes.navbar}>
-
+					<div className={classes.container}>
 						<NavLink
 							to="/login"
 							className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
@@ -45,8 +41,6 @@ const MobileNavbar = ({ userLoggedIn }) => {
 						>
 							Register
 						</NavLink>
-
-
 					</div>
 			}
 		</Fragment>

@@ -51,37 +51,36 @@ const Book = (book) => {
                 />
             }
         <div className={classes.container}>
-            <div className={classes.cover}>
-                {  // book.status field only exists in book in myLibrary
-                    book.status ?
-                        <NavLink
-                            to={`/library/${_id}`}
-                        >
-                            <img className={classes.cover} src={coverImageLink} alt={title}/>
-                        </NavLink>
-                        :
-                        <div>
-                            {/* use API to get book info then set modal */}
-                            <img onClick={showBookDetails} className={classes.cover} src={coverImageLink} alt={title}/>
-                        </div>
-                }
-            </div>
+
+            {  // book.status field only exists in book in myLibrary
+                book.status ?
+                    <NavLink
+                        to={`/library/${_id}`}
+                    >
+                        <img className={classes.cover} src={coverImageLink} alt={title}/>
+                    </NavLink>
+                    :
+                    <div>
+                        {/* use API to get book info then set modal */}
+                        <img onClick={showBookDetails} className={classes.cover} src={coverImageLink} alt={title}/>
+                    </div>
+            }
+
            <div className={classes.details}>
                {
                    book.status ?
                        <NavLink
                            to={`/library/${_id}`}
                        >
-                           <div className={classes.title}>{title}</div>
+                           <p className={classes.title}>{title}</p>
                        </NavLink>
                        :
-                       <div className={classes.title}>
+                       <p className={classes.title}>
                            {title}
-                       </div>
+                       </p>
                }
-
-               <div className={classes.author}>{author}</div>
-               <div className={classes.year}>{yearPublished}</div>
+               <p className={classes.author}>{author}</p>
+               <p className={classes.year}>{yearPublished}</p>
            </div>
         </div>
         </Card>

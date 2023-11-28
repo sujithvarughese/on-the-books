@@ -1,23 +1,29 @@
 .container {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cover {
-    width: 56px;
-    height: 80px;
+    width: 180px;
+    height: 220px;
+    border-radius: 7px;
 }
-
+.details {
+    width: 175px;
+    text-align: justify;
+}
 .title {
-    font-size: 18px;
+    font-weight: 600;
+    color: var(--COLOR-LIGHTER);
 }
-
 .author {
     font-size: 14px;
 }
 .year {
     font-size: 12px;
 }
+
 @media (min-width: 600px) {
     .container {
         flex-direction: column;

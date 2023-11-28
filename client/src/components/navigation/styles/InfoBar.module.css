@@ -1,4 +1,4 @@
-.infoBar {
+.container {
     display: flex;
     position: fixed;
     top: 0;
@@ -6,13 +6,17 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 6vh;
-    padding: 10px 20px;
-    z-index: 20;
+    height: 4rem;
+    padding: 0 20px;
+    z-index: 1000;
     text-align: center;
-    font-family: "pastiche-brush", sans-serif;
 }
-
+.user {
+    width: 100%;
+    display: flex;
+    gap: 40%;
+    justify-content: space-between;
+}
 .logo {
 
 }
@@ -25,6 +29,6 @@
     color: var(--COLOR-ALT);
 }
 
-.logout {
-
+@media (min-width: 600px) {
+    display: none;
 }

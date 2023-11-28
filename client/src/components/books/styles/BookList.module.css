@@ -1,21 +1,18 @@
-.mobile {
-    display: flex;
-    flex-direction: column;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
-}
-.desktop {
-    display: none;
+    padding: 1rem;
 }
 
+
 @media (min-width: 600px) {
-    .desktop {
+    .container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 1rem;
         margin: 3rem 2rem;
     }
-    .mobile {
-        display: none;
-    }
+
 }

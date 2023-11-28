@@ -1,13 +1,14 @@
 import classes from "./styles/Auth.module.css"
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext.jsx";
+import {Fragment} from "react";
 
 const Auth = () => {
 
 	const { user, logout } = useGlobalContext()
 
 	return (
-		<div className={classes.auth}>
+		<Fragment>
 
 			{
 				user ?
@@ -43,7 +44,7 @@ const Auth = () => {
 
 
 
-		</div>
+		</Fragment>
 	);
 };
 

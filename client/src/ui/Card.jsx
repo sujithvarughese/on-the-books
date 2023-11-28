@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
 const Card = styled.div`
-	padding: 1rem;
+
 	color: var(--COLOR-LIGHT);
-	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-	0 2px 4px -1px rgba(0, 0, 0, 0.06);
 	transition: 0.3s ease-in-out all;
 	border-radius: 10px;
 	z-index: 10;
-    background: var(--COLOR-DARK);
+    background-color: ${props=>props.backgroundColor};
 	
 	&:hover {
       background-color: var(--COLOR);
@@ -18,6 +16,8 @@ const Card = styled.div`
 
 	@media (min-width: 600px) {
 		padding: 2rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
 	}
 
 `

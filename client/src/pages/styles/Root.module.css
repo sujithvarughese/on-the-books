@@ -1,31 +1,5 @@
-.root {
-
-}
-
 .main {
-    padding: 4rem 1rem;
-}
-
-.desktop {
-    display: none;
-}
-.mobile {
-    display: block;
-}
-
-@media (min-width: 450px){
-    .main {
-        margin: auto;
-        max-width: 1280px;
-    }
-    .infobar {
-        display: none;
-    }
-
-    .desktop {
-        display: block;
-    }
-    .mobile {
-        display: none;
-    }
+    padding: 4rem 0;
+    max-width: 1280px;
+    backdrop-filter: blur(5px);
 }

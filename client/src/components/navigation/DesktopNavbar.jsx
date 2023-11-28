@@ -6,7 +6,7 @@ import { Auth } from "../../components"
 const DesktopNavbar = ({ userLoggedIn }) => {
 
 	return (
-		<div className={classes.navbar}>
+		<div className={classes.container}>
 
 			<div className={classes.logo}>
 				<HeaderLogo />

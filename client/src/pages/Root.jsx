@@ -24,25 +24,18 @@ const Root = () => {
 	}, [user]);
 
 	return (
-		<div className={classes.root}>
+		<div className={classes.container}>
 
-			<div className={classes.desktop}>
-				<DesktopNavbar userLoggedIn={userLoggedIn}/>
-			</div>
+			<DesktopNavbar userLoggedIn={userLoggedIn}/>
 
-			<div className={classes.infobar}>
-				<InfoBar />
-			</div>
+			<InfoBar />
 
 			<div className={classes.main}>
 				{ navigation.state === 'loading' && <h3>Loading...</h3> }
 				<Outlet />
 			</div>
 
-			<div className={classes.mobile}>
-				<MobileNavbar userLoggedIn={userLoggedIn}/>
-			</div>
-
+			<MobileNavbar userLoggedIn={userLoggedIn}/>
 
 		</div>
 	);

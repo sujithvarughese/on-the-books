@@ -5,20 +5,11 @@ const BookList = ({ books }) => {
 
 	return (
 		<div className={classes.container}>
-			<div className={classes.desktop}>
-				{
-					books.map((book, index) =>
-						<Book key={index} {...book} />
-					)
-				}
-			</div>
-			<div className={classes.mobile}>
-				{
-					books.map((book, index) =>
-						<Book key={index} {...book} />
-					)
-				}
-			</div>
+			{
+				books.map((book, index) =>
+					<Book key={index} {...book} />
+				)
+			}
 		</div>
 	);
 };

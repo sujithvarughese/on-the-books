@@ -4,6 +4,7 @@ import { Button } from "../../ui";
 import {useNavigate, useLocation, NavLink} from "react-router-dom";
 import { HeaderLogo } from "../../components"
 import { useEffect, useState } from "react";
+import ButtonPlain from "../../ui/ButtonPlain.jsx";
 
 const InfoBar = () => {
 
@@ -22,31 +23,21 @@ const InfoBar = () => {
 
 	const navigate = useNavigate()
 	return (
-		<div className={classes.infoBar}>
-			{
-				user && showBackButton &&
-					<div className={classes.back} onClick={() => navigate(-1)}>
-						<Button>◁ Back</Button>
-					</div>
-			}
-			{
-				!user &&
+		<div className={classes.container}>
+		{
+			user ?
+				<div className={classes.user}>
+					{ showBackButton && <ButtonPlain onClick={() => navigate(-1)}>◁ Back</ButtonPlain>}
+					<ButtonPlain onClick={logout}>Logout</ButtonPlain>
+				</div>
+				:
 				<NavLink
 					to="/"
 					className={classes.link}
 				>
 					<h3 className={classes.title}>On the Books</h3>
 				</NavLink>
-			}
-
-			{
-				user &&
-					<div className={classes.logout}>
-						<Button onClick={logout}>Logout</Button>
-					</div>
-			}
-
-
+		}
 		</div>
 	);
 };
