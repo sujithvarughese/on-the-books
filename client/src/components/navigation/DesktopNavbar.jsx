@@ -26,7 +26,7 @@ const DesktopNavbar = ({ userLoggedIn }) => {
 							className={({ isActive }) => [classes.link, isActive ? classes.active : undefined].join(" ") }
 							end
 						>
-							My Library
+							Library
 						</NavLink>
 
 						<NavLink

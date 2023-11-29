@@ -9,7 +9,6 @@ const Auth = () => {
 	console.log(user)
 	return (
 		<Fragment>
-
 			{
 				user ?
 					<div className={classes.auth}>

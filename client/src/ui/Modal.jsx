@@ -1,22 +1,14 @@
 import styled from "styled-components";
 
-const Backdrop = styled.div`
+const Modal = styled.div`
 	position: fixed;
-	top: 0;
+	right: 0;
 	left: 0;
-	background: rgba(0, 0, 0, 0.5);
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 20;
-`
-
-const StyledModal = styled.div`
-	background: rgba(0, 0, 0, 0.5);
+	margin: auto;
+	background-color: var(--COLOR-DARK);
 	border-radius: 15px;
-	z-index: 0;
+	z-index: 10;
+  height: 90vh;
 	padding: 1rem;
 	width: 90vw;
 	max-width: 600px;
@@ -26,13 +18,4 @@ const StyledModal = styled.div`
 		padding: 2rem;
 	}
 `
-const Modal = (props) => {
-	return (
-		<Backdrop>
-			<StyledModal>
-				{props.children}
-			</StyledModal>
-		</Backdrop>
-	)
-}
 export default Modal;

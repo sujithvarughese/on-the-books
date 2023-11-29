@@ -1,3 +1,4 @@
+import Backdrop from "./Backdrop.jsx";
 import Button from "./Button.jsx";
 import Card from "./Card.jsx"
 import Form from "./Form.jsx";
@@ -7,6 +8,7 @@ import Modal from "./Modal.jsx"
 import Select from "./Select.jsx";
 
 export {
+    Backdrop,
     Button,
     Card,
     Form,

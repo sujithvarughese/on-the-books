@@ -14,7 +14,7 @@ const MobileNavbar = ({ userLoggedIn }) => {
 							className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
 							end
 						>
-							My Library
+							Library
 						</NavLink>
 
 						<NavLink

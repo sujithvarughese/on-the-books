@@ -1,33 +1,24 @@
-.modal {
-    z-index: 50;
+.container {
+    z-index: 10;
 }
 
 .details {
-    padding: 2rem 0;
-    margin: auto;
+    margin: 0 auto;
     text-align: center;
-    color: whitesmoke;
-    z-index: 30;
 }
-a {
-    color: whitesmoke;
+.details > * {
+    text-align: center;
 }
-
-
-.coverImage {
-
+.cover {
+    width: 180px;
+    height: 240px;
 }
 .title {
     font-size: 20px;
-    color: white;
+
 }
 .author {
     font-size: 16px;
-    color: white;
-}
-
-.year {
-
 }
 .getInfo {
     display: flex;
@@ -40,13 +31,12 @@ a {
 .buttons {
     display: flex;
     justify-content: space-around;
+
 }
 .btn {
-    width: 125px
+    width: 125px;
 }
 @media (min-width: 450px) {
-    .details {
 
-    }
 
 }

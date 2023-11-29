@@ -1,5 +1,5 @@
 import classes from "./styles/BookModal.module.css"
-import { Button, Modal, Card } from "../../ui";
+import { Button, Backdrop, Modal, Card } from "../../ui";
 import { useEffect } from "react";
 import { axiosAPI, axiosDB } from "../../utils/axios.js";
 
@@ -30,19 +30,20 @@ const BookModal = ({ book, setShowModal }) => {
 		console.log(response);
 	}
 
+	const closeModal = (e) => {
+		setShowModal(false)
+	}
+
 	return (
-		<Modal className={classes.modal}>
-
-			<div className={classes.details}>
-
-				<div className={classes.cover}>
-					<img className={classes.coverImage} src={coverImageLink} alt={title}/>
+		<div className={classes.container}>
+		<Backdrop>
+			<Modal>
+				<div className={classes.details}>
+					<img className={classes.cover} src={coverImageLink} alt={title}/>
+					<h2 className={classes.title}>{title}</h2>
+					<h3 className={classes.author}>{author}</h3>
+					<h4 className={classes.year}>{yearPublished}</h4>
 				</div>
-
-				<h2 className={classes.title}>{title}</h2>
-				<h3 className={classes.author}>{author}</h3>
-				<h4 className={classes.year}>{yearPublished}</h4>
-
 				<div className={classes.getInfo}>
 					<a href={infoURL} target="_blank" rel="noreferrer">
 						<div className={classes.btn}>
@@ -53,12 +54,12 @@ const BookModal = ({ book, setShowModal }) => {
 
 					{  // check if preview is available, then only show Preview link
 						previewAvailable !== "noview" &&
-							<a href={previewURL} target="_blank" rel="noreferrer">
-								<div className={classes.btn}>
-									<Button>Preview</Button>
-								</div>
+						<a href={previewURL} target="_blank" rel="noreferrer">
+							<div className={classes.btn}>
+								<Button>Preview</Button>
+							</div>
 
-							</a>
+						</a>
 					}
 				</div>
 
@@ -71,10 +72,9 @@ const BookModal = ({ book, setShowModal }) => {
 					</div>
 
 				</div>
-
+			</Modal>
+		</Backdrop>
 			</div>
-
-		</Modal>
 	);
 };
 

@@ -5,13 +5,14 @@ const Card = styled.div`
 	color: var(--COLOR-LIGHT);
 	transition: 0.3s ease-in-out all;
 	border-radius: 10px;
-	z-index: 10;
+	z-index: 0;
     background-color: ${props=>props.backgroundColor};
 	
 	&:hover {
-      background-color: var(--COLOR);
+        background-color: var(--COLOR);
 		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
 		0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        z-index: 10;
 	}
 
 	@media (min-width: 600px) {
