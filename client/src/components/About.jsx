@@ -11,50 +11,41 @@ const About = () => {
 
 		<div className={classes.content}>
 
-			<Card>
-				<div className={classes.card}>
-					<div className={classes.text}>
-						Discover new reading.
-					</div>
-					<img src={img1} alt="img1" className={classes.image}/>
+			<div className={classes.card}>
+				<div className={classes.text}>
+					Discover new reading.
 				</div>
-			</Card>
+				<img src={img1} alt="img1" className={classes.image}/>
+			</div>
 
-			<Card>
 			<div className={classes.card}>
 				<img src={img2} alt="img2" className={classes.image}/>
 				<div className={classes.text}>
 					Create effective notes.
 				</div>
 			</div>
-			</Card>
 
-			<Card>
 			<div className={classes.card}>
 				<div className={classes.text}>
 					Retain more information.
 				</div>
 				<img src={img3} alt="img3" className={classes.image}/>
 			</div>
-			</Card>
 
-			<Card>
 			<div className={classes.card}>
 				<img src={img4} alt="img4" className={classes.image}/>
 				<div className={classes.text}>
 					Organize your collection.
 				</div>
 			</div>
-			</Card>
 
-			<Card>
 			<div className={classes.card}>
 				<div className={classes.text}>
 					Expand your horizons.
 				</div>
 				<img src={img5} alt="img5" className={classes.image}/>
 			</div>
-			</Card>
+
 		</div>
 	);
 };

@@ -4,9 +4,17 @@ import { useGlobalContext } from "../context/GlobalContext.jsx";
 import {Fragment} from "react";
 import ButtonPlain from "../ui/ButtonPlain.jsx";
 
+const credentials = {
+	email: import.meta.env.VITE_ADMIN_LOGIN,
+	password: import.meta.env.VITE_ADMIN_PASSWORD
+}
 const Auth = () => {
 
-	const { user, logout } = useGlobalContext()
+	const { user, logout, login } = useGlobalContext()
+
+	const previewAsAdmin = () => {
+		login(credentials)
+	}
 
 	return (
 		<Fragment>
@@ -33,7 +41,7 @@ const Auth = () => {
 						>
 							Register
 						</NavLink>
-						<ButtonPlain>Preview</ButtonPlain>
+						<ButtonPlain onClick={previewAsAdmin}>Preview</ButtonPlain>
 					</div>
 
 			}
