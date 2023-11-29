@@ -9,9 +9,9 @@ import ButtonPlain from "../../ui/ButtonPlain.jsx";
 const InfoBar = () => {
 
 	const { logout, user } = useGlobalContext()
-	const [showBackButton, setShowBackButton] = useState(false)
+	//const [showBackButton, setShowBackButton] = useState(false)
 	const location = useLocation()
-
+/*
 	useEffect(() => {
 		if (location.pathname !== '/discover') {
 			setShowBackButton(true)
@@ -22,12 +22,14 @@ const InfoBar = () => {
 
 
 	const navigate = useNavigate()
+
+ */
 	return (
 		<div className={classes.container}>
 		{
 			user ?
 				<div className={classes.user}>
-					{ showBackButton && <ButtonPlain onClick={() => navigate(-1)}>◁ Back</ButtonPlain>}
+					{/* showBackButton && <ButtonPlain onClick={() => navigate(-1)}>◁ Back</ButtonPlain> */}
 					<ButtonPlain onClick={logout}>Logout</ButtonPlain>
 				</div>
 				:

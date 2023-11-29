@@ -1,15 +1,13 @@
 .container {
-    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)), url("../../assets/images/adobe-bg-portrait.jpeg");
+    background-size: 100% 100%;
     background-attachment: fixed;
-    -webkit-background-size: calc(100vw) calc(100vh);
-    -moz-background-size: calc(100vw) calc(100vh);
-    -o-background-size: calc(100vw) calc(100vh);
-    background-size: calc(100vw) calc(100vh);
-    padding: 5rem 1rem;
-    height: 84vh;
+    background-repeat: repeat-y;
+    height: 100vh;
 }
 .content {
-    padding: 2rem;
+    padding: 7rem 3rem;
 }
 .form {
     display: flex;
@@ -20,7 +18,7 @@
 }
 .button {
     margin: auto;
-    width: 125px;
+    width: 200px;
 }
 
 @media (min-width: 600px) {

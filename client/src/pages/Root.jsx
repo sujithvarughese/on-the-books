@@ -2,7 +2,7 @@ import classes from "./styles/Root.module.css";
 import { Outlet, useNavigation, useNavigate, Navigate } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext.jsx";
 import { useEffect, useState } from "react";
-import { DesktopNavbar, InfoBar, MobileNavbar } from "../components";
+import { DesktopNavbar, InfoBar, MobileNavbar, Navbar } from "../components";
 
 
 const Root = () => {
@@ -11,6 +11,10 @@ const Root = () => {
 	// automatically redirect appropriately if user credentials ok
 	const navigate = useNavigate();
 	const [userLoggedIn, setUserLoggedIn] = useState(false)
+
+	const previewAsAdmin = () => {
+
+	}
 
 	useEffect(() => {
 		if (user && Object.keys(user).length > 0) {
@@ -26,16 +30,13 @@ const Root = () => {
 	return (
 		<div className={classes.container}>
 
-			<DesktopNavbar userLoggedIn={userLoggedIn}/>
+			<Navbar userLoggedIn={userLoggedIn}/>
 
-			<InfoBar />
 
 			<div className={classes.main}>
 				{ navigation.state === 'loading' && <h3>Loading...</h3> }
 				<Outlet />
 			</div>
-
-			<MobileNavbar userLoggedIn={userLoggedIn}/>
 
 		</div>
 	);

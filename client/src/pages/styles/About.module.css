@@ -1,13 +1,7 @@
-.container {
 
-}
-.content {
-
-}
 .card {
     display: flex;
     height: 17vh;
-
 }
 
 .text {

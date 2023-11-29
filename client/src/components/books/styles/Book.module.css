@@ -6,12 +6,12 @@
 }
 
 .cover {
-    width: 180px;
-    height: 220px;
+    width: 160px;
+    height: 200px;
     border-radius: 7px;
 }
 .details {
-    width: 175px;
+    width: 160px;
     text-align: justify;
 }
 .title {

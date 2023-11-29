@@ -27,14 +27,12 @@ const Register = () => {
 
 	return (
 		<div className={classes.container}>
-			<div className={classes.card}>
-			<Card>
 			<div className={classes.content}>
 				<Form onSubmit={handleSubmit} title="Register">
 					<div className={classes.form}>
 						<Input
 							htmlFor="lastName"
-							label="Last Name: "
+							placeholder="Last Name"
 							type="text"
 							name="lastName"
 							value={values.lastName}
@@ -42,7 +40,7 @@ const Register = () => {
 						></Input>
 						<Input
 							htmlFor="firstName"
-							label="First Name: "
+							placeholder="First Name"
 							type="text"
 							name="firstName"
 							value={values.firstName}
@@ -50,7 +48,7 @@ const Register = () => {
 						></Input>
 						<Input
 							htmlFor="email"
-							label="Email: "
+							placeholder="Email Address"
 							type="email"
 							name="email"
 							value={values.email}
@@ -58,7 +56,7 @@ const Register = () => {
 						></Input>
 						<Input
 							htmlFor="password"
-							label="Password: "
+							placeholder="Password"
 							type="password"
 							name="password"
 							value={values.password}
@@ -69,8 +67,6 @@ const Register = () => {
 						<Button type="submit">Create Account</Button>
 					</div>
 				</Form>
-			</div>
-			</Card>
 			</div>
 		</div>
 

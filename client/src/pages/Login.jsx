@@ -25,15 +25,13 @@ const Login = () => {
 
 	return (
 		<div className={classes.container}>
-			<div className={classes.card}>
-			<Card>
 			<div className={classes.content}>
 
 					<Form onSubmit={handleSubmit} title="Login">
 						<div className={classes.form}>
 							<Input
 								htmlFor="email"
-								label="Email: "
+								placeholder="Email"
 								type="email"
 								name="email"
 								value={values.email}
@@ -41,7 +39,7 @@ const Login = () => {
 							></Input>
 							<Input
 								htmlFor="password"
-								label="Password: "
+								placeholder="Password"
 								type="password"
 								name="password"
 								value={values.password}
@@ -54,8 +52,6 @@ const Login = () => {
 					</Form>
 
 
-			</div>
-			</Card>
 			</div>
 		</div>
 

@@ -1,8 +1,13 @@
 .container {
-    padding: 2rem 1rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)), url("../../assets/images/adobe-bg-portrait.jpeg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: repeat-y;
+    height: 100vh;
 }
 .content {
-    padding: 2rem;
+    padding: 6rem 3rem;
 }
 .form {
     display: flex;
@@ -12,7 +17,7 @@
 }
 .button {
     margin: auto;
-    width: 125px;
+    width: 200px;
 }
 
 @media (min-width: 600px) {
