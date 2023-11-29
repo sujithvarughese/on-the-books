@@ -60,9 +60,9 @@ const addBookNote = async (req, res) => {
 		throw new BadRequestError("Book not found");
 	}
 	// new array of notes after adding new note
-	const updatedBookNotes = book.bookNotes.push(req.body)
+	const updatedNotebook = book.notebook.push(req.body)
 	// update old array of notes with newly created array
-	await Book.findByIdAndUpdate(req.params.id, { ...book, bookNotes: updatedBookNotes });
+	await Book.findByIdAndUpdate(req.params.id, { ...book, notebook: updatedNotebook });
 	res.status(StatusCodes.OK).json({
 		message: `${book.title} successfully updated`,
 	});

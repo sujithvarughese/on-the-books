@@ -1,8 +1,8 @@
-import classes from "./styles/BookNoteContent.module.css"
-import { Button, Form, Input, Modal, Card } from "../../../ui";
+import classes from "./styles/NoteContent.module.css"
+import { Button, Form, Input, Modal, Card } from "../../ui/index.js";
 import { useState } from "react";
 
-const BookNoteContent = ({ content, editBookNote, deleteBookNote }) => {
+const NoteContent = ({ content, editBookNote, deleteBookNote }) => {
 
 	const [editMode, setEditMode] = useState(false)
 	const [noteContent, setNoteContent] = useState(content)
@@ -58,4 +58,4 @@ const BookNoteContent = ({ content, editBookNote, deleteBookNote }) => {
 	);
 };
 
-export default BookNoteContent;
+export default NoteContent;

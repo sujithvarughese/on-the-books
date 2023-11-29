@@ -1,14 +1,14 @@
-import classes from "./styles/AddBookNoteForm.moudule.css?inline";
-import { Input, Button, Form, Modal, Card } from "../../../ui";
+import classes from "./styles/AddNoteForm.moudule.css?inline";
+import { Input, Button, Form, Modal, Card } from "../../ui/index.js";
 import { useState } from "react";
-import iconX from "../../../assets/images/x_icon.svg"
+import iconX from "../../assets/images/x_icon.svg"
 
 const initialState = {
 	title: "",
 	content: ""
 }
 
-const AddBookNoteForm = ({ addBookNote, hideForm }) => {
+const AddNoteForm = ({ addBookNote, hideForm }) => {
 
 	const [newBookNote, setNewBookNote] = useState(initialState)
 
@@ -63,4 +63,4 @@ const AddBookNoteForm = ({ addBookNote, hideForm }) => {
 	);
 };
 
-export default AddBookNoteForm;
+export default AddNoteForm;

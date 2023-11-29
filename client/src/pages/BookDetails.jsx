@@ -1,7 +1,7 @@
 import classes from "./styles/BookDetails.module.css";
 import { axiosDB } from "../utils/axios.js";
 import { useLoaderData } from "react-router-dom";
-import { BookNotesList } from "../components";
+import { Notebook } from "../components";
 import {Button, Card, FormRow, Select} from "../ui";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ const BookDetails = () => {
 		previewURL,
 		status,
 		rating,
-		bookNotes
+		notebook
 	} = bookDetails
 
 	// values that user can change, updateBookDetails function will also change value accordingly in back-end
@@ -101,9 +101,9 @@ const BookDetails = () => {
 
 
 			<div>
-				<BookNotesList
+				<Notebook
 				bookID={_id}
-				bookNotes={bookNotes}
+				notebook={notebook}
 				updateBookDetails={updateBookDetails}
 			/>
 		</div>

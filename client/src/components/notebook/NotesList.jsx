@@ -1,11 +1,11 @@
-import classes from "./styles/BookNotesList.module.css"
-import { BookNoteItem, AddBookNoteForm } from "../../";
-import { Button } from "../../../ui"
+import classes from "./styles/NotesList.module.css"
+import { NoteItem, AddNoteForm } from "../index.js";
+import { Button } from "../../ui/index.js"
 import { useEffect, useState } from "react";
-import { axiosDB } from "../../../utils/axios.js";
+import { axiosDB } from "../../utils/axios.js";
 
 
-const BookNotesList = ({ bookID, bookNotes, updateBookDetails }) => {
+const NotesList = ({ bookID, bookNotes, updateBookDetails }) => {
 
 	const [showAddBookNoteForm, setShowAddBookNoteForm] = useState(false)
 	const [bookNotesState, setBookNotesState] = useState(bookNotes)
@@ -42,7 +42,7 @@ const BookNotesList = ({ bookID, bookNotes, updateBookDetails }) => {
 
 
 			{
-				showAddBookNoteForm && <AddBookNoteForm addBookNote={addBookNote} hideForm={hideForm}/>
+				showAddBookNoteForm && <AddNoteForm addBookNote={addBookNote} hideForm={hideForm}/>
 			}
 
 			{
@@ -53,7 +53,7 @@ const BookNotesList = ({ bookID, bookNotes, updateBookDetails }) => {
 					:
 				bookNotesState?.map((note, index) => {
 					return (
-						<BookNoteItem
+						<NoteItem
 							key={index}
 							note={note}
 							updateBookDetails={updateBookDetails}
@@ -67,4 +67,4 @@ const BookNotesList = ({ bookID, bookNotes, updateBookDetails }) => {
 	);
 };
 
-export default BookNotesList;
+export default NotesList;

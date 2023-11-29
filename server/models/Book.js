@@ -37,7 +37,7 @@ const BookSchema = new mongoose.Schema({
 		min: 0,
 		max: 10
 	},
-	bookNotes: [
+	notebook: [
 		{
 			type: {}
 		}

@@ -1,8 +1,8 @@
 import classes from "./styles/BookNoteItem.module.css";
-import BookNoteContent from "./BookNoteContent.jsx";
+import NoteContent from "./NoteContent.jsx";
 import { useState } from "react";
 
-const BookNoteItem = ({ note, updateBookDetails, bookNotesState, setBookNotesState }) => {
+const NoteItem = ({ note, updateBookDetails, notebookState, setNotebookState }) => {
 
 	const [showContent, setShowContent] = useState(false)
 	const [bookNoteState, setBookNoteState] = useState(note)
@@ -36,7 +36,7 @@ const BookNoteItem = ({ note, updateBookDetails, bookNotesState, setBookNotesSta
 			<div className={classes.content}>
 				{
 					showContent &&
-					<BookNoteContent
+					<NoteContent
 						content={bookNoteState.content}
 						editBookNote={editBookNote}
 						deleteBookNote={deleteBookNote}
@@ -49,4 +49,4 @@ const BookNoteItem = ({ note, updateBookDetails, bookNotesState, setBookNotesSta
 	);
 };
 
-export default BookNoteItem;
+export default NoteItem;

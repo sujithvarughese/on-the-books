@@ -1,9 +1,10 @@
 import Book from "./books/Book.jsx";
 import SearchLibrary from "./books/SearchLibrary.jsx";
-import AddBookNoteForm from "./books/booknotes/AddBookNoteForm.jsx";
-import BookNoteContent from "./books/booknotes/BookNoteContent.jsx";
-import BookNoteItem from "./books/booknotes/BookNoteItem.jsx";
-import BookNotesList from "./books/booknotes/BookNotesList.jsx";
+import Notebook from "./notebook/Notebook.jsx";
+import AddNoteForm from "./notebook/AddNoteForm.jsx";
+import NoteContent from "./notebook/NoteContent.jsx";
+import NoteItem from "./notebook/NoteItem.jsx";
+import NotesList from "./notebook/NotesList.jsx";
 import BookModal from "./books/BookModal.jsx";
 
 import Navbar from "./navigation/Navbar.jsx";
@@ -19,10 +20,11 @@ export {
 	Book,
 	SearchLibrary,
 	BookModal,
-	AddBookNoteForm,
-	BookNoteItem,
-	BookNotesList,
-	BookNoteContent,
+	AddNoteForm,
+	Notebook,
+	NoteItem,
+	NotesList,
+	NoteContent,
 	Navbar,
 	BackButton,
 	About,
