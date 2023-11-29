@@ -2,7 +2,7 @@ import classes from "./styles/Root.module.css";
 import { Outlet, useNavigation, useNavigate, Navigate } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext.jsx";
 import { useEffect, useState } from "react";
-import { DesktopNavbar, InfoBar, MobileNavbar, Navbar } from "../components";
+import { Navbar } from "../components";
 
 
 const Root = () => {
@@ -30,8 +30,7 @@ const Root = () => {
 	return (
 		<div className={classes.container}>
 
-			<Navbar userLoggedIn={userLoggedIn}/>
-
+			<Navbar userLoggedIn={userLoggedIn} />
 
 			<div className={classes.main}>
 				{ navigation.state === 'loading' && <h3>Loading...</h3> }

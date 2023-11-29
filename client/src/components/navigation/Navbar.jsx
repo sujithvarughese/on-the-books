@@ -1,4 +1,4 @@
-import classes from "./styles/MobileNavbar.module.css"
+import classes from "./styles/Navbar.module.css"
 import { Fragment } from "react"
 import { NavLink } from "react-router-dom";
 import {Auth, HeaderLogo} from "../index.js";
@@ -9,11 +9,10 @@ const Navbar = ({ userLoggedIn }) => {
         <div className={classes.container}>
 
             <div className={classes.header}>
-                <div>
+                <div className={classes.logo}>
                     <HeaderLogo />
                 </div>
-
-                <div>On the Books</div>
+                <div className={classes.title}>On the Books</div>
             </div>
             {
                 userLoggedIn &&

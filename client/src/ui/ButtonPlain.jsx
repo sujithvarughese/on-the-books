@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 const ButtonPlain = styled.button`
     cursor: pointer;
-    color: var(--COLOR);
     border: none;
     transition: 0.3s ease-in-out all;
+    color: inherit;
     font-size: inherit;
     font-weight: inherit;
     background-color: inherit;

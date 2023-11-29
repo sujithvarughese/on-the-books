@@ -1,4 +1,4 @@
-import classes from "./styles/Auth.module.css"
+import classes from "../components/navigation/styles/Navbar.module.css"
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext.jsx";
 import {Fragment} from "react";
@@ -27,14 +27,13 @@ const Auth = () => {
 						>
 							Login
 						</NavLink>
-
-
 						<NavLink
 							to="/register"
 							className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
 						>
 							Register
 						</NavLink>
+						<ButtonPlain>Preview</ButtonPlain>
 					</div>
 
 			}
