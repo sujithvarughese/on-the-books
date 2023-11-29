@@ -24,7 +24,7 @@ const BookNoteItem = ({ note, updateBookDetails, bookNotesState, setBookNotesSta
 	}
 
 	return (
-		<div className={classes.bookNoteItem}>
+		<div className={classes.container}>
 
 			<div className={classes.title} onClick={()=>setShowContent(!showContent)}>
 				{ !showContent && <div className={classes.arrow}>▽</div>}

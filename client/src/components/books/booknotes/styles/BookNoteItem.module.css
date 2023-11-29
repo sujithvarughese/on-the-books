@@ -1,4 +1,7 @@
-.bookNoteItem {
+.container {
+    width: 95%;
+    border-radius: 7px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

@@ -1,7 +1,7 @@
 import classes from "./styles/Navbar.module.css"
 import { Fragment } from "react"
 import { NavLink } from "react-router-dom";
-import {Auth, HeaderLogo} from "../index.js";
+import {Auth, HeaderLogo, BackButton} from "../index.js";
 
 const Navbar = ({ userLoggedIn }) => {
 

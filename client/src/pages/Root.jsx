@@ -12,9 +12,6 @@ const Root = () => {
 	const navigate = useNavigate();
 	const [userLoggedIn, setUserLoggedIn] = useState(false)
 
-	const previewAsAdmin = () => {
-
-	}
 
 	useEffect(() => {
 		if (user && Object.keys(user).length > 0) {

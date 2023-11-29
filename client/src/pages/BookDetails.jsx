@@ -42,20 +42,54 @@ const BookDetails = () => {
 
 			<div className={classes.coverContainer}>
 
-				<a href={infoURL} className={classes.link} target="_blank" rel="noreferrer">
-					More Info
-				</a>
-
-				<img className={classes.coverImage} src={coverImageLink} alt={title}/>
-
-				{
-					previewAvailable !== "noview" ?
+				<div className={classes.urls}>
+					<a href={infoURL} className={classes.link} target="_blank" rel="noreferrer">
+						More Info
+					</a>
+					{
+						previewAvailable !== "noview" &&
 						<a href={previewURL} className={classes.link} target="_blank" rel="noreferrer">
 							Preview
 						</a>
-						:
-						<p>No Preview Available</p>
-				}
+					}
+				</div>
+
+				<img className={classes.coverImage} src={coverImageLink} alt={title}/>
+
+				<div className={classes.statusRating}>
+					<div className={classes.status}>
+						<div className={classes.label}>
+							Status
+						</div>
+						<Select
+							type="text"
+							name="content"
+							value={statusState}
+							onChange={(e) => {
+								updateBookDetails({ status: e.target.value })
+								setStatusState(e.target.value)
+							}}
+							list={["unread", "read", "reading"]}
+						/>
+					</div>
+
+					<div className={classes.rating}>
+						<div className={classes.label}>
+							Rating
+						</div>
+						<Select
+							type="number"
+							name="rating"
+							value={ratingState}
+							onChange={(e) => {
+								updateBookDetails({ rating: Number(e.target.value) })
+								setRatingState(e.target.value)
+							}}
+							list={[0,1,2,3,4,5,6,7,8,9,10]}
+						/>
+					</div>
+				</div>
+
 			</div>
 
 			<div className={classes.details}>
@@ -64,37 +98,8 @@ const BookDetails = () => {
 				<h4 className={classes.year}>{yearPublished}</h4>
 			</div>
 
-			<div className={classes.statusRating}>
-				<FormRow label="Status">
-					<Select
-						type="text"
-						name="content"
-						value={statusState}
-						onChange={(e) => {
-							updateBookDetails({ status: e.target.value })
-							setStatusState(e.target.value)
-						}}
-						list={["unread", "read", "reading"]}
-					/>
-				</FormRow>
 
-				<FormRow label="Rating">
-					<Select
-						type="number"
-						name="rating"
-						value={ratingState}
-						onChange={(e) => {
-							updateBookDetails({ rating: Number(e.target.value) })
-							setRatingState(e.target.value)
-						}}
-						list={[0,1,2,3,4,5,6,7,8,9,10]}
-					/>
-				</FormRow>
-			</div>
-			<div className={classes.buttons}>
-				<Button>Add <br/> Quick Note</Button>
-				<Button>View Notebook</Button>
-			</div>
+
 			<div>
 				<BookNotesList
 				bookID={_id}

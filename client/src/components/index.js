@@ -7,7 +7,7 @@ import BookNotesList from "./books/booknotes/BookNotesList.jsx";
 import BookModal from "./books/BookModal.jsx";
 
 import Navbar from "./navigation/Navbar.jsx";
-
+import BackButton from "./BackButton.jsx";
 import About from "./About.jsx";
 import Auth from "./Auth.jsx";
 import HeaderLogo from "./HeaderLogo.jsx";
@@ -24,6 +24,7 @@ export {
 	BookNotesList,
 	BookNoteContent,
 	Navbar,
+	BackButton,
 	About,
 	Auth,
 	HeaderLogo,

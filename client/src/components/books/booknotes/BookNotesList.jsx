@@ -26,19 +26,31 @@ const BookNotesList = ({ bookID, bookNotes, updateBookDetails }) => {
 	}
 
 	return (
-		<div className={classes.booknotes}>
-			{
-				!showAddBookNoteForm &&
-				<div className={classes.btn}>
-					<Button onClick={()=>setShowAddBookNoteForm(true)}>Add Note</Button>
+		<div className={classes.container}>
+			<div className={classes.head}>
+				<div className={classes.title}>
+					Book Notes
 				</div>
+				{
+					!showAddBookNoteForm &&
+					<div className={classes.addButton}>
+						<Button onClick={()=>setShowAddBookNoteForm(true)}>Create New Note</Button>
+					</div>
 
-			}
+				}
+			</div>
+
+
 			{
 				showAddBookNoteForm && <AddBookNoteForm addBookNote={addBookNote} hideForm={hideForm}/>
 			}
 
 			{
+				bookNotesState.length === 0 ?
+					<div className={classes.text}>
+						No Book Notes. Make one by pressing the Create button!
+					</div>
+					:
 				bookNotesState?.map((note, index) => {
 					return (
 						<BookNoteItem
