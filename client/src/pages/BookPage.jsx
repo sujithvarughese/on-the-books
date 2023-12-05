@@ -15,6 +15,7 @@ const BookPage = () => {
 		title,
 		author,
 		coverID,
+		description,
 		yearPublished,
 		infoURL,
 		previewAvailable,
@@ -106,6 +107,9 @@ const BookPage = () => {
 				<h4 className={classes.year}>{yearPublished}</h4>
 			</div>
 
+			<div>
+				{description}
+			</div>
 
 
 			<div>

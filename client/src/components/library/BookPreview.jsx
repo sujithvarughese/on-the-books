@@ -52,7 +52,7 @@ const BookPreview = ({ book, setShowModal }) => {
 					</div>
 						:
 					<div>
-						{description?.substring(0, 350)} ...
+						{description?.substring(0, 250)} ...
 						<ButtonPlain onClick={()=>setSeeMore(true)}>[See More]</ButtonPlain>
 					</div>
 				}

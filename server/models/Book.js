@@ -15,6 +15,9 @@ const BookSchema = new mongoose.Schema({
 	coverID: {
 		type: String
 	},
+	description: {
+		type: String
+	},
 	yearPublished: {
 		type: String
 	},
