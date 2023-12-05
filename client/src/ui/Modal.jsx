@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import {
+    createPortal
+} from "react-dom";
 
-const Modal = styled.div`
+const StyledModal = styled.div`
 	position: fixed;
 	right: 0;
 	left: 0;
@@ -8,7 +11,7 @@ const Modal = styled.div`
 	background-color: var(--COLOR-DARK);
 	border-radius: 15px;
 	z-index: 10;
-  height: 90vh;
+    height: 90vh;
 	padding: 1rem;
 	width: 90vw;
 	max-width: 600px;
@@ -18,4 +21,28 @@ const Modal = styled.div`
 		padding: 2rem;
 	}
 `
+const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  padding: 5rem;
+  z-index: 100;
+`
+
+
+
+const Modal = ({ closeFn, children}) => {
+    return createPortal(
+        <Backdrop onClick={closeFn}>
+            <StyledModal onClick={(e) => e.stopPropagation()}>
+                {...children}
+            </StyledModal>
+        </Backdrop>
+        , document.getElementById("modal"))
+
+}
+
 export default Modal;

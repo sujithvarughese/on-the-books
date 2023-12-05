@@ -1,36 +1,41 @@
-import Book from "./books/Book.jsx";
-import SearchLibrary from "./books/SearchLibrary.jsx";
+
+import BookCover
+	from "./library/BookCover.jsx";
+import BookInfo from "./book/BookInfo.jsx";
+import BookPreview from "./library/BookPreview.jsx";
+
 import Notebook from "./notebook/Notebook.jsx";
 import AddNoteForm from "./notebook/AddNoteForm.jsx";
 import NoteContent from "./notebook/NoteContent.jsx";
 import NoteItem from "./notebook/NoteItem.jsx";
-import NotesList from "./notebook/NotesList.jsx";
-import BookModal from "./books/BookModal.jsx";
+import NotesTitles from "./notebook/NotesTitles.jsx";
 
 import Navbar from "./navigation/Navbar.jsx";
 import BackButton from "./BackButton.jsx";
 import About from "./About.jsx";
 import Auth from "./Auth.jsx";
 import HeaderLogo from "./HeaderLogo.jsx";
-import RecommendedBooks from "./RecommendedBooks.jsx";
-import SearchBar from "./SearchBar.jsx";
-import SearchResults from "./SearchResults.jsx";
+
+import SearchLibrary from "./library/SearchLibrary.jsx";
+import SearchBar from "./library/SearchBar.jsx";
+import SearchResults from "./library/SearchResults.jsx";
 
 export {
-	Book,
+
+	BookCover,
+	BookInfo,
 	SearchLibrary,
-	BookModal,
+	BookPreview,
 	AddNoteForm,
 	Notebook,
 	NoteItem,
-	NotesList,
+	NotesTitles,
 	NoteContent,
 	Navbar,
 	BackButton,
 	About,
 	Auth,
 	HeaderLogo,
-	RecommendedBooks,
 	SearchBar,
 	SearchResults
 }

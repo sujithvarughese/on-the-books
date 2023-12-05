@@ -1,4 +1,4 @@
-import classes from "./styles/Login.module.css";
+import classes from "./styles/Auth.module.css";
 import { useState } from "react";
 import { Form, Input, Button, Card } from "../ui"
 import { useGlobalContext } from "../context/GlobalContext.jsx";

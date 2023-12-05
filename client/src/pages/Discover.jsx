@@ -2,11 +2,11 @@ import classes from "./styles/Discover.module.css";
 import { axiosAPI } from "../utils/axios.js"
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { SearchBar, SearchResults, RecommendedBooks } from "../components";
+import { SearchBar, SearchResults } from "../components";
 
 const Discover = () => {
 	const recommendedBooks = useLoaderData()
-
+	console.log(recommendedBooks)
 	const [searchResults, setSearchResults] = useState([])
 	const [search, setSearch] = useState("")
 
@@ -19,6 +19,7 @@ const Discover = () => {
 					title: work.title,
 					author: work.authors[0]?.name,
 					coverID: work.cover_id,
+					OLID: work.key.substring(7),
 					coverEditionKey: work.cover_edition_key,
 					yearPublished: work.first_publish_year,
 				}
@@ -39,13 +40,9 @@ const Discover = () => {
 			<div className={classes.contents}>
 
 				{searchResults.length > 0 && <SearchResults search={search} books={searchResults} />}
-				<RecommendedBooks books={recommendedBooks} />
+				<SearchResults search={"Editor's Picks"} books={recommendedBooks} />
 
 			</div>
-
-
-
-
 		</div>
 	);
 };
@@ -62,6 +59,7 @@ export const discoverLoader = async () => {
 				title: work.title,
 				author: work.authors[0]?.name,
 				coverID: work.cover_id,
+				OLID: work.key.substring(7),
 				coverEditionKey: work.cover_edition_key,
 				yearPublished: work.first_publish_year,
 			}
@@ -70,37 +68,8 @@ export const discoverLoader = async () => {
 	} catch (error) {
 		throw new Error(error)
 	}
-	// getting additional book info when each book is clicked instead of when loading all results
-/*
-	let updatedBooks = []
-	// second API call to add preview information into each book object
-	try {
-		// use for loop as using map() would return a promise to loader
-		for (let i = 0; i < books.length; i++) {
-			const previewResponse = await axiosAPI(`/api/books?bibkeys=OLID:${books[i].coverEditionKey}&format=json`)
-			const info = previewResponse.data[`OLID:${books[i].coverEditionKey}`];
-
-			// info_url -> link to more info
-			// preview -> value will be "noview" if preview is not available
-			// previewURL -> link to preview
-			const { info_url, preview, preview_url } = info;
-
-
-			// destructure and return each book with additional preview info
-			const updatedBook = {
-				...books[i],
-				infoURL: info_url,
-				previewAvailable: preview,
-				previewURL: preview_url
-			}
-			updatedBooks.push(updatedBook)
-		}
-		console.log(updatedBooks);
-		return updatedBooks
-
-	} catch (error) {
-		throw new Error(error)
-	}*/
 }
+
+
 
 export default Discover;

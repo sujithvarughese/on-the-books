@@ -62,5 +62,9 @@ p, h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 @media (min-width: 600px) {
-    background-image: url("./assets/images/adobe-bg.jpeg");
+    body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.75)), url("./assets/images/adobe-bg.jpeg");
+    }
+
 }

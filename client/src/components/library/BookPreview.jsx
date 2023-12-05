@@ -1,14 +1,18 @@
-import classes from "./styles/BookModal.module.css"
+import classes from "./styles/BookPreview.module.css"
 import { Button, Backdrop, Modal, Card } from "../../ui";
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
 import { axiosAPI, axiosDB } from "../../utils/axios.js";
+import { getBookDescription } from "../../utils/functions.js";
+import ButtonPlain
+	from "../../ui/ButtonPlain.jsx";
 
-// modal is used only for books in Discover (not in myLibrary)
-const BookModal = ({ book, setShowModal }) => {
-	console.log(book);
+// modal is used only for library in Discover (not in myLibrary)
+const BookPreview = ({ book, setShowModal }) => {
+
 	const {
 		title,
 		author,
+		description,
 		coverID,
 		yearPublished,
 		infoURL,
@@ -17,6 +21,8 @@ const BookModal = ({ book, setShowModal }) => {
 	} = book;
 
 	const coverImageLink = `https://covers.openlibrary.org/b/id/${coverID}-M.jpg`
+
+	const [seeMore, setSeeMore] = useState(false)
 
 	const addToLibrary = async () => {
 		console.log("Adding to library...");
@@ -27,23 +33,30 @@ const BookModal = ({ book, setShowModal }) => {
 			rating: 0,
 			bookNotes: []
 		})
-		console.log(response);
-	}
-
-	const closeModal = (e) => {
-		setShowModal(false)
 	}
 
 	return (
 		<div className={classes.container}>
-		<Backdrop>
-			<Modal>
+			<Modal closeFn={()=>setShowModal(false)}>
 				<div className={classes.details}>
 					<img className={classes.cover} src={coverImageLink} alt={title}/>
 					<h2 className={classes.title}>{title}</h2>
 					<h3 className={classes.author}>{author}</h3>
 					<h4 className={classes.year}>{yearPublished}</h4>
 				</div>
+				{
+					(seeMore && description) ?
+					<div>
+						{description}
+						<ButtonPlain onClick={()=>setSeeMore(false)}>[See Less]</ButtonPlain>
+					</div>
+						:
+					<div>
+						{description?.substring(0, 350)} ...
+						<ButtonPlain onClick={()=>setSeeMore(true)}>[See More]</ButtonPlain>
+					</div>
+				}
+
 				<div className={classes.getInfo}>
 					<a href={infoURL} target="_blank" rel="noreferrer">
 						<div className={classes.btn}>
@@ -73,9 +86,9 @@ const BookModal = ({ book, setShowModal }) => {
 
 				</div>
 			</Modal>
-		</Backdrop>
-			</div>
+
+		</div>
 	);
 };
 
-export default BookModal;
+export default BookPreview;

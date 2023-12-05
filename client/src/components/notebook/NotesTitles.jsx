@@ -1,11 +1,11 @@
-import classes from "./styles/NotesList.module.css"
+import classes from "./styles/NotesTitles.module.css"
 import { NoteItem, AddNoteForm } from "../index.js";
 import { Button } from "../../ui/index.js"
 import { useEffect, useState } from "react";
 import { axiosDB } from "../../utils/axios.js";
 
 
-const NotesList = ({ bookID, bookNotes, updateBookDetails }) => {
+const NotesTitles = ({ bookID, bookNotes, updateBookDetails }) => {
 
 	const [showAddBookNoteForm, setShowAddBookNoteForm] = useState(false)
 	const [bookNotesState, setBookNotesState] = useState(bookNotes)
@@ -67,4 +67,4 @@ const NotesList = ({ bookID, bookNotes, updateBookDetails }) => {
 	);
 };
 
-export default NotesList;
+export default NotesTitles;

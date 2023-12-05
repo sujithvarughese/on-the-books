@@ -1,11 +1,14 @@
-import classes from "./styles/BookDetails.module.css";
+import classes from "./styles/Book.module.css";
 import { axiosDB } from "../utils/axios.js";
 import { useLoaderData } from "react-router-dom";
-import { Notebook } from "../components";
-import {Button, Card, FormRow, Select} from "../ui";
-import { useState } from "react";
+import { BookInfo, Notebook } from "../components";
+import {Button, Card, FormRow, Select } from "../ui";
+import {
+	useEffect,
+	useState
+} from "react";
 
-const BookDetails = () => {
+const BookPage = () => {
 	const bookDetails = useLoaderData()
 	const {
 		_id,
@@ -36,7 +39,9 @@ const BookDetails = () => {
 			console.log(error);
 		}
 	}
-
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, []);
 	return (
 		<div className={classes.container}>
 
@@ -54,7 +59,10 @@ const BookDetails = () => {
 					}
 				</div>
 
-				<img className={classes.coverImage} src={coverImageLink} alt={title}/>
+
+					<img className={classes.coverImage} src={coverImageLink} alt={title}/>
+
+
 
 				<div className={classes.statusRating}>
 					<div className={classes.status}>
@@ -108,10 +116,12 @@ const BookDetails = () => {
 			/>
 		</div>
 	</div>
-	);
+	)
+
+
 };
 
-export default BookDetails;
+export default BookPage;
 
 export const bookDetailsLoader = async ({ params }) => {
 	try {

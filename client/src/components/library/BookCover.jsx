@@ -1,17 +1,19 @@
-import classes from "./styles/Book.module.css";
+import classes from "./styles/BookLibrary.module.css";
 import { useState } from "react";
 import { axiosAPI, axiosDB } from "../../utils/axios.js";
 import { NavLink } from "react-router-dom";
 import Card from "../../ui/Card.jsx";
-import {BookModal} from "../index.js";
+import {BookPreview} from "../index.js";
 
-const Book = (book) => {
+const BookCover = (book) => {
 
     const {
         _id,
         title,
         author,
         coverID,
+        OLID,
+        description,
         yearPublished,
         infoURL,
         previewAvailable,
@@ -26,17 +28,31 @@ const Book = (book) => {
     const [showModal, setShowModal] = useState(false)
 
     const showBookDetails = async () => {
-        const coverEditionKey = book.coverEditionKey
-        const previewResponse = await axiosAPI(`/api/books?bibkeys=OLID:${coverEditionKey}&format=json`)
-        const info = previewResponse.data[`OLID:${coverEditionKey}`];
-
-        // info_url -> link to more info
-        // preview -> value will be "noview" if preview is not available
-        // previewURL -> link to preview
-        const { info_url, preview, preview_url } = info;
-
-        // new book object with updated values to update state before we show info in modal
-        const updatedBook = { ...currentBook, infoURL: info_url, previewAvailable: preview, previewURL: preview_url }
+        // create new book variable to update with details to later updated in state
+        let updatedBook = { ...currentBook }
+        // get book cover info
+        try {
+            const coverEditionKey = book.coverEditionKey
+            const previewResponse = await axiosAPI(`/api/books?bibkeys=OLID:${coverEditionKey}&format=json`)
+            const info = previewResponse.data[`OLID:${coverEditionKey}`];
+            // info_url -> link to more info
+            // preview -> value will be "noview" if preview is not available
+            // previewURL -> link to preview
+            const { info_url, preview, preview_url } = info;
+            updatedBook = { ...updatedBook, infoURL: info_url, previewAvailable: preview, previewURL: preview_url  }
+        } catch (error) {
+            throw new Error(error)
+        }
+        // get book description
+        try {
+            const response = await axiosAPI(`/works/${OLID}.json`)
+            const { description } = response.data
+            console.log(description)
+            updatedBook = { ...updatedBook, description: description.value || description}
+        } catch (error){
+            throw new Error(error)
+        }
+        // updated in state
         setCurrentBook(updatedBook)
         setShowModal(true)
     }
@@ -45,7 +61,7 @@ const Book = (book) => {
         <Card>
             {
                 showModal &&
-                <BookModal
+                <BookPreview
                     book={currentBook}
                     setShowModal={setShowModal}
                 />
@@ -87,4 +103,4 @@ const Book = (book) => {
     );
 };
 
-export default Book;
+export default BookCover;

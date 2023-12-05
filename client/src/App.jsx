@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
-   BookDetails,
+   BookPage,
    bookDetailsLoader,
    Discover,
    discoverLoader,
@@ -13,6 +13,8 @@ import {
    Root
 } from "./pages";
 import { GlobalProvider } from "./context/GlobalContext.jsx";
+import bookPreview
+   from "./components/library/BookPreview.jsx";
 
 
 const App = () => {
@@ -25,7 +27,7 @@ const App = () => {
          errorElement: <Error />,
          children: [
             { index: true, element: <Landing /> },
-            { path: "library/:id", element: <BookDetails />, loader: bookDetailsLoader},
+            { path: "library/:id", element: <BookPage />, loader: bookDetailsLoader},
             { path: "library", element: <MyLibrary />, loader: myLibraryLoader},
             { path: "discover", element: <Discover />, loader: discoverLoader},
             { path: "login", element: <Login />},

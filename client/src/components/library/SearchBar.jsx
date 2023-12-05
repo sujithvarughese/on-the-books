@@ -1,5 +1,5 @@
-import classes from "../pages/styles/Discover.module.css";
-import {Input, Button, Form, FormRow} from "../ui";
+import classes from "../../pages/styles/Discover.module.css";
+import {Input, Button, Form, FormRow} from "../../ui/index.js";
 import { useState } from "react";
 
 const SearchBar = ({ searchBooks, setSearch }) => {
@@ -19,7 +19,7 @@ const SearchBar = ({ searchBooks, setSearch }) => {
 			<div className={classes.form}>
 				<Input
 					htmlFor="search"
-					placeholder="Search Book by Genre"
+					placeholder="Search BookInfo by Genre"
 					type="text"
 					name="search"
 					value={searchInput}

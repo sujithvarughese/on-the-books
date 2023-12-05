@@ -2,7 +2,7 @@ import classes from "./styles/MyLibrary.module.css";
 import { useState } from "react";
 import { axiosDB } from "../utils/axios.js";
 import { useLoaderData } from "react-router-dom";
-import { Book, SearchLibrary } from "../components"
+import { BookCover, SearchLibrary } from "../components"
 
 const MyLibrary = () => {
 	const books = useLoaderData()
@@ -39,7 +39,7 @@ const MyLibrary = () => {
 			<div className={classes.bookContainer}>
 				{
 					queriedBooks.map((book, index) =>
-						<Book key={index} {...book} />
+						<BookCover key={index} {...book} />
 					)
 				}
 			</div>

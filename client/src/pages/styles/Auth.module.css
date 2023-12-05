@@ -1,0 +1,25 @@
+.container {
+    margin: auto;
+}
+.content {
+    padding: 7rem 3rem;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+
+}
+.button {
+    margin: auto;
+    width: 200px;
+}
+
+@media (min-width: 600px) {
+
+    .card {
+        max-width: 620px;
+        margin: auto;
+    }
+}

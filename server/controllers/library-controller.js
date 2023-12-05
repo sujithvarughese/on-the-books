@@ -3,7 +3,7 @@ import { BadRequestError } from "../errors/index.js";
 import User from "../models/User.js";
 import Book from "../models/Book.js";
 
-// GET all books in library
+// GET all library in library
 const getLibrary = async (req, res) => {
 	const { library } = await User.findOne({ _id: req.user.userID }).populate("library")
 
@@ -23,7 +23,7 @@ const addBookToLibrary = async (req, res) => {
 	// check if book is already in library, if so send error is response
 	const duplicate = library.find(book => book.title === title)
 	if (duplicate) {
-		throw new BadRequestError("Book already in Library!");
+		throw new BadRequestError("BookInfo already in Library!");
 	}
 
 	// create new mongo document for new book
@@ -45,10 +45,10 @@ const getBookDetails = async (req, res) => {
 	// make sure book exists in requested user's library
 	const book = await Book.findOne({ user: req.user.userID, _id: req.params.id })
 	if (!book) {
-		throw new BadRequestError("Book not found");
+		throw new BadRequestError("BookInfo not found");
 	}
 	res.status(StatusCodes.OK).json({
-		message: "Book retrieved successfully",
+		message: "BookInfo retrieved successfully",
 		bookDetails: book
 	});
 
@@ -57,7 +57,7 @@ const getBookDetails = async (req, res) => {
 const addBookNote = async (req, res) => {
 	const book = await Book.findOne({ user: req.user.userID, _id: req.params.id })
 	if (!book) {
-		throw new BadRequestError("Book not found");
+		throw new BadRequestError("BookInfo not found");
 	}
 	// new array of notes after adding new note
 	const updatedNotebook = book.notebook.push(req.body)
@@ -72,7 +72,7 @@ const addBookNote = async (req, res) => {
 const updateBookDetails = async (req, res) => {
 	const book = await Book.findOne({ user: req.user.userID, _id: req.params.id })
 	if (!book) {
-		throw new BadRequestError("Book not found");
+		throw new BadRequestError("BookInfo not found");
 	}
 	// req.body will contain key value pair to replace old pair
 	const updatedBook = await Book.findByIdAndUpdate(req.params.id, req.body);
@@ -86,7 +86,7 @@ const updateBookDetails = async (req, res) => {
 const removeBookFromLibrary = async (req, res) => {
 	const book = await Book.findOne({ user: req.user.userID, _id: req.params.id })
 	if (!book) {
-		throw new BadRequestError("Book not found");
+		throw new BadRequestError("BookInfo not found");
 	}
 	await Book.findByIdAndDelete(req.params.id);
 	res.status(StatusCodes.OK).json({ message: `${book.title} successfully removed from library` });
