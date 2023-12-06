@@ -2,8 +2,6 @@ import { StatusCodes } from "http-status-codes";
 import { BadRequestError } from "../errors/index.js";
 import User from "../models/User.js";
 import Book from "../models/Book.js";
-import book
-	from "../models/Book.js";
 
 // GET all library in library
 const getLibrary = async (req, res) => {
@@ -55,20 +53,6 @@ const getBookDetails = async (req, res) => {
 
 }
 
-const addBookNote = async (req, res) => {
-	const book = await Book.findOne({ user: req.user.userID, _id: req.params.id })
-	if (!book) {
-		throw new BadRequestError("BookInfo not found");
-	}
-	// new array of notes after adding new note
-	const updatedNotebook = book.notebook.push(req.body)
-	// update old array of notes with newly created array
-	await Book.findByIdAndUpdate(req.params.id, { ...book, notebook: updatedNotebook });
-	res.status(StatusCodes.OK).json({
-		message: `${book.title} successfully updated`,
-	});
-}
-
 // PATCH book details from req.body
 const updateBookDetails = async (req, res) => {
 	const book = await Book.findOne({ user: req.user.userID, _id: req.params.id })
@@ -93,4 +77,4 @@ const removeBookFromLibrary = async (req, res) => {
 	res.status(StatusCodes.OK).json({ message: `${book.title} successfully removed from library` });
 };
 
-export { getLibrary, addBookToLibrary, getBookDetails, addBookNote, updateBookDetails, removeBookFromLibrary }
+export { getLibrary, addBookToLibrary, getBookDetails, updateBookDetails, removeBookFromLibrary }

@@ -1,8 +1,16 @@
 import classes from "./styles/NotebookContainer.module.css";
 import {useState} from 'react';
-import { Notebook, NotebookPreview } from "../../components"
+import {
+    CreateNoteForm,
+    Notebook,
+    NotebookPreview
+} from "../../components"
 import createNoteForm
     from "./CreateNoteForm.jsx";
+import {
+    Button,
+    Modal
+} from "../../ui/index.js";
 const NotebookContainer = ({ bookID, notebook, updateBookDetails}) => {
 
     const dates = Date.now()
@@ -11,6 +19,7 @@ const NotebookContainer = ({ bookID, notebook, updateBookDetails}) => {
     const time = currentDate.toLocaleTimeString("en-US")
 
     const [notebookState, setNotebookState] = useState(notebook)
+    const [showCreateNoteModal, setShowCreateNoteModal] = useState(false)
     const [showFullNotebook, setShowFullNotebook] = useState(false)
 
     const [showUpdateConfirmation, setShowUpdateConfirmation] = useState(false)
@@ -54,10 +63,16 @@ const NotebookContainer = ({ bookID, notebook, updateBookDetails}) => {
                                 Notebook is empty! Make your first entry by pressing the Create Quick Note button, or just open up the notebook and start writing!
                             </div>
                         }
+                        <Button>Create Quick Note</Button>
+                        {
+                            showCreateNoteModal &&
+                            <Modal>
+                                <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteModal(false)}/>
+                            </Modal>
+                        }
                         <NotebookPreview
                             bookID={bookID}
                             notebook={notebookState}
-                            createNote={createNote}
                             showFullNotebook={()=>setShowFullNotebook(true)}
                         />
                     </div>

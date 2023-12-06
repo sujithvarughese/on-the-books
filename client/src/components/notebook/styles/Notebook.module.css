@@ -1,4 +1,9 @@
 .container {
+    background-image: url("./../../../assets/images/notebook-half.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+
     padding: 0.5rem;
 }
 .actions {
@@ -7,7 +12,7 @@
 
 @media (min-width: 800px) {
     .container {
-
+        background-image: url("./../../../assets/images/notebook-full.png");
     }
     .notebook {
         display: grid;

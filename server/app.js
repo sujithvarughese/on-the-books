@@ -8,6 +8,7 @@ import cors from "cors";
 // router imports
 import authRouter from "./routes/auth-router.js"
 import libraryRouter from "./routes/library-router.js";
+import notebookRouter from "./routes/notebook-router.js"
 
 // remaining middleware imports
 import morgan from "morgan";
@@ -39,6 +40,7 @@ app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 app.use("/api/v1/auth", authRouter);  // login, logout, register
 app.use("/api/v1/library", authenticateUser, libraryRouter) // library functions - getLibrary, add/update/removeBook
+app.use("/api/v1/notebook", authenticateUser, notebookRouter) // notebook functions - getNotebook, add/update note
 app.use(notFound);
 app.use(errorHandler);
 

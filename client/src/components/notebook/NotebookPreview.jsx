@@ -3,7 +3,7 @@ import {Button, Modal} from "../../ui/index.js";
 import {useState} from "react";
 import {RecentNotes, CreateNoteForm} from "../";
 
-const NotebookPreview = ({ bookID, notebook, createNote, showFullNotebook }) => {
+const NotebookPreview = ({ bookID, notebook, showFullNotebook }) => {
 
     const [recentNotes, setRecentNotes] = useState(notebook?.slice(-3))
 
