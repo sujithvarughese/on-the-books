@@ -2,11 +2,12 @@ import { StatusCodes } from "http-status-codes";
 import { BadRequestError } from "../errors/index.js";
 import User from "../models/User.js";
 import Book from "../models/Book.js";
+import book
+	from "../models/Book.js";
 
 // GET all library in library
 const getLibrary = async (req, res) => {
-	const { library } = await User.findOne({ _id: req.user.userID }).populate("library")
-
+	const library = await Book.find({ user: req.user.userID })
 	res.status(StatusCodes.OK).json({
 		message: "library retrieved successfully",
 		library: library

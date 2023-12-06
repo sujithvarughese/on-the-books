@@ -32,7 +32,7 @@ const Notebook = ({ bookID, notebook, updateBookDetails}) => {
 
             <div className={classes.head}>
                 <div className={classes.title}>
-                    Book Notes
+                    Notebook
                 </div>
                 {
                     !showAddNoteForm &&

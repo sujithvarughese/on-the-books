@@ -38,7 +38,7 @@ const Modal = ({ closeFn, children}) => {
     return createPortal(
         <Backdrop onClick={closeFn}>
             <StyledModal onClick={(e) => e.stopPropagation()}>
-                {...children}
+                {children}
             </StyledModal>
         </Backdrop>
         , document.getElementById("modal"))
