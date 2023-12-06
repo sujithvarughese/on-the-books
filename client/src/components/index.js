@@ -1,6 +1,7 @@
 
 import BookCover from "./library/BookCover.jsx";
 import BookCoverArt from "./book/BookCoverArt.jsx";
+import BookDescription from "./book/BookDescription.jsx";
 import BookInfo from "./book/BookInfo.jsx";
 import BookLinks from "./book/BookLinks.jsx"
 import BookPreview from "./library/BookPreview.jsx";
@@ -27,6 +28,7 @@ export {
 
 	BookCover,
 	BookCoverArt,
+	BookDescription,
 	BookInfo,
 	BookLinks,
 	BookRating,

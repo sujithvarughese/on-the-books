@@ -1,14 +1,9 @@
-import classes from "./styles/Book.module.css";
+import classes from "./styles/BookPage.module.css";
 import { axiosDB } from "../utils/axios.js";
 import { useLoaderData } from "react-router-dom";
-import { BookInfo, Notebook, BookCoverArt, BookRating, BookStatus, BookLinks } from "../components";
-import {Button, Card, FormRow, Select } from "../ui";
-import {
-	useEffect,
-	useState
-} from "react";
-import ButtonPlain
-	from "../ui/ButtonPlain.jsx";
+import { BookInfo, Notebook, BookCoverArt, BookDescription, BookRating, BookStatus, BookLinks } from "../components";
+import {useEffect} from "react";
+
 
 const BookPage = () => {
 	const bookDetails = useLoaderData()
@@ -27,13 +22,6 @@ const BookPage = () => {
 		notebook
 	} = bookDetails
 
-	// values that user can change, updateBookDetails function will also change value accordingly in back-end
-	const [statusState, setStatusState] = useState(status)
-	const [ratingState, setRatingState] = useState(rating)
-	const [seeMore, setSeeMore] = useState(false)
-
-	const coverImageLink = `https://covers.openlibrary.org/b/id/${coverID}-M.jpg`
-
 	// when user changes rating or status, the updated field is sent to back end as an object to update book in db
 	const updateBookDetails = async (updatedField) => {
 		try {
@@ -43,43 +31,38 @@ const BookPage = () => {
 			console.log(error);
 		}
 	}
+
+	// scroll to top on load
 	useEffect(() => {
 		window.scrollTo(0, 0)
 	}, []);
+
 	return (
 		<div className={classes.container}>
+			<div className={classes.cover}>
+				<BookCoverArt coverID={coverID} alt={title}/>
+			</div>
 
-			<div className={classes.coverContainer}>
+			<BookLinks infoURL={infoURL} previewAvailable={previewAvailable} previewURL={previewURL} />
 
-				<BookCoverArt coverImageLink={coverImageLink} alt={title}/>
+			<div className={classes.content}>
+				<BookInfo title={title} author={author} yearPublished={yearPublished} status={status} rating={rating} updateBookDetails={updateBookDetails}/>
+				<div className={classes.statusRating}>
+					<BookStatus status={status} updateBookDetails={updateBookDetails} />
+					<BookRating rating={rating} updateBookDetails={updateBookDetails}/>
+				</div>
+				<div className={classes.description}>
+					<BookDescription description={description} />
+				</div>
 
 			</div>
 
-			<BookInfo title={title} author={author} yearPublished={yearPublished} status={status} rating={rating} updateBookDetails={updateBookDetails}/>
-			<BookLinks infoURL={infoURL} previewAvailable={previewAvailable} previewURL={previewURL} />
-
-			{
-				description ?
-					<div>
-						{description}
-						<ButtonPlain onClick={()=>setSeeMore(false)}>[See Less]</ButtonPlain>
-					</div>
-					:
-					<div>
-						{description?.substring(0, 250)} ...
-						<ButtonPlain onClick={()=>setSeeMore(true)}>[See More]</ButtonPlain>
-					</div>
-			}
-
-
-			<div>
-				<Notebook
+			<Notebook
 				bookID={_id}
 				notebook={notebook}
 				updateBookDetails={updateBookDetails}
 			/>
 		</div>
-	</div>
 	)
 
 

@@ -1,12 +1,14 @@
 .coverContainer {
-
     padding: 5px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
     background-color: var(--COLOR-LIGHTER);
+    width: 200px;
+    margin: 0 auto;
 
 }
 .coverImage {
-    width: 180px;
     border-radius: 5px;
 }
 

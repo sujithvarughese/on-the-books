@@ -55,7 +55,6 @@ p, h1, h2, h3, h4, h5, h6 {
     display: block;
     overflow-wrap: break-word;
     hyphens: auto;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: clip;
     text-align: justify;

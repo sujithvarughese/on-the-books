@@ -13,7 +13,7 @@ const BookRating = ({ rating, updateBookDetails }) => {
             arr.push(
                 <FaStar style={{color: "yellow"}}/>)
         }
-        for (let i = ratingState; i < 10; i++) {
+        for (let i = ratingState; i < 5; i++) {
             arr.push(
                 <FaRegStar/>)
         }

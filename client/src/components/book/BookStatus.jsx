@@ -10,7 +10,8 @@ const BookStatus = ({ status, updateBookDetails}) => {
     const [editMode, setEditMode] = useState(false)
 
     return (
-        <FormRow label="Status">
+        <div className={classes.container}>
+        <FormRow label="Status:">
             {
                 editMode ?
                     <Select
@@ -31,6 +32,7 @@ const BookStatus = ({ status, updateBookDetails}) => {
                     </div>
             }
         </FormRow>
+        </div>
     );
 };
 
