@@ -8,11 +8,11 @@
     -moz-background-size: calc(100vw) calc(100vh);
     -o-background-size: calc(100vw) calc(100vh);
     background-size: calc(100vw) calc(100vh);
-    --COLOR-LIGHTER: #DFD3E3;
-    --COLOR-LIGHT: #B0A8B9;
-    --COLOR: #845EC2;
+    --COLOR-LIGHTER: #F5E8C7;
+    --COLOR-LIGHT: #818FB4;
+    --COLOR: #435585;
     --COLOR-ALT: #FF8066;
-    --COLOR-DARK: #4B4453;
+    --COLOR-DARK: #363062;
     --COLOR-GRADIENT: radial-gradient(var(--COLOR), var(--COLOR-LIGHT));
     --BACKGROUND: linear-gradient(to right, #434343 0%, black 100%);
 

@@ -1,12 +1,14 @@
 import classes from "./styles/Book.module.css";
 import { axiosDB } from "../utils/axios.js";
 import { useLoaderData } from "react-router-dom";
-import { BookInfo, Notebook } from "../components";
+import { BookInfo, Notebook, BookCoverArt, BookRating } from "../components";
 import {Button, Card, FormRow, Select } from "../ui";
 import {
 	useEffect,
 	useState
 } from "react";
+import ButtonPlain
+	from "../ui/ButtonPlain.jsx";
 
 const BookPage = () => {
 	const bookDetails = useLoaderData()
@@ -28,6 +30,7 @@ const BookPage = () => {
 	// values that user can change, updateBookDetails function will also change value accordingly in back-end
 	const [statusState, setStatusState] = useState(status)
 	const [ratingState, setRatingState] = useState(rating)
+	const [seeMore, setSeeMore] = useState(false)
 
 	const coverImageLink = `https://covers.openlibrary.org/b/id/${coverID}-M.jpg`
 
@@ -60,9 +63,7 @@ const BookPage = () => {
 					}
 				</div>
 
-
-					<img className={classes.coverImage} src={coverImageLink} alt={title}/>
-
+				<BookCoverArt coverImageLink={coverImageLink} alt={title}/>
 
 
 				<div className={classes.statusRating}>
@@ -81,22 +82,10 @@ const BookPage = () => {
 							list={["unread", "read", "reading"]}
 						/>
 					</div>
-
 					<div className={classes.rating}>
-						<div className={classes.label}>
-							Rating
-						</div>
-						<Select
-							type="number"
-							name="rating"
-							value={ratingState}
-							onChange={(e) => {
-								updateBookDetails({ rating: Number(e.target.value) })
-								setRatingState(e.target.value)
-							}}
-							list={[0,1,2,3,4,5,6,7,8,9,10]}
-						/>
+						<BookRating rating={rating} updateBookDetails={updateBookDetails}/>
 					</div>
+
 				</div>
 
 			</div>
@@ -107,9 +96,18 @@ const BookPage = () => {
 				<h4 className={classes.year}>{yearPublished}</h4>
 			</div>
 
-			<div>
-				{description}
-			</div>
+			{
+				description ?
+					<div>
+						{description}
+						<ButtonPlain onClick={()=>setSeeMore(false)}>[See Less]</ButtonPlain>
+					</div>
+					:
+					<div>
+						{description?.substring(0, 250)} ...
+						<ButtonPlain onClick={()=>setSeeMore(true)}>[See More]</ButtonPlain>
+					</div>
+			}
 
 
 			<div>

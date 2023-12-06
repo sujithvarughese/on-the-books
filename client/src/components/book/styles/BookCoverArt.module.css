@@ -1,0 +1,9 @@
+.coverContainer {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--COLOR-LIGHTER);
+}
+.coverImage {
+    border-radius: 5px;
+}
+

@@ -9,9 +9,9 @@ const StyledModal = styled.div`
 	left: 0;
 	margin: auto;
 	background-color: var(--COLOR-DARK);
+    border: var(--COLOR-ALT) 3px solid;
 	border-radius: 15px;
 	z-index: 10;
-    height: 90vh;
 	padding: 1rem;
 	width: 90vw;
 	max-width: 600px;
