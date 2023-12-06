@@ -6,6 +6,7 @@ import FormRow from "./FormRow.jsx";
 import Input from "./Input.jsx";
 import Modal from "./Modal.jsx"
 import Select from "./Select.jsx";
+import Textarea from "./Textarea.jsx";
 
 export {
     Backdrop,
@@ -15,5 +16,6 @@ export {
     FormRow,
     Input,
     Modal,
-    Select
+    Select,
+    Textarea
 }

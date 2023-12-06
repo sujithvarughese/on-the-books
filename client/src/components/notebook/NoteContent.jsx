@@ -1,59 +1,73 @@
 import classes from "./styles/NoteContent.module.css"
-import { Button, Form, Input, Modal, Card } from "../../ui/index.js";
+import {
+	Button,
+	Form,
+	Input,
+	Modal,
+	Card,
+	Textarea
+} from "../../ui/index.js";
 import { useState } from "react";
 
-const NoteContent = ({ content, editBookNote, deleteBookNote }) => {
+const NoteContent = ({ note, editNote }) => {
 
 	const [editMode, setEditMode] = useState(false)
-	const [noteContent, setNoteContent] = useState(content)
-
-	const handleChange = (e) => {
-		setNoteContent(e.target.value)
-	}
+	const [noteTitle, setNoteTitle] = useState(note.title)
+	const [noteContent, setNoteContent] = useState(note.content)
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		setEditMode(false)
-		editBookNote(noteContent)
+		editNote(noteContent)
+	}
+
+	const handleCancel = () => {
+		setNoteTitle(note.title)
+		setNoteContent(note.content)
+		setEditMode(false)
 	}
 
 	return (
 		<div className={classes.content}>
 
 			{
-				editMode ?
-					<Modal>
-
-						<Form onSubmit={handleSubmit} title="Edit Note">
-							<Input
-								htmlFor="noteContent"
-								type="text"
-								name="noteContent"
-								value={noteContent}
-								onChange={handleChange}
-							></Input>
-							<Button type="submit">Submit</Button>
-							<Button onClick={(prevState)=>setEditMode(false)}>Cancel</Button>
-						</Form>
-
-					</Modal>
-					:
-					<div>
-						{noteContent}
-					</div>
+				!editMode && <Button onClick={(prevState)=>setEditMode(true)}>Edit</Button>
 			}
 
 
-			<div className={classes.buttons}>
-				<div className={classes.btn}>
-					<Button onClick={(prevState)=>setEditMode(!editMode)}>Edit</Button>
+			{
+				editMode ?
+				<Input
+					htmlFor="noteContent"
+					type="text"
+					name="noteContent"
+					value={noteTitle}
+					onChange={(e)=>setNoteTitle(e.target.value)}
+				></Input>
+				:
+				<div>
+					{noteTitle}
 				</div>
+			}
 
-				<div className={classes.btn}>
-					<Button onClick={deleteBookNote}>Delete</Button>
+			{
+				editMode ?
+				<Form onSubmit={handleSubmit} title="Edit Note">
+					<Textarea
+						placeholder="Type new note here..."
+						name="content"
+						value={noteContent}
+						onChange={(e)=>setNoteContent(e.target.value)}
+						rows="15"
+					></Textarea>
+					<Button type="submit">Save</Button>
+					<Button onClick={handleCancel}>Cancel</Button>
+				</Form>
+				:
+				<div>
+					{noteContent}
 				</div>
-
-			</div>
+			}
 		</div>
 	);
 };

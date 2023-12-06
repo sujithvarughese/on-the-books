@@ -8,12 +8,14 @@ import BookPreview from "./library/BookPreview.jsx";
 import BookRating from "./book/BookRating.jsx";
 import BookStatus from "./book/BookStatus.jsx";
 
+import NotebookContainer from "./notebook/NotebookContainer.jsx";
 import Notebook from "./notebook/Notebook.jsx";
-import AddNoteForm from "./notebook/AddNoteForm.jsx";
+import CreateNoteForm from "./notebook/CreateNoteForm.jsx";
 import NoteContent from "./notebook/NoteContent.jsx";
 import NoteItem from "./notebook/NoteItem.jsx";
-import NotesTitles from "./notebook/NotesTitles.jsx";
-
+import NotebookPreview from "./notebook/NotebookPreview.jsx";
+import NoteUpdateConfirm from "./notebook/NoteUpdateConfirm.jsx";
+import RecentNotes from "./notebook/RecentNotes.jsx";
 import Navbar from "./navigation/Navbar.jsx";
 import BackButton from "./BackButton.jsx";
 import About from "./About.jsx";
@@ -35,10 +37,13 @@ export {
 	BookStatus,
 	SearchLibrary,
 	BookPreview,
-	AddNoteForm,
+	CreateNoteForm,
+	NotebookContainer,
 	Notebook,
 	NoteItem,
-	NotesTitles,
+	NoteUpdateConfirm,
+	NotebookPreview,
+	RecentNotes,
 	NoteContent,
 	Navbar,
 	BackButton,
