@@ -41,11 +41,6 @@ const BookSchema = new mongoose.Schema({
 		min: 0,
 		max: 5
 	},
-	notebook: [
-		{
-			type: {}
-		}
-	],
 	createdAt: {
 		type: Date,
 		default: () => Date.now(),

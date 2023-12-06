@@ -1,8 +1,9 @@
 import classes from "./styles/BookPage.module.css";
 import { axiosDB } from "../utils/axios.js";
-import { useLoaderData } from "react-router-dom";
-import { BookInfo, Notebook, BookCoverArt, BookDescription, BookRating, BookStatus, BookLinks } from "../components";
-import {useEffect} from "react";
+import {NavLink, useLoaderData} from "react-router-dom";
+import {BookInfo, Notebook, NotebookContainer, BookCoverArt, BookDescription, BookRating, BookStatus, BookLinks, NotebookPreview} from "../components";
+import {useEffect, useState} from "react";
+import card from "../ui/Card.jsx";
 
 
 const BookPage = () => {
@@ -19,8 +20,14 @@ const BookPage = () => {
 		previewURL,
 		status,
 		rating,
-		notebook
 	} = bookDetails
+
+	const dates = Date.now()
+	const currentDate = new Date(dates)
+	const date = currentDate.toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
+	const time = currentDate.toLocaleTimeString("en-US")
+
+	const [notebook, setNotebook] = useState([])
 
 	// when user changes rating or status, the updated field is sent to back end as an object to update book in db
 	const updateBookDetails = async (updatedField) => {
@@ -32,9 +39,43 @@ const BookPage = () => {
 		}
 	}
 
+	const createNote = async (newNote) => {
+		// const { bookID, title, content } = newNote
+		try {
+			const response = await axiosDB.post("/notebook", newNote)
+			console.log(response.data)
+			const updatedNotebook = [...notebook]
+			updatedNotebook.push(newNote)
+			setNotebook(updatedNotebook)
+		} catch (error) {
+			throw new Error(error)
+		}
+	}
+
+	const updateNote = async (updatedNote) => {
+		try {
+			const response = await axiosDB.patch("/notebook", updatedNote)
+			console.log(response.data)
+			const updatedNotebook = [...notebook]
+			const noteIndex = updatedNotebook.findIndex(note => note.title === updateNote.title)
+			updatedNotebook[noteIndex] = updatedNote
+			setNotebook(updatedNotebook)
+		} catch (error) {
+			throw new Error(error)
+		}
+	}
 	// scroll to top on load
 	useEffect(() => {
 		window.scrollTo(0, 0)
+		const fetchNotebook = async () => {
+			try {
+				const response = await axiosDB(`/notebook${_id}`)
+				const { notebook } = response.data
+				setNotebook(notebook)
+			} catch (error) {
+				throw new Error(error)
+			}
+		}
 	}, []);
 
 	return (
@@ -57,11 +98,13 @@ const BookPage = () => {
 
 			</div>
 
-			<Notebook
-				bookID={_id}
-				notebook={notebook}
-				updateBookDetails={updateBookDetails}
+			<NotebookPreview bookID={_id} recentNotes={notebook.slice(-3)} createNote={createNote} updateNote={updateNote}/>
+
+			<NavLink
+				to={{ pathname: `./notebook/${_id}`}}
+				state={{ _id: bookID, notebook, createNote, updateNote }}
 			/>
+
 		</div>
 	)
 

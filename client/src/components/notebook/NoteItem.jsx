@@ -1,4 +1,4 @@
-import classes from "./styles/BookNoteItem.module.css";
+import classes from "./styles/NoteItem.module.css";
 import NoteContent from "./NoteContent.jsx";
 import { useState } from "react";
 

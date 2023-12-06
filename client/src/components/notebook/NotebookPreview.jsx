@@ -3,9 +3,8 @@ import {Button, Modal} from "../../ui/index.js";
 import {useState} from "react";
 import {RecentNotes, CreateNoteForm} from "../";
 
-const NotebookPreview = ({ bookID, notebook, showFullNotebook }) => {
+const NotebookPreview = ({ bookID, recentNotes, createNote, updateNote }) => {
 
-    const [recentNotes, setRecentNotes] = useState(notebook?.slice(-3))
 
     const [showCreateNoteModal, setShowCreateNoteModal] = useState(false)
 
@@ -20,11 +19,10 @@ const NotebookPreview = ({ bookID, notebook, showFullNotebook }) => {
                 </Modal>
             }
 
-            {recentNotes.length > 0 && <RecentNotes recentNotes={recentNotes}/>}
+            {
+                recentNotes.map((recentNote, index) => <div key={index}>{recentNote.content}</div>)
+            }
 
-
-
-            <Button onClick={showFullNotebook}>Show full notebook</Button>
 
 
         </div>

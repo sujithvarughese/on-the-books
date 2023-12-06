@@ -5,7 +5,7 @@ import Book from "../models/Book.js";
 
 // GET all library in library
 const getLibrary = async (req, res) => {
-	const library = await Book.find({ user: req.user.userID })
+	const library = await Book.find({ user: req.user.userID }).sort({ updatedAt: -1 })
 	res.status(StatusCodes.OK).json({
 		message: "library retrieved successfully",
 		library: library
@@ -14,29 +14,17 @@ const getLibrary = async (req, res) => {
 
 // POST add single book from req.body object
 const addBookToLibrary = async (req, res) => {
-	const { title, author } = req.body
-
-	// destructure library array from appropriate user
-	const { library } = await User.findOne({ _id: req.user.userID })
-
 	// check if book is already in library, if so send error is response
-	const duplicate = library.find(book => book.title === title)
+	const duplicate = await Book.findOne({ user: req.user.userID, title: req.body.title })
 	if (duplicate) {
-		throw new BadRequestError("BookInfo already in Library!");
+		throw new BadRequestError("Book already in Library!");
 	}
 
 	// create new mongo document for new book
-	const newBook = await Book.create({ ...req.body, user: req.user.userID });
-
-	// add new book to existing library
-	library.push(newBook)
-
-	// update user's library in database with library containing newly added book
-	await User.findByIdAndUpdate(req.user.userID, { library: library })
+	await Book.create({ ...req.body, user: req.user.userID });
 
 	res.status(StatusCodes.CREATED).json({
-		message: "library retrieved successfully",
-		library: library
+		message: "Book successfully added to library",
 	});
 }
 

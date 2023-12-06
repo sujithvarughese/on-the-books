@@ -35,12 +35,6 @@ const UserSchema = new mongoose.Schema({
 		maxLength: 25,
 		select: false // hidden unless explicitly called
 	},
-	library: [
-		{
-			type: mongoose.Types.ObjectId,
-			ref: "Book"
-		}
-	],
 	isAdmin: {
 		type: Boolean,
 		default: false

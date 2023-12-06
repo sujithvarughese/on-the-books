@@ -51,7 +51,6 @@ export const myLibraryLoader = async () => {
 	try {
 		const response = await axiosDB("/library")
 		const { library } = response.data
-		console.log(library);
 		return library
 	} catch (error) {
 		throw new Error(error)
