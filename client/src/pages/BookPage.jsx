@@ -1,7 +1,7 @@
 import classes from "./styles/Book.module.css";
 import { axiosDB } from "../utils/axios.js";
 import { useLoaderData } from "react-router-dom";
-import { BookInfo, Notebook, BookCoverArt, BookRating } from "../components";
+import { BookInfo, Notebook, BookCoverArt, BookRating, BookStatus, BookLinks } from "../components";
 import {Button, Card, FormRow, Select } from "../ui";
 import {
 	useEffect,
@@ -51,50 +51,12 @@ const BookPage = () => {
 
 			<div className={classes.coverContainer}>
 
-				<div className={classes.urls}>
-					<a href={infoURL} className={classes.link} target="_blank" rel="noreferrer">
-						More Info
-					</a>
-					{
-						previewAvailable !== "noview" &&
-						<a href={previewURL} className={classes.link} target="_blank" rel="noreferrer">
-							Preview
-						</a>
-					}
-				</div>
-
 				<BookCoverArt coverImageLink={coverImageLink} alt={title}/>
 
-
-				<div className={classes.statusRating}>
-					<div className={classes.status}>
-						<div className={classes.label}>
-							Status
-						</div>
-						<Select
-							type="text"
-							name="content"
-							value={statusState}
-							onChange={(e) => {
-								updateBookDetails({ status: e.target.value })
-								setStatusState(e.target.value)
-							}}
-							list={["unread", "read", "reading"]}
-						/>
-					</div>
-					<div className={classes.rating}>
-						<BookRating rating={rating} updateBookDetails={updateBookDetails}/>
-					</div>
-
-				</div>
-
 			</div>
 
-			<div className={classes.details}>
-				<h2 className={classes.title}>{title}</h2>
-				<h3 className={classes.author}>{author}</h3>
-				<h4 className={classes.year}>{yearPublished}</h4>
-			</div>
+			<BookInfo title={title} author={author} yearPublished={yearPublished} status={status} rating={rating} updateBookDetails={updateBookDetails}/>
+			<BookLinks infoURL={infoURL} previewAvailable={previewAvailable} previewURL={previewURL} />
 
 			{
 				description ?

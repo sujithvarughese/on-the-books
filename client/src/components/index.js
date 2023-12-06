@@ -2,8 +2,10 @@
 import BookCover from "./library/BookCover.jsx";
 import BookCoverArt from "./book/BookCoverArt.jsx";
 import BookInfo from "./book/BookInfo.jsx";
+import BookLinks from "./book/BookLinks.jsx"
 import BookPreview from "./library/BookPreview.jsx";
 import BookRating from "./book/BookRating.jsx";
+import BookStatus from "./book/BookStatus.jsx";
 
 import Notebook from "./notebook/Notebook.jsx";
 import AddNoteForm from "./notebook/AddNoteForm.jsx";
@@ -26,7 +28,9 @@ export {
 	BookCover,
 	BookCoverArt,
 	BookInfo,
+	BookLinks,
 	BookRating,
+	BookStatus,
 	SearchLibrary,
 	BookPreview,
 	AddNoteForm,

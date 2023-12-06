@@ -1,9 +1,17 @@
 .coverContainer {
+
     padding: 5px;
     border-radius: 5px;
     background-color: var(--COLOR-LIGHTER);
+
 }
 .coverImage {
+    width: 180px;
     border-radius: 5px;
 }
 
+@media (min-width: 450px) {
+    .coverImage {
+        width: 300px;
+    }
+}

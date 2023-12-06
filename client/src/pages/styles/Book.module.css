@@ -4,41 +4,11 @@
     opacity: 90%;
     height: 100vh;
 }
-.coverContainer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 
-}
-.urls {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.coverImage {
-    width: 180px;
-}
-.statusRating {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 
-}
-.details > * {
-    text-align: center;
-}
 
 .link:hover {
     color: var(--COLOR);
-}
-
-.title {
-    font-size: 20px;
-    color: white;
-}
-.author {
-    font-size: 16px;
-    color: white;
 }
 
 
@@ -50,7 +20,5 @@
 
 }
 @media (min-width: 450px) {
-    .coverImage {
-        width: 300px;
-    }
+
 }
