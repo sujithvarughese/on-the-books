@@ -10,15 +10,15 @@
 }
 .coverImage {
     border-radius: 5px;
+    width: 100%;
 }
 
 
 
 @media (min-width: 800px) {
     .coverContainer {
-        width: auto;
+        width: 220px;
     }
-    .coverImage {
-        width: 600px;
-    }
+
+
 }

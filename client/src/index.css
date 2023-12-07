@@ -55,13 +55,15 @@ img {
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-    display: block;
+
     overflow-wrap: break-word;
     hyphens: auto;
     overflow: hidden;
     text-overflow: clip;
-    text-align: justify;
     width: 100%;
+}
+p {
+    text-align: justify;
 }
 @media (min-width: 600px) {
     body {

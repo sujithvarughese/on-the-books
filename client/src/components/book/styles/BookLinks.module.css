@@ -1,10 +1,12 @@
 .urls {
-    margin: 1rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
     gap: 1rem;
+    padding-bottom: 0.5rem;
+    font-weight: 500;
+    text-decoration: underline;
 }
 
 .link:hover {
-    color: var(--COLOR);
+    color: var(--COLOR-ALT);
 }

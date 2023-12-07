@@ -5,17 +5,13 @@ import {Button, ButtonIcon} from "../../ui/index.js";
 import { IoIosCreate } from "react-icons/io";
 import ButtonPlain from "../../ui/ButtonPlain.jsx";
 
-const Notebook = ({ notebook, createNote, updateNote, hideNotebook }) => {
+const Notebook = ({ notebook, createNote, updateNote }) => {
 
     const [showCreateNoteForm, setShowCreateNoteForm] = useState(false)
     const [displayedContent, setDisplayedContent] = useState(null)
 
     return (
         <div className={classes.container}>
-            <div className={classes.button}>
-                <Button onClick={hideNotebook}>Hide Notebook</Button>
-            </div>
-
 
             {showCreateNoteForm && <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>}
 

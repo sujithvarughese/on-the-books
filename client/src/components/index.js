@@ -9,11 +9,10 @@ import BookRating from "./book/BookRating.jsx";
 import BookStatus from "./book/BookStatus.jsx";
 
 import Notebook from "./notebook/Notebook.jsx";
-import NotePreview from "./notebook/NotePreview.jsx"
 import CreateNoteForm from "./notebook/CreateNoteForm.jsx";
 import NoteContent from "./notebook/NoteContent.jsx";
 import NoteItem from "./notebook/NoteItem.jsx";
-import NotebookPreview from "./notebook/NotebookPreview.jsx";
+
 import NoteUpdateConfirm from "./notebook/NoteUpdateConfirm.jsx";
 import Navbar from "./navigation/Navbar.jsx";
 import BackButton from "./BackButton.jsx";
@@ -38,9 +37,7 @@ export {
 	BookPreview,
 	CreateNoteForm,
 	NoteItem,
-	NotePreview,
 	NoteUpdateConfirm,
-	NotebookPreview,
 	NoteContent,
 	Navbar,
 	Notebook,

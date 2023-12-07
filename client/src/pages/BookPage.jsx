@@ -1,7 +1,7 @@
 import classes from "./styles/BookPage.module.css";
 import { axiosDB } from "../utils/axios.js";
 import {NavLink, useLoaderData} from "react-router-dom";
-import {BookInfo, BookCoverArt, BookDescription, BookRating, BookStatus, BookLinks, Notebook, NotebookPreview} from "../components";
+import {BookInfo, BookCoverArt, BookDescription, BookRating, BookStatus, BookLinks, Notebook } from "../components";
 import {useEffect, useState} from "react";
 
 
@@ -22,7 +22,6 @@ const BookPage = () => {
 	} = bookDetails
 
 	const [myNotebook, setMyNotebook] = useState(notebook)
-	const [showFullNotebook, setShowFullNotebook] = useState(false)
 	// when user changes rating or status, the updated field is sent to back end as an object to update book in db
 	const updateBookDetails = async (updatedField) => {
 		try {
@@ -32,7 +31,6 @@ const BookPage = () => {
 			console.log(error);
 		}
 	}
-	console.log(myNotebook)
 	const createNote = async (newNote) => {
 		// const { bookID, title, content } = newNote
 		try {
@@ -70,11 +68,15 @@ const BookPage = () => {
 				</div>
 
 				<div className={classes.content}>
-					<BookInfo title={title} author={author} yearPublished={yearPublished} status={status} rating={rating} updateBookDetails={updateBookDetails}/>
-					<BookLinks infoURL={infoURL} previewAvailable={previewAvailable} previewURL={previewURL} />
-					<div className={classes.statusRating}>
-						<BookStatus status={status} updateBookDetails={updateBookDetails} />
-						<BookRating rating={rating} updateBookDetails={updateBookDetails}/>
+					<div className={classes.info}>
+						<div>
+							<BookInfo title={title} author={author} yearPublished={yearPublished} status={status} rating={rating} updateBookDetails={updateBookDetails}/>
+							<BookLinks infoURL={infoURL} previewAvailable={previewAvailable} previewURL={previewURL} />
+						</div>
+						<div className={classes.statusRating}>
+							<BookStatus status={status} updateBookDetails={updateBookDetails} />
+							<BookRating rating={rating} updateBookDetails={updateBookDetails}/>
+						</div>
 					</div>
 					<div className={classes.description}>
 						<BookDescription description={description} />
@@ -84,13 +86,10 @@ const BookPage = () => {
 			</div>
 
 
+			<Notebook notebook={myNotebook} createNote={createNote} updateNote={updateNote}/>
 
-			{
-				showFullNotebook ?
-					<Notebook notebook={myNotebook} createNote={createNote} updateNote={updateNote} hideNotebook={()=>setShowFullNotebook(false)}/>
-					:
-					<NotebookPreview recentNotes={myNotebook.slice(-3)} createNote={createNote} showFullNotebook={()=>setShowFullNotebook(true)}/>
-			}
+
+
 		</div>
 	)
 

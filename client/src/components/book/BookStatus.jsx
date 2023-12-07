@@ -1,7 +1,7 @@
 import classes from "./styles/BookStatus.module.css"
 import { MdOutlineEditNote } from "react-icons/md";
 import {useState} from "react";
-import {FormRow, Select} from "../../ui/index.js";
+import {ButtonIcon, FormRow, Select} from "../../ui/index.js";
 
 
 const BookStatus = ({ status, updateBookDetails}) => {
@@ -28,7 +28,7 @@ const BookStatus = ({ status, updateBookDetails}) => {
                     :
                     <div className={classes.display}>
                         {statusState}
-                        <MdOutlineEditNote className={classes.icon} onClick={()=>setEditMode(true)}/>
+                        <ButtonIcon className={classes.icon} onClick={()=>setEditMode(true)}><MdOutlineEditNote fontSize="36px"/></ButtonIcon>
                     </div>
             }
         </FormRow>

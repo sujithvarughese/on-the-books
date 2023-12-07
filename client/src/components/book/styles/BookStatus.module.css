@@ -4,9 +4,8 @@
 }
 .display {
     display: flex;
-    gap: 0.5rem;
     align-items: center;
 }
 .icon {
-    font-size: 28px;
+
 }

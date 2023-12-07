@@ -1,0 +1,19 @@
+.collapsed {
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: break-spaces;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.expanded {
+    white-space: break-spaces;
+    overflow: unset;
+}
+
+@media (min-width: 800px) {
+    .collapsed {
+        height: 200px;
+    }
+}

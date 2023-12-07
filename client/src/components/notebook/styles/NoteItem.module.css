@@ -8,18 +8,20 @@
     border-bottom: 2px solid var(--COLOR-LIGHT);
 
 }
-.titleContainer {
-
-}
 .titleDate {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns:3fr 2fr;
+    align-items: center;
 }
 .title {
     font-weight: bolder;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .date {
-    font-size: 14px;
+    font-size: 13px;
+    text-align: end;
 }
 .content {
     display: flex;
@@ -42,12 +44,32 @@
 }
 @media (min-width: 800px) {
     .container {
-        height: 73px;
+
     }
     .note {
         display: none;
     }
+    .date {
+        font-size: 11px;
+    }
+    .title {
+        font-size: 14px;
+    }
+    .collapsed {
+        font-size: 12px;
+    }
     .buttons {
         display: none;
+    }
+}
+@media (min-width: 1000px) {
+    .date {
+        font-size: 13px;
+    }
+    .title {
+        font-size: 16px;
+    }
+    .collapsed {
+        font-size: 14px;
     }
 }

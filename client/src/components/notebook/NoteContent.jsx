@@ -72,7 +72,7 @@ const NoteContent = ({ note, updateNote }) => {
 							Last updated on {updatedDate}
 						</div>
 						<div>
-							Created {createdDate}
+							Created on {createdDate}
 						</div>
 					</div>
 					<div className={classes.title}>

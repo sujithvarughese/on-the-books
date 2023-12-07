@@ -13,18 +13,8 @@ const BookDescription = ({ description }) => {
 
     return (
         <div>
-            {
-                seeMore ?
-                    <div>
-                        <p>{description}</p>
-                        <ButtonPlain onClick={()=>setSeeMore(false)}>[See Less]</ButtonPlain>
-                    </div>
-                    :
-                    <div>
-                        <p>{description?.substring(0, 250)} ...</p>
-                        <ButtonPlain onClick={()=>setSeeMore(true)}>[See More]</ButtonPlain>
-                    </div>
-            }
+            <p className={seeMore ? classes.expanded : classes.collapsed}>{description}</p>
+            <ButtonPlain onClick={()=>setSeeMore(!seeMore)}>{seeMore ? "[See Less]" : "[See More]"}</ButtonPlain>
         </div>
     );
 };

@@ -2,7 +2,6 @@
     margin: 0 auto;
     padding: 1rem;
 }
-
 .cover {
     padding: 0.5rem;
 }
@@ -11,15 +10,21 @@
     color: black;
     margin: 1rem;
     padding: 1rem;
-    opacity: 90%;
     border-radius: 7px;
     overflow: hidden;
     max-height: 100%;
 }
-.statusRating {
-    margin: 1rem 0;
+.info {
     display: flex;
     justify-content: space-between;
+
+}
+.statusRating {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 1rem;
 }
 .description {
 
@@ -35,8 +40,8 @@
 }
 @media (min-width: 800px) {
     .coverContent {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
     }
     .cover {
         padding: 2rem;
