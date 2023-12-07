@@ -1,6 +1,6 @@
 .container {
     margin: 0 auto;
-    
+    padding: 1rem;
 }
 
 .cover {
@@ -9,12 +9,12 @@
 .content {
     background-color: var(--COLOR-LIGHTER);
     color: black;
-    margin: 0 auto;
+    margin: 1rem;
     padding: 1rem;
     opacity: 90%;
-    width: 90%;
-    border-radius: 10px;
+    border-radius: 7px;
     overflow: hidden;
+    max-height: 100%;
 }
 .statusRating {
     margin: 1rem 0;
@@ -33,6 +33,12 @@
     padding: 1rem 2rem;
 
 }
-@media (min-width: 450px) {
-
+@media (min-width: 800px) {
+    .coverContent {
+        display: flex;
+        justify-content: space-between;
+    }
+    .cover {
+        padding: 2rem;
+    }
 }

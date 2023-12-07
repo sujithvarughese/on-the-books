@@ -1,7 +1,6 @@
-import classes from "./styles/CreateNoteForm.moudule.css?inline";
+import classes from "./styles/CreateNoteForm.module.css";
 import { Input, Button, Form, Modal, Card, Textarea } from "../../ui/index.js";
 import { useState } from "react";
-import iconX from "../../assets/images/x_icon.svg"
 
 const initialState = {
 	title: "",
@@ -24,34 +23,30 @@ const CreateNoteForm = ({ createNote, closeForm }) => {
 
 	return (
 		<Modal>
-			<Form onSubmit={handleSubmit} title="Add Note">
-				<Input
-					htmlFor="title"
-					placeholder="Title"
-					type="text"
-					name="title"
-					value={newNote.title}
-					onChange={handleChange}
-				></Input>
+			<Form onSubmit={handleSubmit} title="Create Note">
+				<div className={classes.form}>
+					<Input
+						htmlFor="title"
+						placeholder="Title"
+						type="text"
+						name="title"
+						value={newNote.title}
+						onChange={handleChange}
+					></Input>
 
-				<Textarea
-					placeholder="Type new note here..."
-					name="content"
-					value={newNote.content}
-					onChange={handleChange}
-					rows="15"
-				></Textarea>
+					<Textarea
+						placeholder="Type new note here..."
+						name="content"
+						value={newNote.content}
+						onChange={handleChange}
+						rows="15"
+					></Textarea>
 
-				<div className={classes.buttons}>
-					<div className={classes.btn}>
+					<div className={classes.buttons}>
 						<Button type="submit">Create Note</Button>
-					</div>
-					<div className={classes.btn}>
 						<Button onClick={closeForm}>Cancel</Button>
 					</div>
-
 				</div>
-
 			</Form>
 
 		</Modal>

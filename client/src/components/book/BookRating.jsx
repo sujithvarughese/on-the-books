@@ -11,7 +11,7 @@ const BookRating = ({ rating, updateBookDetails }) => {
         const arr = []
         for (let i = 0; i < ratingState; i++) {
             arr.push(
-                <FaStar style={{color: "yellow"}}/>)
+                <FaStar style={{color: "orangered"}}/>)
         }
         for (let i = ratingState; i < 5; i++) {
             arr.push(

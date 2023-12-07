@@ -64,23 +64,26 @@ const BookPage = () => {
 
 	return (
 		<div className={classes.container}>
-			<div className={classes.cover}>
-				<BookCoverArt coverID={coverID} alt={title}/>
-			</div>
-
-			<BookLinks infoURL={infoURL} previewAvailable={previewAvailable} previewURL={previewURL} />
-
-			<div className={classes.content}>
-				<BookInfo title={title} author={author} yearPublished={yearPublished} status={status} rating={rating} updateBookDetails={updateBookDetails}/>
-				<div className={classes.statusRating}>
-					<BookStatus status={status} updateBookDetails={updateBookDetails} />
-					<BookRating rating={rating} updateBookDetails={updateBookDetails}/>
-				</div>
-				<div className={classes.description}>
-					<BookDescription description={description} />
+			<div className={classes.coverContent}>
+				<div className={classes.cover}>
+					<BookCoverArt coverID={coverID} alt={title}/>
 				</div>
 
+				<div className={classes.content}>
+					<BookInfo title={title} author={author} yearPublished={yearPublished} status={status} rating={rating} updateBookDetails={updateBookDetails}/>
+					<BookLinks infoURL={infoURL} previewAvailable={previewAvailable} previewURL={previewURL} />
+					<div className={classes.statusRating}>
+						<BookStatus status={status} updateBookDetails={updateBookDetails} />
+						<BookRating rating={rating} updateBookDetails={updateBookDetails}/>
+					</div>
+					<div className={classes.description}>
+						<BookDescription description={description} />
+					</div>
+
+				</div>
 			</div>
+
+
 
 			{
 				showFullNotebook ?

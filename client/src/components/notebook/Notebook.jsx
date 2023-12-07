@@ -12,6 +12,9 @@ const Notebook = ({ notebook, createNote, updateNote, hideNotebook }) => {
 
     return (
         <div className={classes.container}>
+            <div className={classes.button}>
+                <Button onClick={hideNotebook}>Hide Notebook</Button>
+            </div>
 
 
             {showCreateNoteForm && <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>}
@@ -44,9 +47,6 @@ const Notebook = ({ notebook, createNote, updateNote, hideNotebook }) => {
                </div>
 
             </div>
-
-            <Button onClick={hideNotebook}>Hide Notebook</Button>
-
         </div>
     );
 };
