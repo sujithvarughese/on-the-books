@@ -9,7 +9,6 @@ import {
    Login,
    MyLibrary,
    myLibraryLoader,
-   Notebook,
    Register,
    Root
 } from "./pages";
@@ -27,7 +26,6 @@ const App = () => {
             { index: true, element: <Landing /> },
             { path: "library/:id", element: <BookPage />, loader: bookDetailsLoader},
             { path: "library", element: <MyLibrary />, loader: myLibraryLoader},
-            { path: "notebook/:id", element: <Notebook /> },
             { path: "discover", element: <Discover />, loader: discoverLoader},
             { path: "login", element: <Login />},
             { path: "register", element: <Register />},

@@ -13,6 +13,7 @@ const getNotebook = async (req, res) => {
 const createNote = async (req, res) => {
     // const { bookID, title, content} = req.body
     await Note.create(req.body)
+    console.log(req.body)
     res.status(StatusCodes.OK).json({
         message: `${req.body.title} note successfully created`,
     });

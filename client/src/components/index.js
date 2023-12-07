@@ -8,6 +8,7 @@ import BookPreview from "./library/BookPreview.jsx";
 import BookRating from "./book/BookRating.jsx";
 import BookStatus from "./book/BookStatus.jsx";
 
+import Notebook from "./notebook/Notebook.jsx";
 import CreateNoteForm from "./notebook/CreateNoteForm.jsx";
 import NoteContent from "./notebook/NoteContent.jsx";
 import NoteItem from "./notebook/NoteItem.jsx";
@@ -40,6 +41,7 @@ export {
 	NotebookPreview,
 	NoteContent,
 	Navbar,
+	Notebook,
 	BackButton,
 	About,
 	Auth,

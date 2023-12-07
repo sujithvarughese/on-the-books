@@ -9,21 +9,21 @@ import {
 } from "../../ui/index.js";
 import { useState } from "react";
 
-const NoteContent = ({ note, editNote }) => {
+const NoteContent = ({ title, content, updateNote }) => {
 
 	const [editMode, setEditMode] = useState(false)
-	const [noteTitle, setNoteTitle] = useState(note.title)
-	const [noteContent, setNoteContent] = useState(note.content)
+	const [noteTitle, setNoteTitle] = useState(title)
+	const [noteContent, setNoteContent] = useState(content)
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		setEditMode(false)
-		editNote(noteContent)
+		updateNote(noteContent)
 	}
 
 	const handleCancel = () => {
-		setNoteTitle(note.title)
-		setNoteContent(note.content)
+		setNoteTitle(title)
+		setNoteContent(content)
 		setEditMode(false)
 	}
 
@@ -31,28 +31,21 @@ const NoteContent = ({ note, editNote }) => {
 		<div className={classes.content}>
 
 			{
-				!editMode && <Button onClick={(prevState)=>setEditMode(true)}>Edit</Button>
+				!editMode && updateNote && <Button onClick={(prevState)=>setEditMode(true)}>Edit</Button>
 			}
 
 
 			{
 				editMode ?
-				<Input
-					htmlFor="noteContent"
-					type="text"
-					name="noteContent"
-					value={noteTitle}
-					onChange={(e)=>setNoteTitle(e.target.value)}
-				></Input>
-				:
-				<div>
-					{noteTitle}
-				</div>
-			}
 
-			{
-				editMode ?
 				<Form onSubmit={handleSubmit} title="Edit Note">
+					<Input
+						htmlFor="noteContent"
+						type="text"
+						name="noteContent"
+						value={noteTitle}
+						onChange={(e)=>setNoteTitle(e.target.value)}
+					></Input>
 					<Textarea
 						placeholder="Type new note here..."
 						name="content"
@@ -65,7 +58,12 @@ const NoteContent = ({ note, editNote }) => {
 				</Form>
 				:
 				<div>
-					{noteContent}
+					<div>
+						{noteTitle}
+					</div>
+					<div>
+						{noteContent}
+					</div>
 				</div>
 			}
 		</div>

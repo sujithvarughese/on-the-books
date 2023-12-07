@@ -1,9 +1,9 @@
 import classes from "./styles/NotebookPreview.module.css";
 import {Button, Modal} from "../../ui/index.js";
 import {useState} from "react";
-import {RecentNotes, CreateNoteForm} from "../";
+import {CreateNoteForm, NoteItem, NoteContent} from "../";
 
-const NotebookPreview = ({ bookID, recentNotes, createNote, updateNote }) => {
+const NotebookPreview = ({ recentNotes, createNote, showFullNotebook }) => {
 
 
     const [showCreateNoteModal, setShowCreateNoteModal] = useState(false)
@@ -20,8 +20,14 @@ const NotebookPreview = ({ bookID, recentNotes, createNote, updateNote }) => {
             }
 
             {
-                recentNotes.map((recentNote, index) => <div key={index}>{recentNote.content}</div>)
+                recentNotes.map((recentNote, index) =>
+                    <div key={index}>
+                        <NoteItem note={recentNote} />
+                        <NoteContent note={recentNote} />
+                    </div>
+                )
             }
+            <Button onClick={showFullNotebook}>Show full Notebook</Button>
 
 
 

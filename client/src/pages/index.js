@@ -4,7 +4,6 @@ import Error from "./Error.jsx";
 import Landing from "./Landing.jsx";
 import Login from "./Login.jsx";
 import MyLibrary, { myLibraryLoader } from "./MyLibrary.jsx";
-import Notebook from "./Notebook.jsx"
 import Register from "./Register.jsx";
 import Root from "./Root.jsx";
 
@@ -18,7 +17,6 @@ export {
 	Login,
 	MyLibrary,
 	myLibraryLoader,
-	Notebook,
 	Register,
 	Root
 }

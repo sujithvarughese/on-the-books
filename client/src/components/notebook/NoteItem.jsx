@@ -11,7 +11,7 @@ const NoteItem = ({ note }) => {
 	return (
 		<div className={classes.container}>
 
-			<div className={classes.title} onClick={()=>setShowContent(!showContent)}>
+			<div>
 				{ !showContent && <div className={classes.arrow}>▽</div>}
 				{ showContent && <div className={classes.arrow}>△</div>}
 
