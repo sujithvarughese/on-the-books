@@ -4,7 +4,6 @@ import {NavLink, useLoaderData} from "react-router-dom";
 import {BookInfo, BookCoverArt, BookDescription, BookRating, BookStatus, BookLinks, Notebook } from "../components";
 import {useEffect, useState} from "react";
 
-
 const BookPage = () => {
 	const { bookDetails, notebook } = useLoaderData()
 	const {
@@ -34,10 +33,10 @@ const BookPage = () => {
 	const createNote = async (newNote) => {
 		// const { bookID, title, content } = newNote
 		try {
-			await axiosDB.post("/notebook", { ...newNote, book: _id })
+			const response = await axiosDB.post("/notebook", { ...newNote, book: _id })
+			const { note } = response.data
 			const updatedNotebook = [...myNotebook]
-			updatedNotebook.push(newNote)
-			console.log(updatedNotebook)
+			updatedNotebook.push(note)
 			setMyNotebook(updatedNotebook)
 		} catch (error) {
 			throw new Error(error)
@@ -46,10 +45,11 @@ const BookPage = () => {
 
 	const updateNote = async (updatedNote) => {
 		try {
-			await axiosDB.patch("/notebook", updatedNote)
+			const response = await axiosDB.patch("/notebook", updatedNote)
+			const { note } = response.data
 			const updatedNotebook = [...myNotebook]
-			const noteIndex = updatedNotebook.findIndex(note => note.title === updateNote.title)
-			updatedNotebook[noteIndex] = updatedNote
+			const noteIndex = updatedNotebook.findIndex(noteElement => noteElement._id === note._id)
+			updatedNotebook[noteIndex] = note
 			setMyNotebook(updatedNotebook)
 		} catch (error) {
 			throw new Error(error)

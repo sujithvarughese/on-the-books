@@ -16,7 +16,7 @@ const NoteContent = ({ note, updateNote }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		setEditMode(false)
-		updateNote(noteContent)
+		updateNote({_id: note._id, title: noteTitle, content: noteContent})
 	}
 
 	const handleCancel = () => {

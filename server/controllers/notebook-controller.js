@@ -12,18 +12,21 @@ const getNotebook = async (req, res) => {
 
 const createNote = async (req, res) => {
     // const { bookID, title, content} = req.body
-    await Note.create(req.body)
-    console.log(req.body)
+    const note = await Note.create(req.body)
     res.status(StatusCodes.OK).json({
         message: `${req.body.title} note successfully created`,
+        note: note
     });
 }
 
 const updateNote = async (req, res) => {
-    // const { noteID, title, content } = req.body
-    await Note.findByIdAndUpdate(req.body.noteID, { title: req.body.title, content: req.body.content })
+    // const { _id, title, content } = req.body
+    console.log(req.body)
+    const note = await Note.findByIdAndUpdate(req.body._id, req.body)
+    console.log(note)
     res.status(StatusCodes.OK).json({
         message: `${req.body.title} note successfully updated`,
+        note: note
     });
 }
 
