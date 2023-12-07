@@ -21,11 +21,6 @@ const BookPage = () => {
 		rating,
 	} = bookDetails
 
-	const dates = Date.now()
-	const currentDate = new Date(dates)
-	const date = currentDate.toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
-	const time = currentDate.toLocaleTimeString("en-US")
-
 	const [myNotebook, setMyNotebook] = useState(notebook)
 	const [showFullNotebook, setShowFullNotebook] = useState(false)
 	// when user changes rating or status, the updated field is sent to back end as an object to update book in db
@@ -92,7 +87,6 @@ const BookPage = () => {
 					<Notebook notebook={myNotebook} createNote={createNote} updateNote={updateNote} hideNotebook={()=>setShowFullNotebook(false)}/>
 					:
 					<NotebookPreview recentNotes={myNotebook.slice(-3)} createNote={createNote} showFullNotebook={()=>setShowFullNotebook(true)}/>
-
 			}
 		</div>
 	)

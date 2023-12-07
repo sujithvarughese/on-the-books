@@ -1,15 +1,13 @@
 import classes from "./styles/NoteContent.module.css"
-import {
-	Button,
-	Form,
-	Input,
-	Modal,
-	Card,
-	Textarea
-} from "../../ui/index.js";
-import { useState } from "react";
+import {Button, Form, Input, Modal, Card, Textarea, ButtonIcon} from "../../ui/index.js";
+import {useEffect, useState} from "react";
+import { MdOutlineEditNote } from "react-icons/md"
 
-const NoteContent = ({ title, content, updateNote }) => {
+const NoteContent = ({ note, updateNote }) => {
+
+	const { title, content, updatedAt, createdAt } = note
+	const updatedDate = new Date(note.updatedAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
+	const createdDate = new Date(note.createdAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
 
 	const [editMode, setEditMode] = useState(false)
 	const [noteTitle, setNoteTitle] = useState(title)
@@ -27,12 +25,23 @@ const NoteContent = ({ title, content, updateNote }) => {
 		setEditMode(false)
 	}
 
-	return (
-		<div className={classes.content}>
+	useEffect(() => {
+		console.log("yo")
+	}, [title]);
 
-			{
-				!editMode && updateNote && <Button onClick={(prevState)=>setEditMode(true)}>Edit</Button>
-			}
+	return (
+		<div className={classes.container}>
+
+			<div className={classes.editButton}>
+				{
+					!editMode && updateNote &&
+					<ButtonIcon
+						onClick={(prevState)=>setEditMode(true)}
+					>
+						<MdOutlineEditNote />
+					</ButtonIcon>
+				}
+			</div>
 
 
 			{
@@ -57,12 +66,20 @@ const NoteContent = ({ title, content, updateNote }) => {
 					<Button onClick={handleCancel}>Cancel</Button>
 				</Form>
 				:
-				<div>
-					<div>
-						{noteTitle}
+				<div className={classes.content}>
+					<div className={classes.dates}>
+						<div>
+							Last updated on {updatedDate}
+						</div>
+						<div>
+							Created {createdDate}
+						</div>
 					</div>
-					<div>
-						{noteContent}
+					<div className={classes.title}>
+						{title}
+					</div>
+					<div className={classes.content}>
+						{content}
 					</div>
 				</div>
 			}

@@ -1,17 +1,25 @@
-.content {
+.container {
     padding: 0 2rem;
-    color: white;
-    background-color: var(--COLOR-DARK);
+    color: var(--COLOR-DARK);
     margin: .5rem;
     border-radius: 10px;
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-around;
-}
 
-.btn {
-    width: 125px;
-    margin: auto;
+
+.dates {
+    display: flex;
+    justify-content: space-between;
+}
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+.editButton {
+    font-size: 62px;
+    color: black;
+    text-align: right;
+    padding-top: 1.4rem;
 }

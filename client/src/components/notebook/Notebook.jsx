@@ -1,20 +1,34 @@
 import classes from "./styles/Notebook.module.css";
 import {CreateNoteForm, NoteContent, NoteItem} from "../index.js";
 import {useState} from "react";
-import {Button} from "../../ui/index.js";
+import {Button, ButtonIcon} from "../../ui/index.js";
+import { IoIosCreate } from "react-icons/io";
+import ButtonPlain from "../../ui/ButtonPlain.jsx";
 
 const Notebook = ({ notebook, createNote, updateNote, hideNotebook }) => {
 
     const [showCreateNoteForm, setShowCreateNoteForm] = useState(false)
     const [displayedContent, setDisplayedContent] = useState(null)
-    console.log(displayedContent)
+
     return (
         <div className={classes.container}>
-            {!showCreateNoteForm && <Button onClick={()=>setShowCreateNoteForm(true)}>Create New Note</Button>}
+
+
             {showCreateNoteForm && <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>}
 
             <div className={classes.notebook}>
-                <div>
+
+                <div className={classes.createButton}>
+                    {
+                        !showCreateNoteForm &&
+                        <ButtonIcon
+                            onClick={()=>setShowCreateNoteForm(true)}
+                        >
+                            <IoIosCreate />
+                        </ButtonIcon>}
+                </div>
+
+                <div className={classes.title}>
                     {
                         notebook?.map((note, index) =>
                             <div onClick={()=>setDisplayedContent(note)} key={index}>
@@ -23,9 +37,9 @@ const Notebook = ({ notebook, createNote, updateNote, hideNotebook }) => {
                         )
                     }
                 </div>
-               <div>
+               <div className={classes.content}>
                    {
-                       displayedContent && <NoteContent title={displayedContent.title} content={displayedContent.content} updateNote={updateNote}/>
+                       displayedContent && <NoteContent note={displayedContent} updateNote={updateNote}/>
                    }
                </div>
 
