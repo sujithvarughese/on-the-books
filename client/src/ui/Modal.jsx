@@ -8,15 +8,15 @@ const StyledModal = styled.div`
 	right: 0;
 	left: 0;
 	margin: auto;
-	background-color: var(--COLOR-DARK);
-    border: var(--COLOR-ALT) 3px solid;
+	background-color: var(--COLOR-LIGHTER);
+    border: var(--COLOR-LIGHT) 3px solid;
 	border-radius: 15px;
 	z-index: 10;
 	padding: 1rem;
 	width: 90vw;
     height: ${props => props.height || "auto"};
 	max-width: 600px;
-	color: var(--COLOR-LIGHTER);
+
 
 	@media (min-width: 600px) {
 		padding: 2rem;

@@ -19,7 +19,6 @@ import Navbar from "./navigation/Navbar.jsx";
 import BackButton from "./BackButton.jsx";
 import About from "./About.jsx";
 import Auth from "./Auth.jsx";
-import HeaderLogo from "./HeaderLogo.jsx";
 
 import SearchLibrary from "./library/SearchLibrary.jsx";
 import SearchBar from "./library/SearchBar.jsx";
@@ -46,7 +45,6 @@ export {
 	BackButton,
 	About,
 	Auth,
-	HeaderLogo,
 	SearchBar,
 	SearchResults
 }

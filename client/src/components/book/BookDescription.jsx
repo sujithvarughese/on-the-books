@@ -12,9 +12,12 @@ const BookDescription = ({ description }) => {
     const [seeMore, setSeeMore] = useState(false)
 
     return (
-        <div>
+        <div className={classes.container}>
             <p className={seeMore ? classes.expanded : classes.collapsed}>{description}</p>
-            <ButtonPlain onClick={()=>setSeeMore(!seeMore)}>{seeMore ? "[See Less]" : "[See More]"}</ButtonPlain>
+            <div className={classes.button}>
+                <ButtonPlain onClick={()=>setSeeMore(!seeMore)}>{seeMore ? "[See Less]" : "[See More]"}</ButtonPlain>
+            </div>
+
         </div>
     );
 };

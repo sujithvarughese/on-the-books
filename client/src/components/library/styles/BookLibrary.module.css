@@ -6,8 +6,6 @@
 }
 
 .cover {
-    width: 160px;
-    height: 200px;
     border-radius: 7px;
 }
 .details {
@@ -16,7 +14,6 @@
 }
 .title {
     font-weight: 600;
-    color: var(--COLOR-LIGHTER);
 }
 .author {
     font-size: 14px;

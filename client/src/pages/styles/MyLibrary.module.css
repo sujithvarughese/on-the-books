@@ -2,7 +2,9 @@
     padding: 0.3rem;
 }
 .search {
+    max-width: 550px;
     padding: 1rem 3rem;
+    margin: 0 auto;
 }
 .bookContainer {
     display: grid;
@@ -17,6 +19,6 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 1rem;
-        margin: 3rem 2rem;
+
     }
 }

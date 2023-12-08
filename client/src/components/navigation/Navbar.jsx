@@ -1,7 +1,8 @@
 import classes from "./styles/Navbar.module.css"
 import { Fragment } from "react"
 import { NavLink } from "react-router-dom";
-import {Auth, HeaderLogo, BackButton} from "../index.js";
+import {Auth, BackButton} from "../index.js";
+import logo from "../../assets/images/logo.png";
 
 const Navbar = ({ userLoggedIn }) => {
 
@@ -10,7 +11,17 @@ const Navbar = ({ userLoggedIn }) => {
 
             <div className={classes.header}>
                 <div className={classes.logo}>
-                    <HeaderLogo />
+                    {
+                        userLoggedIn ?
+                            <NavLink to="library">
+                                <img className={classes.logo} src={logo} alt="logo" />
+                            </NavLink>
+                            :
+                            <NavLink to="/">
+                                <img className={classes.logo} src={logo} alt="logo" />
+                            </NavLink>
+                    }
+
                 </div>
                 <div className={classes.title}>On the Books</div>
             </div>
@@ -20,7 +31,6 @@ const Navbar = ({ userLoggedIn }) => {
                         <NavLink
                             to="/library"
                             className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
-                            end
                         >
                             Library
                         </NavLink>
@@ -28,7 +38,6 @@ const Navbar = ({ userLoggedIn }) => {
                         <NavLink
                             to="/discover"
                             className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
-                            end
                         >
                             Discover
                         </NavLink>

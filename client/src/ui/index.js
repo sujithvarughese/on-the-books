@@ -6,6 +6,7 @@ import Card from "./Card.jsx"
 import Form from "./Form.jsx";
 import FormRow from "./FormRow.jsx";
 import Input from "./Input.jsx";
+import Loading from "./Loading.jsx"
 import Modal from "./Modal.jsx"
 import Select from "./Select.jsx";
 import Textarea from "./Textarea.jsx";
@@ -19,6 +20,7 @@ export {
     Form,
     FormRow,
     Input,
+    Loading,
     Modal,
     Select,
     Textarea

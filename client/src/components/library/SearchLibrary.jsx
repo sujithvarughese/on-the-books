@@ -5,7 +5,7 @@ const SearchLibrary = ({ query, setQuery }) => {
         <Input
             type="text"
             name="search"
-            placeholder="SEARCH LIBRARY"
+            placeholder="Search Library"
             value={query}
             onChange={(e)=>setQuery(e.target.value)}
         ></Input>

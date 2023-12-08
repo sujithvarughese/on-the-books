@@ -1,9 +1,11 @@
 .container {
-    padding: 0.3rem;
+    padding: 1rem;
     z-index: 0;
 }
 .search {
-    padding: 1rem 3rem;
+    max-width: 550px;
+    padding: 1rem;
+    margin: 0 auto;
 }
 .bookContainer {
     display: grid;

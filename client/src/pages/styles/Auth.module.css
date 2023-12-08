@@ -1,5 +1,6 @@
 .container {
     margin: auto;
+    max-width: 550px;
 }
 .content {
     padding: 7rem 3rem;
@@ -9,11 +10,9 @@
     flex-direction: column;
     gap: 2rem;
     padding: 2rem 0;
-
 }
 .button {
     margin: auto;
-    width: 200px;
 }
 
 @media (min-width: 600px) {

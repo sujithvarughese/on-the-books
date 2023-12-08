@@ -1,6 +1,6 @@
 import { FaRegStar, FaStar } from "react-icons/fa6";
 import {useEffect, useState} from "react";
-import ButtonPlain from "../../ui/ButtonPlain.jsx";
+import ButtonIcon from "../../ui/ButtonPlain.jsx";
 
 const BookRating = ({ rating, updateBookDetails }) => {
 
@@ -24,7 +24,7 @@ const BookRating = ({ rating, updateBookDetails }) => {
         <div>
             {
                 stars.map((star, index) =>
-                    <ButtonPlain
+                    <ButtonIcon
                         key={index}
                         onClick={()=> {
                             updateBookDetails({ rating: index + 1 })
@@ -32,7 +32,7 @@ const BookRating = ({ rating, updateBookDetails }) => {
                         }}
                     >
                         {star}
-                    </ButtonPlain>
+                    </ButtonIcon>
                 )
 
             }

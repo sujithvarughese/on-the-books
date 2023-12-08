@@ -19,7 +19,7 @@ const SearchBar = ({ searchBooks, setSearch }) => {
 			<div className={classes.form}>
 				<Input
 					htmlFor="search"
-					placeholder="Search BookInfo by Genre"
+					placeholder="Search Books by Genre"
 					type="text"
 					name="search"
 					value={searchInput}

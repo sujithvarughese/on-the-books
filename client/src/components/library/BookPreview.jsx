@@ -1,10 +1,12 @@
 import classes from "./styles/BookPreview.module.css"
-import { Button, Backdrop, Modal, Card } from "../../ui";
-import {useEffect, useState} from "react";
-import { axiosAPI, axiosDB } from "../../utils/axios.js";
-import { getBookDescription } from "../../utils/functions.js";
+import {Button, ButtonIcon, Modal} from "../../ui";
+import {useState} from "react";
+import { axiosDB } from "../../utils/axios.js";
+import { IoClose } from "react-icons/io5";
+
 import ButtonPlain
 	from "../../ui/ButtonPlain.jsx";
+import {BookCoverArt, BookDescription, BookInfo, BookLinks} from "../index.js";
 
 // modal is used only for library in Discover (not in myLibrary)
 const BookPreview = ({ book, setShowModal }) => {
@@ -38,53 +40,25 @@ const BookPreview = ({ book, setShowModal }) => {
 	return (
 		<div className={classes.container}>
 			<Modal closeFn={()=>setShowModal(false)}>
-				<div className={classes.details}>
-					<img className={classes.cover} src={coverImageLink} alt={title}/>
-					<h2 className={classes.title}>{title}</h2>
-					<h3 className={classes.author}>{author}</h3>
-					<h4 className={classes.year}>{yearPublished}</h4>
+				<div className={classes.closeButton}>
+					<ButtonIcon onClick={()=>setShowModal(false)}><IoClose /></ButtonIcon>
 				</div>
-				{
-					(seeMore && description) ?
-					<div>
-						{description}
-						<ButtonPlain onClick={()=>setSeeMore(false)}>[See Less]</ButtonPlain>
-					</div>
-						:
-					<div>
-						{description?.substring(0, 250)} ...
-						<ButtonPlain onClick={()=>setSeeMore(true)}>[See More]</ButtonPlain>
-					</div>
-				}
 
-				<div className={classes.getInfo}>
-					<a href={infoURL} target="_blank" rel="noreferrer">
+
+				<BookCoverArt coverID={coverID} title={title} />
+
+				<div className={classes.info}>
+					<div>
+						<BookInfo title={title} author={author} yearPublished={yearPublished}/>
+					</div>
+					<div>
 						<div className={classes.btn}>
-							<Button>Info</Button>
+							<Button onClick={addToLibrary}>Add to Library</Button>
 						</div>
-
-					</a>
-
-					{  // check if preview is available, then only show Preview link
-						previewAvailable !== "noview" &&
-						<a href={previewURL} target="_blank" rel="noreferrer">
-							<div className={classes.btn}>
-								<Button>Preview</Button>
-							</div>
-
-						</a>
-					}
-				</div>
-
-				<div className={classes.buttons}>
-					<div className={classes.btn}>
-						<Button onClick={addToLibrary}>Add Book</Button>
 					</div>
-					<div className={classes.btn}>
-						<Button onClick={()=>setShowModal(false)}>Close</Button>
-					</div>
-
 				</div>
+				<BookLinks infoURL={infoURL} previewAvailable={previewAvailable} previewURL={previewURL}/>
+				<BookDescription description={description} />
 			</Modal>
 
 		</div>

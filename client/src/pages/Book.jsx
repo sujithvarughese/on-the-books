@@ -50,8 +50,9 @@ const Book = () => {
 							<BookLinks infoURL={infoURL} previewAvailable={previewAvailable} previewURL={previewURL} />
 						</div>
 						<div className={classes.statusRating}>
-							<BookStatus status={status} updateBookDetails={updateBookDetails} />
 							<BookRating rating={rating} updateBookDetails={updateBookDetails}/>
+							<BookStatus status={status} updateBookDetails={updateBookDetails} />
+
 						</div>
 					</div>
 					<div className={classes.description}>
@@ -61,9 +62,7 @@ const Book = () => {
 				</div>
 			</div>
 
-
 			<Notebook notebook={notebook}/>
-
 
 		</div>
 	)

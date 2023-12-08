@@ -64,7 +64,7 @@ const Register = () => {
 						></Input>
 					</div>
 					<div className={classes.button}>
-						<Button type="submit">Create Account</Button>
+						<Button type="submit">Register</Button>
 					</div>
 				</Form>
 			</div>
