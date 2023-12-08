@@ -12,12 +12,15 @@ const Note = ({ note, setDisplayedNote}) => {
     return (
         <ButtonPlain onClick={()=>setDisplayedNote(note)}>
             <div className={classes.container}>
-                <div className={classes.title}>
-                    {title}
+                <div className={classes.titleDate}>
+                    <div className={classes.title}>
+                        {title}
+                    </div>
+                    <div className={classes.date}>
+                        {updatedDate}
+                    </div>
                 </div>
-                <div className={classes.date}>
-                    {updatedDate}
-                </div>
+
                 <div className={classes.content}>
                     {content}
                 </div>

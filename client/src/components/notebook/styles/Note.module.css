@@ -1,8 +1,9 @@
 .container {
-    margin: 0 auto;
+    text-align: left;
     padding: 0.6rem 0;
     display: flex;
     flex-direction: column;
+    gap: 0.3rem;
     justify-content: space-around;
     color: var(--COLOR-DARK);
     border-bottom: 2px solid var(--COLOR-LIGHT);
@@ -36,7 +37,6 @@
     line-clamp: 2;
     -webkit-box-orient: vertical;
     font-size: 14px;
-    padding: 1rem;
 }
 
 @media (min-width: 705px) {

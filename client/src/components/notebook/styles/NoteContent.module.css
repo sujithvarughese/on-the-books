@@ -1,6 +1,12 @@
 .container {
     position: relative;
-    padding: 5rem 0;
+    padding: 6rem 0 4rem 0;
+}
+.backButton {
+    position: absolute;
+    font-size: 48px;
+    top: 1.7rem;
+    z-index: 10;
 }
 .editButton {
     position: absolute;
@@ -25,17 +31,21 @@
     padding-top: 1rem;
     padding-right: 1rem;
 }
+
+@media (min-width: 705px) {
+    .backButton {
+        display: none;
+    }
+}
 @media (min-width: 1000px) {
     .container {
-        padding: 6rem 2rem 6rem 1rem;
+        padding: 6rem 2rem 6rem 2rem;
     }
     .title {
         font-size: 24px;
         padding-bottom: 2rem;
     }
     .dates {
-        display: flex;
-        justify-content: space-between;
         font-size: 14px;
     }
 }

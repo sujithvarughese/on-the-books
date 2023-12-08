@@ -4,8 +4,10 @@ import {useEffect, useState} from "react";
 import { MdOutlineEditNote } from "react-icons/md"
 import { EditNoteForm } from "../../components"
 import {axiosDB} from "../../utils/axios.js";
+import { MdArrowBackIosNew } from "react-icons/md";
+import {useNavigate} from "react-router-dom";
 
-const NoteContent = ({ note }) => {
+const NoteContent = ({ note, goBack }) => {
 
 	const { title, content, updatedAt, createdAt } = note
 	const updatedDate = new Date(note.updatedAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
@@ -25,6 +27,12 @@ const NoteContent = ({ note }) => {
 
 	return (
 		<div className={classes.container}>
+			<div className={classes.backButton}>
+				<ButtonIcon onClick={goBack}>
+					<MdArrowBackIosNew />
+				</ButtonIcon>
+
+			</div>
 			<div className={classes.editButton}>
 				{
 					!editMode && updateNote &&

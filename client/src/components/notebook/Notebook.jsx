@@ -51,7 +51,7 @@ const Notebook = ({ notebook, book }) => {
 
                 <div className={classes.right}>
                     {showCreateNoteForm && <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>}
-                    {displayedNote && <NoteContent note={displayedNote} />}
+                    {displayedNote && <NoteContent note={displayedNote} goBack={()=>setDisplayedNote(null)}/>}
                 </div>
 
             </div>

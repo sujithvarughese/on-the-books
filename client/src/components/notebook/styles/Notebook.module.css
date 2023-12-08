@@ -8,7 +8,6 @@
 .notebook {
     position: relative;
 }
-
 .createButton {
     position: absolute;
     color: black;
@@ -23,13 +22,24 @@
 .hidden {
     display: none;
 }
-.list {
-    padding-right: 2rem;
+.left {
+    padding: 4rem 1rem 3rem 2.2rem;
+}
+.right {
+    padding: 0 1rem 3rem 3rem;
 }
 
-@media (min-width: 500px) {
-    .list {
-        left: 4rem;
+@media (min-width: 400px) {
+    .left {
+        padding: 4rem 1.3rem 3rem 3rem;
+    }
+}
+@media (min-width: 550px) {
+    .left {
+        padding: 5rem 2rem 4rem 4rem;
+    }
+    .right {
+        padding: 0 1rem 3rem 4rem;
     }
 }
 @media (min-width: 705px) {
@@ -44,24 +54,34 @@
         position: fixed;
     }
     .createButton {
-        left: 2rem;
+        left: 2.5rem;
+        top: 1.5rem;
     }
     .notebook {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
     .left {
-        padding-right: 4rem;
+        padding: 5rem 3rem;
     }
     .right {
-
+        padding: 0 1rem 3rem 3rem;
+    }
+}
+@media (min-width: 800px) {
+    .left {
+        padding: 5rem 4rem;
+    }
+    .right {
+        padding: 0 1rem 3rem 4rem;
     }
 }
 @media (min-width: 1000px) {
     .createButton {
         top: 2rem;
+        left: 3rem;
     }
-    .title {
-        padding-right: 5rem;
+    .left {
+        padding: 6rem;
     }
 }
