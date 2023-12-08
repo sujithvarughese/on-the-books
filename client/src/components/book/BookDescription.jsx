@@ -13,7 +13,11 @@ const BookDescription = ({ description }) => {
 
     return (
         <div className={classes.container}>
-            <p className={seeMore ? classes.expanded : classes.collapsed}>{description}</p>
+            {seeMore ?
+                <p className={classes.expanded}>{description}</p>
+                :
+                <p className={classes.collapsed}>{description.substring(0,300)}</p>
+            }
             <div className={classes.button}>
                 <ButtonPlain onClick={()=>setSeeMore(!seeMore)}>{seeMore ? "[See Less]" : "[See More]"}</ButtonPlain>
             </div>
