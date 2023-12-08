@@ -20,7 +20,9 @@
     text-align: right;
     padding-top: 1.4rem;
 }
-
+.content {
+    white-space: break-spaces;
+}
 @media (min-width: 1000px) {
     .title {
         font-size: 24px;

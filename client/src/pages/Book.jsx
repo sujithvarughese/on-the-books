@@ -1,10 +1,10 @@
-import classes from "./styles/BookPage.module.css";
+import classes from "./styles/Book.module.css";
 import { axiosDB } from "../utils/axios.js";
 import {NavLink, useLoaderData} from "react-router-dom";
 import {BookInfo, BookCoverArt, BookDescription, BookRating, BookStatus, BookLinks, Notebook } from "../components";
 import {useEffect, useState} from "react";
 
-const BookPage = () => {
+const Book = () => {
 	const { bookDetails, notebook } = useLoaderData()
 	const {
 		_id,
@@ -20,7 +20,7 @@ const BookPage = () => {
 		rating,
 	} = bookDetails
 
-	const [myNotebook, setMyNotebook] = useState(notebook)
+
 	// when user changes rating or status, the updated field is sent to back end as an object to update book in db
 	const updateBookDetails = async (updatedField) => {
 		try {
@@ -30,31 +30,7 @@ const BookPage = () => {
 			console.log(error);
 		}
 	}
-	const createNote = async (newNote) => {
-		// const { bookID, title, content } = newNote
-		try {
-			const response = await axiosDB.post("/notebook", { ...newNote, book: _id })
-			const { note } = response.data
-			const updatedNotebook = [...myNotebook]
-			updatedNotebook.push(note)
-			setMyNotebook(updatedNotebook)
-		} catch (error) {
-			throw new Error(error)
-		}
-	}
 
-	const updateNote = async (updatedNote) => {
-		try {
-			const response = await axiosDB.patch("/notebook", updatedNote)
-			const { note } = response.data
-			const updatedNotebook = [...myNotebook]
-			const noteIndex = updatedNotebook.findIndex(noteElement => noteElement._id === note._id)
-			updatedNotebook[noteIndex] = note
-			setMyNotebook(updatedNotebook)
-		} catch (error) {
-			throw new Error(error)
-		}
-	}
 	// scroll to top on load
 	useEffect(() => {
 		window.scrollTo(0, 0)
@@ -86,8 +62,7 @@ const BookPage = () => {
 			</div>
 
 
-			<Notebook notebook={myNotebook} createNote={createNote} updateNote={updateNote}/>
-
+			<Notebook notebook={notebook}/>
 
 
 		</div>
@@ -96,7 +71,7 @@ const BookPage = () => {
 
 };
 
-export default BookPage;
+export default Book;
 
 export const bookDetailsLoader = async ({ params }) => {
 	try {

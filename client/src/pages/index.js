@@ -1,4 +1,4 @@
-import BookPage, { bookDetailsLoader } from "./BookPage.jsx";
+import Book, { bookDetailsLoader } from "./Book.jsx";
 import Discover, { discoverLoader } from "./Discover.jsx";
 import Error from "./Error.jsx";
 import Landing from "./Landing.jsx";
@@ -8,7 +8,7 @@ import Register from "./Register.jsx";
 import Root from "./Root.jsx";
 
 export {
-	BookPage,
+	Book,
 	bookDetailsLoader,
 	Discover,
 	discoverLoader,

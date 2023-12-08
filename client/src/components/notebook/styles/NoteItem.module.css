@@ -38,11 +38,13 @@
 }
 .expanded {
     padding: 1rem;
+    white-space: break-spaces;
+
 }
 .buttons {
     font-size: 24px;
 }
-@media (min-width: 800px) {
+@media (min-width: 705px) {
     .container {
 
     }

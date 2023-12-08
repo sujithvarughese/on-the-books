@@ -1,5 +1,9 @@
-.container {
-    border: 7px green solid;
+
+.fullImage {
+    display: none;
+}
+.halfImage {
+    position: fixed;
 }
 .button {
     text-align: right;
@@ -7,69 +11,69 @@
 }
 .notebook {
     position: relative;
-    background-image: url("../../../assets/images/notebook-half.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 1200px;
-    border: red 4px solid;
 }
 .createButton {
+    position: absolute;
     color: black;
     font-size: 48px;
-    text-align: right;
-    padding-top: 1rem;
-    padding-right: 3rem;
+    top: 1rem;
+    right: 2rem;
+    z-index: 10;
+}
+.createForm {
+    padding: 3rem 4rem 0 4rem;
 }
 .title {
-    padding-left: 3rem;
+    position: absolute;
+    top: 5rem;
+    left: 3rem;
     padding-right: 2rem;
 }
 .content {
     display: none;
 }
-
-@media (min-width: 600px) {
+@media (min-width: 500px) {
     .title {
-        padding-left: 4rem;
+        left: 4rem;
     }
 }
-@media (min-width: 800px) {
-    .container {
-
+@media (min-width: 705px) {
+    .halfImage {
+        display: none;
     }
-    .notebook {
-        position: relative;
-        height: 1100px;
+    .fullImage {
+        display: unset;
+        position: fixed;
     }
     .createButton {
-        position: absolute;
-        left: 3rem;
-        font-size: 56px;
-        z-index: 10;
-    }
-    .title {
-        padding: 3rem 2rem 3rem 1rem;
+        left: 2rem;
     }
     .notebook {
-        background-image: url("../../../assets/images/notebook-full.png");
         display: grid;
         grid-template-columns: 2fr 5fr;
     }
     .title {
-        position: absolute;
         width: 42%;
-        left: 2rem;
-        top: 3rem;
+        top: 4rem;
+        padding-right: 4rem;
     }
     .content {
-        display: block;
+        display: unset;
         position: absolute;
         right: 0;
-        width: 45%;
+        width: 47%;
     }
 }
 @media (min-width: 1000px) {
+    .createButton {
+        top: 2rem;
+    }
     .title {
-        padding: 4rem 2rem 1rem 3rem;
+        top: 5rem;
+        left: 5rem;
+        padding-right: 5rem;
+    }
+    .content {
+        width: 45%;
     }
 }

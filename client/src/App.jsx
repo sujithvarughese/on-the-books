@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
-   BookPage,
+   Book,
    bookDetailsLoader,
    Discover,
    discoverLoader,
@@ -24,7 +24,7 @@ const App = () => {
          errorElement: <Error />,
          children: [
             { index: true, element: <Landing /> },
-            { path: "library/:id", element: <BookPage />, loader: bookDetailsLoader},
+            { path: "library/:id", element: <Book />, loader: bookDetailsLoader},
             { path: "library", element: <MyLibrary />, loader: myLibraryLoader},
             { path: "discover", element: <Discover />, loader: discoverLoader},
             { path: "login", element: <Login />},

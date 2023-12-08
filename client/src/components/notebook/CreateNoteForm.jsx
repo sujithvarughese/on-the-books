@@ -22,34 +22,34 @@ const CreateNoteForm = ({ createNote, closeForm }) => {
 	}
 
 	return (
-		<Modal>
-			<Form onSubmit={handleSubmit} title="Create Note">
-				<div className={classes.form}>
-					<Input
-						htmlFor="title"
-						placeholder="Title"
-						type="text"
-						name="title"
-						value={newNote.title}
-						onChange={handleChange}
-					></Input>
 
-					<Textarea
-						placeholder="Type new note here..."
-						name="content"
-						value={newNote.content}
-						onChange={handleChange}
-						rows="15"
-					></Textarea>
+		<Form onSubmit={handleSubmit} title="Create Note" color="black">
+			<div className={classes.form}>
+				<Input
+					htmlFor="title"
+					placeholder="Title"
+					type="text"
+					name="title"
+					value={newNote.title}
+					onChange={handleChange}
+				></Input>
 
-					<div className={classes.buttons}>
-						<Button type="submit">Create Note</Button>
-						<Button onClick={closeForm}>Cancel</Button>
-					</div>
+				<Textarea
+					placeholder="Type new note here..."
+					name="content"
+					value={newNote.content}
+					onChange={handleChange}
+					rows="20"
+				></Textarea>
+
+				<div className={classes.buttons}>
+					<Button type="submit">Create Note</Button>
+					<Button onClick={closeForm}>Cancel</Button>
 				</div>
-			</Form>
+			</div>
+		</Form>
 
-		</Modal>
+
 
 	);
 };

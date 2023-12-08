@@ -1,6 +1,5 @@
 .container {
     margin: 0 auto;
-    padding: 1rem;
 }
 .cover {
     padding: 0.5rem;
@@ -26,11 +25,6 @@
     gap: 1rem;
     padding-right: 1rem;
 }
-.description {
-
-}
-
-
 
 .buttons {
     display: flex;
