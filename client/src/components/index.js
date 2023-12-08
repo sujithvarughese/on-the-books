@@ -12,7 +12,7 @@ import Notebook from "./notebook/Notebook.jsx";
 import CreateNoteForm from "./notebook/CreateNoteForm.jsx";
 import EditNoteForm from "./notebook/EditNoteForm.jsx";
 import NoteContent from "./notebook/NoteContent.jsx";
-import NoteItem from "./notebook/NoteItem.jsx";
+import Note from "./notebook/Note.jsx"
 
 import NoteUpdateConfirm from "./notebook/NoteUpdateConfirm.jsx";
 import Navbar from "./navigation/Navbar.jsx";
@@ -37,10 +37,10 @@ export {
 	BookPreview,
 	CreateNoteForm,
 	EditNoteForm,
-	NoteItem,
 	NoteUpdateConfirm,
 	NoteContent,
 	Navbar,
+	Note,
 	Notebook,
 	BackButton,
 	About,

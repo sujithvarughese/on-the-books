@@ -10,15 +10,26 @@ const initialState = {
 const CreateNoteForm = ({ createNote, closeForm }) => {
 
 	const [newNote, setNewNote] = useState(initialState)
+	const [buttonText, setButtonText] = useState("Save")
 
 	const handleChange = (e) => {
 		setNewNote({ ...newNote, [e.target.name]: e.target.value });
 	}
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
-		createNote(newNote)
-		closeForm()
+		try {
+			const message = await createNote(newNote)
+			if (message === 'success') {
+				setButtonText("Saved!")
+			}
+			setTimeout(() => {
+				closeForm()
+			}, 1000)
+		} catch (error) {
+			setButtonText("Error")
+			throw new Error(error)
+		}
 	}
 
 	return (
@@ -43,7 +54,7 @@ const CreateNoteForm = ({ createNote, closeForm }) => {
 					></Textarea>
 
 					<div className={classes.buttons}>
-						<Button type="submit">Save</Button>
+						<Button type="submit">{buttonText}</Button>
 						<Button onClick={closeForm}>Cancel</Button>
 					</div>
 				</div>

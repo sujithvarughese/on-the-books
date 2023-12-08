@@ -7,7 +7,6 @@ import { Loading } from "../ui"
 
 const Root = () => {
 	const navigation = useNavigation()
-	console.log(navigation.state)
 	const { user } = useGlobalContext()
 	// automatically redirect appropriately if user credentials ok
 	const navigate = useNavigate();

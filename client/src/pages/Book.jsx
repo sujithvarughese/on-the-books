@@ -62,7 +62,7 @@ const Book = () => {
 				</div>
 			</div>
 
-			<Notebook notebook={notebook}/>
+			<Notebook notebook={notebook} book={_id}/>
 
 		</div>
 	)

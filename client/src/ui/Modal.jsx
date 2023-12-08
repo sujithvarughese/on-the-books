@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import {
-    createPortal
-} from "react-dom";
+import {createPortal} from "react-dom";
 
 const StyledModal = styled.div`
 	position: fixed;

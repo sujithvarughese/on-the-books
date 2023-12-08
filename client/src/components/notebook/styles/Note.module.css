@@ -29,10 +29,6 @@
     justify-content: space-between;
     position: relative;
     height: 100%;
-    padding-right: 1rem;
-
-}
-.collapsed {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -42,38 +38,8 @@
     font-size: 14px;
     padding: 1rem;
 }
-.expanded {
-    padding: 1rem;
-    white-space: break-spaces;
-
-}
-.editButton {
-    position: absolute;
-    right: -0.4rem;
-    top: 2rem;
-    font-size: 32px;
-
-}
-.buttons {
-    position: absolute;
-    right: -0.2rem;
-    top: 0;
-    font-size: 32px;
-}
 
 @media (min-width: 705px) {
-    .note {
-        display: none;
-    }
-    .editButton {
-        display: none;
-    }
-    .buttons {
-        display: none;
-    }
-    .titleDate {
-        align-items: center;
-    }
     .date {
         font-size: 11px;
     }
@@ -81,13 +47,11 @@
         font-size: 14px;
     }
     .content {
+        font-size: 12px;
         padding-right: 0;
     }
-    .collapsed {
-        font-size: 12px;
-    }
-
 }
+
 @media (min-width: 1000px) {
     .date {
         font-size: 13px;
@@ -95,7 +59,7 @@
     .title {
         font-size: 16px;
     }
-    .collapsed {
+    .content {
         font-size: 14px;
     }
 }
