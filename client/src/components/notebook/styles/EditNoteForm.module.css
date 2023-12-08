@@ -1,0 +1,15 @@
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (min-width: 705px) {
+
+}

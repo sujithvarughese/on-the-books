@@ -10,6 +10,7 @@ import BookStatus from "./book/BookStatus.jsx";
 
 import Notebook from "./notebook/Notebook.jsx";
 import CreateNoteForm from "./notebook/CreateNoteForm.jsx";
+import EditNoteForm from "./notebook/EditNoteForm.jsx";
 import NoteContent from "./notebook/NoteContent.jsx";
 import NoteItem from "./notebook/NoteItem.jsx";
 
@@ -36,6 +37,7 @@ export {
 	SearchLibrary,
 	BookPreview,
 	CreateNoteForm,
+	EditNoteForm,
 	NoteItem,
 	NoteUpdateConfirm,
 	NoteContent,

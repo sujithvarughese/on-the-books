@@ -1,4 +1,9 @@
-
+.large {
+    display: none;
+}
+.container {
+    color: var(--COLOR-DARK);
+}
 .fullImage {
     display: none;
 }
@@ -38,6 +43,12 @@
     }
 }
 @media (min-width: 705px) {
+    .mobile {
+        display: none;
+    }
+    .large {
+        display: unset;
+    }
     .halfImage {
         display: none;
     }
@@ -61,7 +72,7 @@
         display: unset;
         position: absolute;
         right: 0;
-        width: 47%;
+        width: 43%;
     }
 }
 @media (min-width: 1000px) {
@@ -72,8 +83,5 @@
         top: 5rem;
         left: 5rem;
         padding-right: 5rem;
-    }
-    .content {
-        width: 45%;
     }
 }

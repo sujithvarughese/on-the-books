@@ -2,6 +2,7 @@ import classes from "./styles/NoteContent.module.css"
 import {Button, Form, Input, Modal, Card, Textarea, ButtonIcon} from "../../ui/index.js";
 import {useEffect, useState} from "react";
 import { MdOutlineEditNote } from "react-icons/md"
+import { EditNoteForm } from "../../components"
 
 const NoteContent = ({ note, updateNote }) => {
 
@@ -10,28 +11,9 @@ const NoteContent = ({ note, updateNote }) => {
 	const createdDate = new Date(note.createdAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
 
 	const [editMode, setEditMode] = useState(false)
-	const [noteTitle, setNoteTitle] = useState(title)
-	const [noteContent, setNoteContent] = useState(content)
-
-	const handleSubmit = (e) => {
-		e.preventDefault()
-		setEditMode(false)
-		updateNote({_id: note._id, title: noteTitle, content: noteContent})
-	}
-
-	const handleCancel = () => {
-		setNoteTitle(title)
-		setNoteContent(content)
-		setEditMode(false)
-	}
-
-	useEffect(() => {
-		console.log("yo")
-	}, [title]);
 
 	return (
 		<div className={classes.container}>
-
 			<div className={classes.editButton}>
 				{
 					!editMode && updateNote &&
@@ -44,28 +26,8 @@ const NoteContent = ({ note, updateNote }) => {
 			</div>
 
 
-			{
-				editMode ?
 
-				<Form onSubmit={handleSubmit} title="Edit Note">
-					<Input
-						htmlFor="noteContent"
-						type="text"
-						name="noteContent"
-						value={noteTitle}
-						onChange={(e)=>setNoteTitle(e.target.value)}
-					></Input>
-					<Textarea
-						placeholder="Type new note here..."
-						name="content"
-						value={noteContent}
-						onChange={(e)=>setNoteContent(e.target.value)}
-						rows="15"
-					></Textarea>
-					<Button type="submit">Save</Button>
-					<Button onClick={handleCancel}>Cancel</Button>
-				</Form>
-				:
+
 				<div className={classes.content}>
 					<div className={classes.dates}>
 						<div>
@@ -75,14 +37,28 @@ const NoteContent = ({ note, updateNote }) => {
 							Created on {createdDate}
 						</div>
 					</div>
-					<div className={classes.title}>
-						{title}
-					</div>
-					<div className={classes.content}>
-						{content}
-					</div>
+					{
+						editMode ?
+							<div className={classes.form}>
+								<EditNoteForm
+									_id={note._id}
+									title={title}
+									content={content}
+									updateNote={updateNote}
+									closeForm={()=>setEditMode(false)}
+								/>
+							</div>
+							:
+							<div>
+								<div className={classes.title}>
+									{title}
+								</div>
+								<div className={classes.content}>
+									{content}
+								</div>
+							</div>
+					}
 				</div>
-			}
 		</div>
 	);
 };

@@ -55,27 +55,44 @@ const Notebook = ({ notebook }) => {
                         </ButtonIcon>}
                 </div>
 
-                {
-                    showCreateNoteForm &&
-                    <div className={classes.createForm}>
-                        <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>
+                <div className={classes.title}>
+
+                    <div className={classes.mobile}>
+                        {
+                            showCreateNoteForm ?
+                            <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>
+                            :
+                            <div>
+                                {
+                                    notebook?.map((note, index) =>
+                                        <div onClick={()=>setDisplayedContent(note)} key={index}>
+                                            <NoteItem note={note} updateNote={updateNote}/>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        }
+                    </div>
+                    <div className={classes.large}>
+                        {
+                            notebook?.map((note, index) =>
+                                <div onClick={()=>setDisplayedContent(note)} key={index}>
+                                    <NoteItem note={note} updateNote={updateNote}/>
+                                </div>
+                            )
+                        }
                     </div>
 
-                }
 
-                <div className={classes.title}>
-                    {
-                        notebook?.map((note, index) =>
-                            <div onClick={()=>setDisplayedContent(note)} key={index}>
-                                <NoteItem note={note}/>
-                            </div>
-                        )
-                    }
+
                 </div>
 
                <div className={classes.content}>
                    {
-                       displayedContent && <NoteContent note={displayedContent} updateNote={updateNote}/>
+                       showCreateNoteForm ?
+                           <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>
+                           :
+                           (displayedContent && <NoteContent note={displayedContent} updateNote={updateNote}/>)
                    }
                </div>
 

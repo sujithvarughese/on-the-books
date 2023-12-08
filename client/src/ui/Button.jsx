@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Button = styled.button`
 	cursor: pointer;
 	color: #fff;
-    width: 100%;
+    width: ${props => props.width || "100px" };
 	font-weight: bold;
 	background: var(--COLOR);
 	border: none;
@@ -28,7 +28,7 @@ const Button = styled.button`
 	}
 	@media(min-width: 600px) {
 		padding: 11px;
-        width: 200px;
+        width: 120px;
 	}
 `
 

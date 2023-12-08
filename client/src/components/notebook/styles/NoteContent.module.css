@@ -1,29 +1,34 @@
 .container {
-    padding: 0 2rem;
-    color: var(--COLOR-DARK);
-    margin: .5rem;
-    border-radius: 10px;
+    position: relative;
+    padding: 5rem 0;
 }
-
-.title {
-    font-size: 20px;
-    font-weight: 600;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+.editButton {
+    position: absolute;
+    font-size: 62px;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
 }
 .dates {
     font-size: 13px;
 }
-.editButton {
-    font-size: 62px;
-    color: black;
-    text-align: right;
-    padding-top: 1.4rem;
+.title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .content {
     white-space: break-spaces;
 }
+.form {
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
 @media (min-width: 1000px) {
+    .container {
+        padding: 6rem 2rem 6rem 1rem;
+    }
     .title {
         font-size: 24px;
         padding-bottom: 2rem;
@@ -31,6 +36,6 @@
     .dates {
         display: flex;
         justify-content: space-between;
-        font-size: 13px;
+        font-size: 14px;
     }
 }

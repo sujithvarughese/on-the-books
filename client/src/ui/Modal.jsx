@@ -14,6 +14,7 @@ const StyledModal = styled.div`
 	z-index: 10;
 	padding: 1rem;
 	width: 90vw;
+    height: ${props => props.height || "auto"};
 	max-width: 600px;
 	color: var(--COLOR-LIGHTER);
 

@@ -6,12 +6,13 @@
     justify-content: space-around;
     color: var(--COLOR-DARK);
     border-bottom: 2px solid var(--COLOR-LIGHT);
-
+    overflow: hidden;
+    text-overflow: clip;
 }
 .titleDate {
     display: grid;
     grid-template-columns:3fr 2fr;
-    align-items: center;
+    align-items: start;
 }
 .title {
     font-weight: bolder;
@@ -26,6 +27,10 @@
 .content {
     display: flex;
     justify-content: space-between;
+    position: relative;
+    height: 100%;
+    padding-right: 1rem;
+
 }
 .collapsed {
     overflow: hidden;
@@ -35,21 +40,39 @@
     line-clamp: 2;
     -webkit-box-orient: vertical;
     font-size: 14px;
+    padding: 1rem;
 }
 .expanded {
     padding: 1rem;
     white-space: break-spaces;
 
 }
-.buttons {
-    font-size: 24px;
-}
-@media (min-width: 705px) {
-    .container {
+.editButton {
+    position: absolute;
+    right: -0.4rem;
+    top: 2rem;
+    font-size: 32px;
 
-    }
+}
+.buttons {
+    position: absolute;
+    right: -0.2rem;
+    top: 0;
+    font-size: 32px;
+}
+
+@media (min-width: 705px) {
     .note {
         display: none;
+    }
+    .editButton {
+        display: none;
+    }
+    .buttons {
+        display: none;
+    }
+    .titleDate {
+        align-items: center;
     }
     .date {
         font-size: 11px;
@@ -57,12 +80,13 @@
     .title {
         font-size: 14px;
     }
+    .content {
+        padding-right: 0;
+    }
     .collapsed {
         font-size: 12px;
     }
-    .buttons {
-        display: none;
-    }
+
 }
 @media (min-width: 1000px) {
     .date {
