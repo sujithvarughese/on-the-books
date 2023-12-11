@@ -34,6 +34,7 @@ const CreateNoteForm = ({ createNote, closeForm }) => {
 
 	return (
 		<div className={classes.container}>
+			<Card>
 			<Form onSubmit={handleSubmit} title="Create Note" color="black">
 				<div className={classes.form}>
 					<Input
@@ -59,6 +60,7 @@ const CreateNoteForm = ({ createNote, closeForm }) => {
 					</div>
 				</div>
 			</Form>
+			</Card>
 		</div>
 
 

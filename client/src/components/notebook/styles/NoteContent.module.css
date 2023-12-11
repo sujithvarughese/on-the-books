@@ -26,6 +26,10 @@
 }
 .content {
     white-space: break-spaces;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    overflow: hidden;
+    text-overflow: clip;
 }
 .form {
     padding-top: 1rem;

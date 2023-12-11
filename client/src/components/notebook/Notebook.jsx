@@ -29,8 +29,7 @@ const Notebook = ({ notebook, book }) => {
 
     return (
         <div className={classes.container}>
-            <img className={classes.halfImage} src={notebookHalf} alt="notebook" />
-            <img className={classes.fullImage} src={notebookFull} alt="notebook" />
+
 
             <div className={classes.notebook}>
 
@@ -44,7 +43,7 @@ const Notebook = ({ notebook, book }) => {
                         </ButtonIcon>
                     </div>
 
-                    <div className={classes.list}>
+                    <div className={displayedNote ? `${classes.hidden} ${classes.left}` : classes.left}>
                         {myNotebook?.map(note => <Note key={note._id} note={note} setDisplayedNote={setDisplayedNote}/>)}
                     </div>
                 </div>

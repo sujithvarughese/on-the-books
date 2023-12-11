@@ -13,7 +13,6 @@ import CreateNoteForm from "./notebook/CreateNoteForm.jsx";
 import EditNoteForm from "./notebook/EditNoteForm.jsx";
 import NoteContent from "./notebook/NoteContent.jsx";
 import Note from "./notebook/Note.jsx"
-
 import NoteUpdateConfirm from "./notebook/NoteUpdateConfirm.jsx";
 import Navbar from "./navigation/Navbar.jsx";
 import BackButton from "./BackButton.jsx";

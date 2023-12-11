@@ -8,9 +8,9 @@ const Card = styled.div`
     border-radius: 10px;
 	color: var(--COLOR-DARK);
 	z-index: 0;
-    height: 330px;
     background-color: var(--COLOR-LIGHTER);
-	
+  
+  
 	&:hover {
         background-color: var(--COLOR-LIGHT);
 	}
