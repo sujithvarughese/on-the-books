@@ -25,25 +25,43 @@ const BookPreview = ({ book, setShowModal }) => {
 	const coverImageLink = `https://covers.openlibrary.org/b/id/${coverID}-M.jpg`
 
 	const [seeMore, setSeeMore] = useState(false)
+	const [buttonText, setButtonText] = useState("Add to Library")
 
 	const addToLibrary = async () => {
-		console.log("Adding to library...");
 		// create new book document in data (adding additional fields with default values to match fields in document)
-		const response = await axiosDB.post("/library", {
-			...book,
-			status: "unread",
-			rating: 0,
-			bookNotes: []
-		})
+		try {
+			const response = await axiosDB.post("/library", {
+				...book,
+				status: "unread",
+				rating: 0,
+				bookNotes: []
+			})
+			// if we get success, change button text to "Added" for 1s, then close modal
+			// change text to "Error" if no success
+			const { msg } = response.data
+			if (msg === "success") {
+				setButtonText("Added!")
+			}
+			setTimeout(() => {
+				setShowModal(false)
+			}, 1000)
+		} catch (error) {
+			setButtonText("Error")
+			setTimeout(() => {
+				setShowModal(false)
+			}, 1000)
+			throw new Error(error)
+		}
+
 	}
 
 	return (
 		<div className={classes.container}>
 			<Modal closeFn={()=>setShowModal(false)}>
+				{/* X button on modal */}
 				<div className={classes.closeButton}>
 					<ButtonIcon onClick={()=>setShowModal(false)}><IoClose /></ButtonIcon>
 				</div>
-
 
 				<BookCoverArt coverID={coverID} title={title} />
 
@@ -53,7 +71,7 @@ const BookPreview = ({ book, setShowModal }) => {
 					</div>
 					<div>
 						<div className={classes.btn}>
-							<Button onClick={addToLibrary}>Add to Library</Button>
+							<Button onClick={addToLibrary}>{buttonText}</Button>
 						</div>
 					</div>
 				</div>

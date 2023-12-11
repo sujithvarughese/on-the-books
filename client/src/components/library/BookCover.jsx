@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import Card from "../../ui/Card.jsx";
 import {BookPreview} from "../index.js";
 
+// component that displays book within the list in library and discover page
 const BookCover = (book) => {
 
     const {
@@ -28,7 +29,7 @@ const BookCover = (book) => {
     const [showModal, setShowModal] = useState(false)
 
     const showBookDetails = async () => {
-        // create new book variable to update with details to later updated in state
+        // create new book variable to update with details to later update in state
         let updatedBook = { ...currentBook }
         // get book cover info
         try {
@@ -47,19 +48,19 @@ const BookCover = (book) => {
         try {
             const response = await axiosAPI(`/works/${OLID}.json`)
             const { description } = response.data
-            console.log(description)
+            // add description property to book (some books have a value property within description, and some do not)
             updatedBook = { ...updatedBook, description: description.value || description}
         } catch (error){
             throw new Error(error)
         }
-        // updated in state
+        // updated book in state and update showModal state
         setCurrentBook(updatedBook)
         setShowModal(true)
     }
 
     return (
         <Card>
-            {
+            {   // if book is clicked, modal with preview will open
                 showModal &&
                 <BookPreview
                     book={currentBook}
@@ -68,7 +69,7 @@ const BookCover = (book) => {
             }
         <div className={classes.container}>
 
-            {  // book.status field only exists in book in myLibrary
+            {  // book.status field only exists in book in myLibrary so if book in library, clicking will take user to book in library, if not(in Discover), then modal will open
                 book.status ?
                     <NavLink
                         to={`/library/${_id}`}

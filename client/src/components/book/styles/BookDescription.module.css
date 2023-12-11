@@ -7,22 +7,41 @@
     font-weight: bold;
     text-align: center;
 }
+.md, .lg, .xl {
+    display: none;
+}
 .collapsed {
-
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: break-spaces;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
-
 .expanded {
     white-space: break-spaces;
     overflow: unset;
 }
-
-@media (min-width: 800px) {
-    .collapsed {
-        height: 180px;
+@media (min-width: 850px) {
+    .sm {
+        display: none;
+    }
+    .md {
+        display: unset;
+    }
+}
+@media (min-width: 1000px) {
+    .md {
+        display: none;
+    }
+    .lg {
+        display: unset;
+    }
+}
+@media (min-width: 1680px) {
+    .lg {
+        display: none;
+    }
+    .xl {
+        display: unset;
     }
 }

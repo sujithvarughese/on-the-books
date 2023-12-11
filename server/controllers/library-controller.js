@@ -24,7 +24,7 @@ const addBookToLibrary = async (req, res) => {
 	await Book.create({ ...req.body, user: req.user.userID });
 
 	res.status(StatusCodes.CREATED).json({
-		message: "Book successfully added to library",
+		msg: "success",
 	});
 }
 

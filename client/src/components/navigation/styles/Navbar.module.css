@@ -21,11 +21,7 @@
     width: 100px;
 }
 .title {
-    position: absolute;
-    left: 3.5rem;
-    color: var(--COLOR-ALT);
-    font-weight: 600;
-    font-size: 12px;
+    display: none;
 }
 .links {
     color: var(--COLOR-DARK);
@@ -46,6 +42,10 @@
         font-size: 28px;
     }
     .title {
+        display: unset;
+        position: absolute;
+        color: var(--COLOR-ALT);
+        font-weight: 600;
         left: 4rem;
         font-size: 20px;
     }

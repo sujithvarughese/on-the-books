@@ -37,7 +37,7 @@ const MyLibrary = () => {
 				</div>
 			}
 			<div className={classes.bookContainer}>
-				{
+				{	// display queried books, if no query then all books in library displayed
 					queriedBooks.map((book, index) =>
 						<BookCover key={index} {...book} />
 					)

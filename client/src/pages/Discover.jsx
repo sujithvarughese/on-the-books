@@ -33,15 +33,15 @@ const Discover = () => {
 
 	return (
 		<div className={classes.container}>
-
+			{/* search bar */}
 			<div className={classes.search}>
 				<SearchBar setSearch={setSearch} searchBooks={searchBooks} />
 			</div>
-			<div className={classes.contents}>
 
+			{/* Show search results(if any) on top, then editor's picks(change later to make more dynamic and user-friendly) */}
+			<div className={classes.contents}>
 				{searchResults.length > 0 && <SearchResults search={search} books={searchResults} />}
 				<SearchResults search={"Editor's Picks"} books={recommendedBooks} />
-
 			</div>
 		</div>
 	);

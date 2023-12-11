@@ -8,7 +8,6 @@ const SearchBar = ({ searchBooks, setSearch }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(`Searching for ${searchInput}...`);
 		setSearchInput("")
 		setSearch(searchInput)
 		searchBooks(searchInput)

@@ -24,7 +24,6 @@ const Book = () => {
 	// when user changes rating or status, the updated field is sent to back end as an object to update book in db
 	const updateBookDetails = async (updatedField) => {
 		try {
-			console.log(updatedField);
 			await axiosDB.patch(`/library/${_id}`, updatedField);
 		} catch (error) {
 			console.log(error);
@@ -46,7 +45,8 @@ const Book = () => {
 				<div className={classes.content}>
 					<div className={classes.info}>
 						<div>
-							<BookInfo title={title} author={author} yearPublished={yearPublished} status={status} rating={rating} updateBookDetails={updateBookDetails}/>
+							<BookInfo title={title} author={author} yearPublished={yearPublished} />
+							{/* OpenLibrary links to show book preview / link for book info */}
 							<BookLinks infoURL={infoURL} previewAvailable={previewAvailable} previewURL={previewURL} />
 						</div>
 						<div className={classes.statusRating}>
@@ -73,6 +73,7 @@ const Book = () => {
 export default Book;
 
 export const bookDetailsLoader = async ({ params }) => {
+	// get book details and notebook for book on load
 	try {
 		const responseLib = await axiosDB(`/library/${params.id}`)
 		const { bookDetails } = responseLib.data

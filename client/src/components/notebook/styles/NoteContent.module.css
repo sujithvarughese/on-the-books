@@ -1,17 +1,15 @@
 .container {
-    position: relative;
-    padding: 6rem 0 4rem 0;
 }
 .backButton {
     position: absolute;
     font-size: 48px;
-    top: 1.7rem;
+    top: 1rem;
     z-index: 10;
 }
 .editButton {
     position: absolute;
-    font-size: 62px;
-    top: 1rem;
+    font-size: 58px;
+    top: 0.4rem;
     right: 1rem;
     z-index: 10;
 }
@@ -43,7 +41,6 @@
 }
 @media (min-width: 1000px) {
     .container {
-        padding: 6rem 2rem 6rem 2rem;
     }
     .title {
         font-size: 24px;
