@@ -14,7 +14,7 @@
     z-index: 10;
 }
 .dates {
-    font-size: 13px;
+    font-size: 14px;
 }
 .title {
     font-size: 18px;
@@ -40,13 +40,14 @@
     }
 }
 @media (min-width: 1000px) {
-    .container {
+    .dates {
+        font-size: 16px;
     }
     .title {
         font-size: 24px;
         padding-bottom: 2rem;
     }
-    .dates {
-        font-size: 14px;
+    .content {
+        font-size: 17px;
     }
 }

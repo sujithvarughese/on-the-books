@@ -106,17 +106,27 @@
     .container {
         min-height: 1280px;
     }
+    .left {
+        margin-left: 5rem;
+    }
+    .right {
+        margin-right: 3rem;
+    }
 }
 @media (min-width: 1400px) {
     .container {
-        min-height: 1450px;
+        min-height: 1460px;
     }
     .left {
         margin-left: 6rem;
+    }
+    .right {
+        margin-right: 4rem;
     }
 }
 @media (min-width: 1680px) {
     .container {
         min-height: 1480px;
+
     }
 }

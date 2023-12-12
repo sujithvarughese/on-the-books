@@ -7,8 +7,8 @@ const StyledModal = styled.div`
 	left: 0;
 	margin: auto;
 	background-color: var(--COLOR-LIGHTER);
-    border: var(--COLOR-LIGHT) 3px solid;
-	border-radius: 15px;
+    border: var(--COLOR-LIGHT) 8px solid;
+	border-radius: 10px;
 	z-index: 100;
 	padding: 1rem;
 	width: 90vw;

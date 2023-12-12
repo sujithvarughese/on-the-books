@@ -6,9 +6,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background: var(--BACKGROUND);
+    background-color: var(--COLOR-DARK);
     z-index: 100;
-    background: linear-gradient(to right, #434343 0%, black 100%);
 }
 .header {
     display: flex;
@@ -24,7 +23,7 @@
     display: none;
 }
 .links {
-    color: var(--COLOR-DARK);
+    color: var(--COLOR);
     display: flex;
     gap: 1rem;
     padding-right: 1rem;

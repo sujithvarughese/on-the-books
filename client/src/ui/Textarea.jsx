@@ -10,7 +10,7 @@ const Textarea = styled.textarea`
   0 10px 10px -5px rgba(0, 0, 0, 0.04);
   resize: none;
   overflow:auto;
-  background-color: var(--COLOR-LIGHTER);
+  background-color: var(--COLOR-LIGHT);
   
   @media (min-width: 550px) {
     height: 650px;

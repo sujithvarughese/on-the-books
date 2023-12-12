@@ -18,12 +18,20 @@ const BookDescription = ({ description }) => {
             <div className={classes.sm}>
                 {
                     (description.length < 240 || seeMore) ?
-                        <p className={classes.expanded}>{description}</p>
+                        <div>
+                            <p className={classes.expanded}>{description}</p>
+                            { seeMore &&
+                            <div className={classes.button}>
+                                <ButtonPlain onClick={()=>setSeeMore(false)}>See Less</ButtonPlain>
+                            </div>
+                            }
+                        </div>
+
                         :
                         <div>
                             <p className={classes.collapsed}>{description.substring(0,240)}</p>
                             <div className={classes.button}>
-                                <ButtonPlain onClick={()=>setSeeMore(!seeMore)}>{seeMore ? "[See Less]" : "[See More]"}</ButtonPlain>
+                                <ButtonPlain onClick={()=>setSeeMore(true)}>See More</ButtonPlain>
                             </div>
                         </div>
                 }
@@ -31,12 +39,20 @@ const BookDescription = ({ description }) => {
             <div className={classes.md}>
                 {
                     (description.length < 315 || seeMore) ?
-                        <p className={classes.expanded}>{description}</p>
+                        <div>
+                            <p className={classes.expanded}>{description}</p>
+                            { seeMore &&
+                                <div className={classes.button}>
+                                    <ButtonPlain onClick={()=>setSeeMore(false)}>See Less</ButtonPlain>
+                                </div>
+                            }
+                        </div>
+
                         :
                         <div>
                             <p className={classes.collapsed}>{description.substring(0,315)}</p>
                             <div className={classes.button}>
-                                <ButtonPlain onClick={()=>setSeeMore(!seeMore)}>{seeMore ? "[See Less]" : "[See More]"}</ButtonPlain>
+                                <ButtonPlain onClick={()=>setSeeMore(true)}>See More</ButtonPlain>
                             </div>
                         </div>
                 }
@@ -44,12 +60,19 @@ const BookDescription = ({ description }) => {
             <div className={classes.lg}>
                 {
                     (description.length < 480 || seeMore) ?
-                        <p className={classes.expanded}>{description}</p>
+                        <div>
+                            <p className={classes.expanded}>{description}</p>
+                            { seeMore &&
+                                <div className={classes.button}>
+                                    <ButtonPlain onClick={()=>setSeeMore(false)}>See Less</ButtonPlain>
+                                </div>
+                            }
+                        </div>
                         :
                         <div>
                             <p className={classes.collapsed}>{description.substring(0,480)}</p>
                             <div className={classes.button}>
-                                <ButtonPlain onClick={()=>setSeeMore(!seeMore)}>{seeMore ? "[See Less]" : "[See More]"}</ButtonPlain>
+                                <ButtonPlain onClick={()=>setSeeMore(true)}>See More</ButtonPlain>
                             </div>
                         </div>
                 }
@@ -57,12 +80,20 @@ const BookDescription = ({ description }) => {
             <div className={classes.xl}>
                 {
                     (description.length < 740 || seeMore) ?
-                        <p className={classes.expanded}>{description}</p>
+                        <div>
+                            <p className={classes.expanded}>{description}</p>
+                            { seeMore &&
+                                <div className={classes.button}>
+                                    <ButtonPlain onClick={()=>setSeeMore(false)}>See Less</ButtonPlain>
+                                </div>
+                            }
+                        </div>
+
                         :
                         <div>
                             <p className={classes.collapsed}>{description.substring(0,740)}</p>
                             <div className={classes.button}>
-                                <ButtonPlain onClick={()=>setSeeMore(!seeMore)}>{seeMore ? "[See Less]" : "[See More]"}</ButtonPlain>
+                                <ButtonPlain onClick={()=>setSeeMore(true)}>See More</ButtonPlain>
                             </div>
                         </div>
                 }

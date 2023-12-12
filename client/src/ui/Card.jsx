@@ -6,13 +6,13 @@ const Card = styled.div`
     padding: 0.4rem;
     transition: 0.2s ease-in-out all;
     border-radius: 10px;
-	color: var(--COLOR-DARK);
 	z-index: 0;
-    background-color: var(--COLOR-LIGHTER);
+    background-color: var(--COLOR-LIGHT);
   
   
 	&:hover {
-        background-color: var(--COLOR-LIGHT);
+      color: var(--COLOR-LIGHTER);
+        background-color: var(--COLOR-DARK);
 	}
   @media (min-width: 600px) {
     padding: 1rem;

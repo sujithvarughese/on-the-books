@@ -40,7 +40,7 @@ const BookPreview = ({ book, setShowModal }) => {
 			// change text to "Error" if no success
 			const { msg } = response.data
 			if (msg === "success") {
-				setButtonText("Added!")
+				setButtonText("Book Added!")
 			}
 			setTimeout(() => {
 				setShowModal(false)
