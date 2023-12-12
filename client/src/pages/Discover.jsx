@@ -8,9 +8,10 @@ const Discover = () => {
 	const recommendedBooks = useLoaderData()
 	const [searchResults, setSearchResults] = useState([])
 	const [search, setSearch] = useState("")
-
+	const [buttonText, setButtonText] = useState("Search")
 	const searchBooks = async (searchString) => {
 		try {
+			setButtonText("Searching...")
 			const response = await axiosAPI(`/subjects/${searchString}.json?limit=36`)
 			const { works } = response.data
 			const books = works.map(work => {
@@ -23,8 +24,10 @@ const Discover = () => {
 					yearPublished: work.first_publish_year,
 				}
 			})
+			setButtonText("Search")
 			setSearchResults(books)
 		} catch (error) {
+			setButtonText("Search")
 			throw new Error(error)
 		}
 
@@ -34,7 +37,7 @@ const Discover = () => {
 		<div className={classes.container}>
 			{/* search bar */}
 			<div className={classes.search}>
-				<SearchBar setSearch={setSearch} searchBooks={searchBooks} />
+				<SearchBar setSearch={setSearch} searchBooks={searchBooks} buttonText={buttonText}/>
 			</div>
 
 			{/* Show search results(if any) on top, then editor's picks(change later to make more dynamic and user-friendly) */}

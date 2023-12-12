@@ -2,7 +2,7 @@ import classes from "../../pages/styles/Discover.module.css";
 import {Input, Button, Form, FormRow} from "../../ui/index.js";
 import { useState } from "react";
 
-const SearchBar = ({ searchBooks, setSearch }) => {
+const SearchBar = ({ searchBooks, setSearch, buttonText }) => {
 
 	const [searchInput, setSearchInput] = useState("")
 
@@ -24,7 +24,7 @@ const SearchBar = ({ searchBooks, setSearch }) => {
 					value={searchInput}
 					onChange={e=>setSearchInput(e.target.value)}
 				></Input>
-				<Button type="submit">Search</Button>
+				<Button type="submit">{buttonText}</Button>
 			</div>
 		</Form>
 	);
