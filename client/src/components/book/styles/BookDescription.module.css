@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.button {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1rem;
+}
+.md, .lg, .xl {
+    display: none;
+}
+.collapsed {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: break-spaces;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.expanded {
+    white-space: break-spaces;
+    overflow: unset;
+}
+@media (min-width: 800px) {
+    .sm {
+        display: none;
+    }
+    .md {
+        display: unset;
+    }
+}
+@media (min-width: 1000px) {
+    .md {
+        display: none;
+    }
+    .lg {
+        display: unset;
+    }
+}
+@media (min-width: 1440px) {
+    .lg {
+        display: none;
+    }
+    .xl {
+        display: unset;
+    }
+}

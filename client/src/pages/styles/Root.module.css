@@ -1,0 +1,13 @@
+.container {
+    position: relative;
+
+}
+
+
+
+.main {
+    padding: 4rem 0;
+    max-width: 1600px;
+    backdrop-filter: blur(2px);
+    margin: 0 auto;
+}

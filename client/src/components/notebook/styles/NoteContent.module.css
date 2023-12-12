@@ -1,0 +1,52 @@
+
+.backButton {
+    position: absolute;
+    font-size: 48px;
+    top: 1rem;
+    z-index: 10;
+}
+.editButton {
+    position: absolute;
+    font-size: 58px;
+    top: 0.4rem;
+    right: 1rem;
+    z-index: 10;
+}
+.dates {
+    font-size: 14px;
+}
+.title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.content {
+    white-space: break-spaces;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    overflow: hidden;
+    text-overflow: clip;text-align: justify;
+}
+.form {
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 705px) {
+    .backButton {
+        display: none;
+    }
+}
+@media (min-width: 1000px) {
+    .dates {
+        font-size: 16px;
+    }
+    .title {
+        font-size: 24px;
+        padding-bottom: 2rem;
+    }
+    .content {
+        font-size: 17px;
+    }
+}

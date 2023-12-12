@@ -1,0 +1,15 @@
+.container {
+    z-index: 10;
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.closeButton {
+    position: absolute;
+    right: 0;
+    padding-right: 1rem;
+    font-size: 36px;
+}
+

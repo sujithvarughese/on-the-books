@@ -1,0 +1,24 @@
+.coverContainer {
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--COLOR-LIGHT);
+    width: 200px;
+    margin: 0 auto;
+    border: var(--COLOR) 3px solid;
+}
+.coverImage {
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+@media (min-width: 800px) {
+    .coverContainer {
+        width: 220px;
+    }
+
+
+}

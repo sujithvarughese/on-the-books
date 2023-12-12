@@ -1,0 +1,42 @@
+.container {
+    margin: 0 auto;
+}
+.cover {
+    padding: 0.5rem;
+}
+.content {
+    background-color: var(--COLOR-LIGHT);
+    border: var(--COLOR) 3px solid;
+    color: black;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-right: 1rem;
+}
+.statusRating {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.buttons {
+    display: flex;
+    gap: 3rem;
+    padding: 1rem 2rem;
+}
+@media (min-width: 800px) {
+    .coverContent {
+        display: flex
+    }
+    .content {
+        margin-top: 2rem;
+    }
+    .cover {
+        padding: 2rem;
+    }
+}
