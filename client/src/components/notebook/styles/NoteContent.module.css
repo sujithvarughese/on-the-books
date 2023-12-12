@@ -1,5 +1,4 @@
-.container {
-}
+
 .backButton {
     position: absolute;
     font-size: 48px;
@@ -27,7 +26,7 @@
     overflow-wrap: break-word;
     hyphens: auto;
     overflow: hidden;
-    text-overflow: clip;
+    text-overflow: clip;text-align: justify;
 }
 .form {
     padding-top: 1rem;

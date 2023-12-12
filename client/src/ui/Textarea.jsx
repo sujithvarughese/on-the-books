@@ -4,7 +4,7 @@ const Textarea = styled.textarea`
   padding: 0.5rem;
   border: 1px solid #bcccdc;
   border-radius: 5px;
-  height: 350px;
+  height: 270px;
   font: inherit;
 
   width: 100%;
@@ -18,21 +18,35 @@ const Textarea = styled.textarea`
     outline: 4px auto -webkit-focus-ring-color;
     outline-offset: -1px;
   }
-  @media (min-width: 550px) {
-    height: 650px;
+  @media (min-width: 361px) {
+    height: 300px;
   }
-  @media (min-width: 705px) {
-    height: 800px;
+  @media (min-width: 391px) {
+    height: 380px;
   }
-  
-  @media (min-width: 850px) {
+  @media (min-width: 431px) {
+    height: 300px;
+  }
+  @media (min-width: 769px) {
+    height: 350px;
+  }
+  @media (min-width: 821px) {
     height: 400px;
   }
   @media (min-width: 1000px) {
-    height: 550px;
+    height: 500px;
   }
-  @media (min-width: 1200px) {
-    height: 700px;
+  @media (min-width: 1025px) {
+    height: 650px;
+  }
+  @media (min-width: 1201px) {
+    height: 800px;
+  }
+  @media (min-width: 1281px) {
+    height: 850px;
+  }
+  @media (min-width: 1441px) {
+    height: 1000px;
   }
 `;
 

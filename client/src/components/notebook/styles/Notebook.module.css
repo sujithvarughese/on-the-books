@@ -2,7 +2,7 @@
     background-image: url("../../../assets/images/notebook-half.png");
     background-size: contain;
     background-repeat: repeat-y;
-    min-height: 690px;
+    min-height: 620px;
 }
 .hidden {
     display: none;
@@ -24,43 +24,82 @@
     z-index: 100;
 }
 .left {
-    width: 75%;
-    margin: 0 2rem 1rem 4rem;
+    width: 80%;
+    margin: 0 0 1rem 4rem;
     padding-top: 5rem;
 }
 .right {
-    width: 75%;
-    margin: 0 2rem 1rem 4rem;
+    width: 80%;
+    margin: 0 0 1rem 3.75rem;
     padding-top: 5rem;
     justify-self: end;
 
 }
-@media (min-width: 400px) {
+@media (min-width: 361px) {
     .container {
-        min-height: 1000px;
+        min-height: 671px;
+    }
+    .right {
+        margin-left: 4.2rem;
+    }
+}
+@media (min-width: 391px) {
+    .container {
+        min-height: 741px;
+    }
+    .right {
+        margin-left: 4.2rem;
+    }
+}
+@media (min-width: 431px) {
+    .container {
+        min-height: 855px;
+    }
+    .left {
+        margin-left: 4.5rem;
+    }
+    .right {
+        margin-left: 4.8rem;
+    }
+}
+
+@media (min-width: 500px) {
+    .container {
+        min-height: 945px;
     }
     .left {
         margin-left: 5rem;
     }
     .right {
-        margin-left: 5rem;
+        margin-left: 5.25rem;
     }
 }
 @media (min-width: 550px) {
     .container {
-        min-height: 1250px;
+        min-height: 1065px;
     }
     .left {
-        margin-left: 7rem;
+        margin-left: 5.5rem;
     }
     .right {
-        margin-left: 7rem;
+        margin-left: 6rem;
+    }
+}
+@media (min-width: 620px) {
+    .container {
+        min-height: 1205px;
+    }
+    .left {
+        margin-left: 6.2rem;
+    }
+    .right {
+        margin-left: 6.5rem;
     }
 }
 @media (min-width: 705px) {
     .container {
         background-image: url("../../../assets/images/notebook-full.png");
-        min-height: 740px;
+        min-height: 665px;
     }
     .hidden {
         display: block;
@@ -75,35 +114,56 @@
     }
     .left {
         margin: 5rem 0 1rem 3rem;
-        width: 70%;
+        width: 75%;
         padding: 0;
     }
     .right {
         width: 75%;
-        margin: 5rem 2.5rem 1rem 0 ;
+        margin: 5rem 2rem 1rem 0;
         justify-self: end;
         padding: 0;
     }
 }
-@media (min-width: 850px) {
+@media (min-width: 769px) {
     .container {
-        min-height: 900px;
+        min-height: 711px;
+    }
+    .left {
+        margin-left: 4rem;
     }
 }
-@media (min-width: 1000px) {
+@media (min-width: 821px) {
     .container {
-        min-height: 1050px;
+        min-height: 792px;
+    }
+    .left {
+        margin-left: 4rem;
+    }
+}
+@media (min-width: 913px) {
+    .container {
+        min-height: 890px;
+    }
+    .left {
+        margin-left: 4rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .container {
+        min-height: 1040px;
     }
     .left {
         margin-left: 4rem;
     }
     .right {
-        margin-left: 6rem;
+        margin-right: 2.5rem;
+
     }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
     .container {
-        min-height: 1280px;
+        min-height: 1215px;
     }
     .left {
         margin-left: 5rem;
@@ -112,20 +172,25 @@
         margin-right: 3rem;
     }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1281px) {
     .container {
-        min-height: 1460px;
+        min-height: 1250px;
+    }
+    .left {
+        margin-left: 5rem;
+    }
+    .right {
+        margin-right: 3rem;
+    }
+}
+@media (min-width: 1441px) {
+    .container {
+        min-height: 1390px;
     }
     .left {
         margin-left: 6rem;
     }
     .right {
         margin-right: 4rem;
-    }
-}
-@media (min-width: 1680px) {
-    .container {
-        min-height: 1480px;
-
     }
 }
