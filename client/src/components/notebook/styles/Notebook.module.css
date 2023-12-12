@@ -2,7 +2,7 @@
     background-image: url("../../../assets/images/notebook-half.png");
     background-size: contain;
     background-repeat: repeat-y;
-    min-height: 680px;
+    min-height: 690px;
 }
 .hidden {
     display: none;
@@ -25,21 +25,26 @@
     z-index: 100;
 }
 .left {
-    padding: 5rem 1rem 2rem 4rem;
+    width: 75%;
+    margin: 0 2rem 1rem 4rem;
+    padding-top: 5rem;
 }
 .right {
-    padding: 5rem 1rem 2rem 4rem;
-}
+    width: 75%;
+    margin: 0 2rem 1rem 4rem;
+    padding-top: 5rem;
+    justify-self: end;
 
+}
 @media (min-width: 400px) {
     .container {
         min-height: 1000px;
     }
     .left {
-        padding: 5rem 1rem 2rem 5rem;
+        margin-left: 5rem;
     }
     .right {
-        padding: 5rem 1rem 2rem 5rem;
+        margin-left: 5rem;
     }
 }
 @media (min-width: 550px) {
@@ -47,10 +52,10 @@
         min-height: 1250px;
     }
     .left {
-        padding: 5rem 1rem 2rem 6rem;
+        margin-left: 7rem;
     }
     .right {
-        padding: 5rem 1rem 2rem 6rem;
+        margin-left: 7rem;
     }
 }
 @media (min-width: 705px) {
@@ -70,57 +75,48 @@
         grid-template-columns: 1fr 1fr;
     }
     .left {
-        padding: 4rem
+        margin: 5rem 0 1rem 3rem;
+        width: 70%;
+        padding: 0;
     }
     .right {
-        padding: 4rem;
+        width: 75%;
+        margin: 5rem 2.5rem 1rem 0 ;
+        justify-self: end;
+        padding: 0;
     }
 }
 @media (min-width: 850px) {
     .container {
         min-height: 900px;
     }
-    .left {
-        padding: 5rem;
-    }
-    .right {
-        padding: 5rem;
-    }
 }
 @media (min-width: 1000px) {
     .container {
         min-height: 1050px;
     }
-
     .left {
-        padding: 6rem;
+        margin-left: 4rem;
     }
     .right {
-        padding: 6rem;
+        margin-left: 6rem;
     }
-
 }
 @media (min-width: 1200px) {
     .container {
         min-height: 1280px;
     }
-
-
 }
 @media (min-width: 1400px) {
     .container {
         min-height: 1450px;
     }
     .left {
-        padding: 8rem 7rem;
-    }
-    .right {
-        padding: 8rem;
+        margin-left: 6rem;
     }
 }
 @media (min-width: 1680px) {
     .container {
-        min-height: 1450px;
+        min-height: 1480px;
     }
-
 }

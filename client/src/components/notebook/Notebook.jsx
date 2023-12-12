@@ -38,7 +38,7 @@ const Notebook = ({ notebook, book }) => {
                 {/* designed so when selected, note list will not be displayed on small screens (when displayedNote or showCreateForm is true) */}
                 <div className={cx(classes.left, `${(displayedNote || showCreateNoteForm) && classes.hidden}`)}>
                     {/* displayed note to null and will place create note form in its place */}
-                    <div className={showCreateNoteForm ? classes.hidden : classes.createButton}>
+                    <div className={showCreateNoteForm ? classes.hiddenAll : classes.createButton}>
                         <ButtonIcon onClick={()=> {
                             setDisplayedNote(null)
                             setShowCreateNoteForm(true)
@@ -52,7 +52,7 @@ const Notebook = ({ notebook, book }) => {
                     </div>
                 </div>
 
-                <div className={classes.right}>
+                <div className={cx(classes.right, !showCreateNoteForm && !displayedNote && classes.hidden)}>
                     {showCreateNoteForm && <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>}
                     {displayedNote && <NoteContent note={displayedNote} goBack={()=>setDisplayedNote(null)}/>}
                 </div>
