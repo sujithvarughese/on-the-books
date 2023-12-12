@@ -14,6 +14,7 @@ const Notebook = ({ notebook, book }) => {
     // state to keep track of notebook on changes to can update DOM appropriately
     const [myNotebook, setMyNotebook] = useState(notebook)
     const [showCreateNoteForm, setShowCreateNoteForm] = useState(false)
+    const [editMode, setEditMode] = useState(false)
     // on small screens, note content will be displayed instead of note list
     // large screens, note list is always displayed on left side and content on right when selected
     const [displayedNote, setDisplayedNote] = useState(null)
@@ -38,7 +39,7 @@ const Notebook = ({ notebook, book }) => {
                 {/* designed so when selected, note list will not be displayed on small screens (when displayedNote or showCreateForm is true) */}
                 <div className={cx(classes.left, `${(displayedNote || showCreateNoteForm) && classes.hidden}`)}>
                     {/* displayed note to null and will place create note form in its place */}
-                    <div className={showCreateNoteForm ? classes.hiddenAll : classes.createButton}>
+                    <div className={(showCreateNoteForm || editMode) ? classes.hiddenAll : classes.createButton}>
                         <ButtonIcon onClick={()=> {
                             setDisplayedNote(null)
                             setShowCreateNoteForm(true)
@@ -48,13 +49,13 @@ const Notebook = ({ notebook, book }) => {
                     </div>
 
                     <div>
-                        {myNotebook?.map(note => <Note key={note._id} note={note} setDisplayedNote={setDisplayedNote}/>)}
+                        {myNotebook?.map(note => <Note key={note._id} note={note} setDisplayedNote={setDisplayedNote} setEditMode={setEditMode} setShowCreateForm={setShowCreateNoteForm}/>)}
                     </div>
                 </div>
 
                 <div className={cx(classes.right, !showCreateNoteForm && !displayedNote && classes.hidden)}>
                     {showCreateNoteForm && <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>}
-                    {displayedNote && <NoteContent note={displayedNote} goBack={()=>setDisplayedNote(null)}/>}
+                    {displayedNote && <NoteContent note={displayedNote} goBack={()=>setDisplayedNote(null)} editMode={editMode} setEditMode={setEditMode}/>}
                 </div>
 
             </div>

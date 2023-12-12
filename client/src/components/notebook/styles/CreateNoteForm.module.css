@@ -1,5 +1,5 @@
 .container {
-    border: red 3px solid;
+
 }
 
 .form {
@@ -11,18 +11,4 @@
 .buttons {
     display: flex;
     justify-content: space-around;
-    gap: 1rem;
 }
-
-@media (min-width: 705px) {
-    .container {
-
-    }
-}
-
-@media (min-width: 800px) {
-    .container {
-
-    }
-}
-

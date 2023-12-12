@@ -3,7 +3,7 @@ import {axiosDB} from "../../utils/axios.js";
 import {ButtonPlain} from "../../ui/index.js";
 import {NoteContent} from "../index.js";
 
-const Note = ({ note, setDisplayedNote}) => {
+const Note = ({ note, setDisplayedNote, setEditMode, setShowCreateForm}) => {
 
     const { title, content, updatedAt } = note
 
@@ -11,7 +11,12 @@ const Note = ({ note, setDisplayedNote}) => {
 
     return (
         <div>
-            <ButtonPlain onClick={()=>setDisplayedNote(note)}>
+            <ButtonPlain onClick={()=> {
+                setDisplayedNote(note)
+                setEditMode(false)
+                setShowCreateForm(false)
+            }}
+                >
                 <div className={classes.container}>
                     <div className={classes.titleDate}>
                         <div className={classes.title}>

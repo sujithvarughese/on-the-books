@@ -7,13 +7,11 @@ import {axiosDB} from "../../utils/axios.js";
 import { MdArrowBackIosNew } from "react-icons/md";
 import {useNavigate} from "react-router-dom";
 
-const NoteContent = ({ note, goBack }) => {
+const NoteContent = ({ note, goBack, editMode, setEditMode }) => {
 
 	const { title, content, updatedAt, createdAt } = note
 	const updatedDate = new Date(note.updatedAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
 	const createdDate = new Date(note.createdAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
-
-	const [editMode, setEditMode] = useState(false)
 
 	const updateNote = async (updatedNote) => {
 		try {

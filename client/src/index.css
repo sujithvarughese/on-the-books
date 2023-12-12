@@ -44,11 +44,6 @@ a {
     text-decoration: none;
 }
 
-textarea:focus {
-    outline: 4px auto -webkit-focus-ring-color;
-    outline-offset: -1px;
-}
-
 img {
     max-width: 100%;
 }
@@ -64,11 +59,3 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
     text-align: justify;
 }
-/*
-@media (min-width: 600px) {
-    body {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.75)), url("./assets/images/adobe-bg.jpeg");
-    }
-
-}*/
