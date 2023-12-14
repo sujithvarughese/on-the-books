@@ -32,6 +32,13 @@ const Notebook = ({ notebook, book }) => {
         }
     }
 
+    const updateNotebookState = (updatedNote) => {
+        const updatedNotebook = myNotebook.filter(note => note._id !== updatedNote._id)
+        updatedNotebook.unshift(updatedNote)
+        setMyNotebook(updatedNotebook)
+        setDisplayedNote({ ...displayedNote, title: updatedNote.title, content: updatedNote.content })
+    }
+
     return (
         <div className={classes.container}>
             <div className={classes.notebook}>
@@ -55,7 +62,15 @@ const Notebook = ({ notebook, book }) => {
 
                 <div className={cx(classes.right, !showCreateNoteForm && !displayedNote && classes.hidden)}>
                     {showCreateNoteForm && <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>}
-                    {displayedNote && <NoteContent note={displayedNote} goBack={()=>setDisplayedNote(null)} editMode={editMode} setEditMode={setEditMode}/>}
+                    {displayedNote &&
+                        <NoteContent
+                            note={displayedNote}
+                            goBack={()=>setDisplayedNote(null)}
+                            editMode={editMode}
+                            setEditMode={setEditMode}
+                            updateNotebookState={updateNotebookState}
+                        />
+                    }
                 </div>
 
             </div>

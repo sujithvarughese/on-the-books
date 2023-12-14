@@ -22,8 +22,7 @@ const createNote = async (req, res) => {
 const updateNote = async (req, res) => {
     // const { noteID, updatedNote: { title, content } } = req.body
     const { updatedNote } = req.body
-    const note = await Note.findByIdAndUpdate(req.body.noteID, { updatedNote })
-    console.log(note)
+    const note = await Note.findByIdAndUpdate(req.body.noteID, updatedNote)
     res.status(StatusCodes.OK).json({
         message: `success`,
         note: note

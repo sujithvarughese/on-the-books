@@ -3,7 +3,7 @@ import {Button, Form, Input, Textarea} from "../../ui";
 import {useState} from "react";
 
 
-const EditNoteForm = ({ title, content, updateNote, closeForm }) => {
+const EditNoteForm = ({ noteID, title, content, updateNote, closeForm, updateNotebookState }) => {
 
     const [noteTitle, setNoteTitle] = useState(title)
     const [noteContent, setNoteContent] = useState(content)
@@ -12,10 +12,13 @@ const EditNoteForm = ({ title, content, updateNote, closeForm }) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const message = await updateNote({ noteTitle, noteContent })
+            const response = await updateNote({ noteID: noteID, title: noteTitle, content: noteContent })
+            const { message, note } = response
+            console.log(note)
             if (message === 'success') {
                 setButtonText("Saved!")
             }
+            updateNotebookState(note)
             setTimeout(() => {
                 closeForm()
             }, 1000)

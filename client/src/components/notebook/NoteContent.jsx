@@ -7,17 +7,18 @@ import {axiosDB} from "../../utils/axios.js";
 import { MdArrowBackIosNew } from "react-icons/md";
 import {useNavigate} from "react-router-dom";
 
-const NoteContent = ({ note, goBack, editMode, setEditMode }) => {
+const NoteContent = ({ note, goBack, editMode, setEditMode, updateNotebookState }) => {
 
 	const { title, content, updatedAt, createdAt } = note
-	const updatedDate = new Date(note.updatedAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
-	const createdDate = new Date(note.createdAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
+	const updatedDate = new Date(note.updatedAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'EST' })
+	const createdDate = new Date(note.createdAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'EST' })
 
 	const updateNote = async (updatedNote) => {
+		const { noteID } = updatedNote
 		try {
-			const response = await axiosDB.patch("/notebook", { noteID: note._id, updatedNote })
-			const { message } = response.data
-			return message
+			const response = await axiosDB.patch("/notebook", { noteID, updatedNote })
+			const { message, note } = response.data
+			return { message, note }
 		} catch (error) {
 			throw new Error(error)
 		}
@@ -51,11 +52,12 @@ const NoteContent = ({ note, goBack, editMode, setEditMode }) => {
 				{editMode ?
 				<div className={classes.form}>
 					<EditNoteForm
-						_id={note._id}
+						noteID={note._id}
 						title={title}
 						content={content}
 						updateNote={updateNote}
 						closeForm={()=>setEditMode(false)}
+						updateNotebookState={updateNotebookState}
 					/>
 				</div>
 				:
