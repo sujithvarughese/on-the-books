@@ -23,6 +23,9 @@
 .createForm {
     z-index: 100;
 }
+.leftContainer {
+    width: 100%;
+}
 .left {
     width: 80%;
     margin: 0 0 1rem 4rem;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 const ButtonPlain = styled.button`
   cursor: pointer;
   border: none;
+  width: 100%;
   padding: 0;
   margin: 0;
   transition: 0.2s ease-in-out all;

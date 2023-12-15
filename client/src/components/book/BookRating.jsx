@@ -1,6 +1,6 @@
 import { FaRegStar, FaStar } from "react-icons/fa6";
 import {useEffect, useState} from "react";
-import ButtonIcon from "../../ui/ButtonPlain.jsx";
+import ButtonIcon from "../../ui/ButtonIcon.jsx";
 
 const BookRating = ({ rating, updateBookDetails }) => {
 

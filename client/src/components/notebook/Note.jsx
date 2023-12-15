@@ -10,29 +10,32 @@ const Note = ({ note, setDisplayedNote, setEditMode, setShowCreateForm}) => {
     const updatedDate = new Date(note.updatedAt).toLocaleString('en-US',{ year:'numeric', month:'short', day:'numeric', timeZone: 'UTC' })
 
     return (
-        <div>
+
             <ButtonPlain onClick={()=> {
                 setDisplayedNote(note)
                 setEditMode(false)
                 setShowCreateForm(false)
             }}
                 >
-                <div className={classes.container}>
-                    <div className={classes.titleDate}>
-                        <div className={classes.title}>
-                            {title}
+                <div className={classes.left}>
+                    <div className={classes.container}>
+                        <div className={classes.titleDate}>
+                            <div className={classes.title}>
+                                {title}
+                            </div>
+                            <div className={classes.date}>
+                                {updatedDate}
+                            </div>
                         </div>
-                        <div className={classes.date}>
-                            {updatedDate}
-                        </div>
-                    </div>
 
-                    <div className={classes.content}>
-                        {content}
+                        <div className={classes.content}>
+                            {content}
+                        </div>
                     </div>
                 </div>
+
             </ButtonPlain>
-        </div>
+
     );
 };
 

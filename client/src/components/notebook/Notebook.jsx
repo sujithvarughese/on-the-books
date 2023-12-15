@@ -55,7 +55,7 @@ const Notebook = ({ notebook, book }) => {
                         </ButtonIcon>
                     </div>
 
-                    <div>
+                    <div className={classes.leftContainer}>
                         {myNotebook?.map(note => <Note key={note._id} note={note} setDisplayedNote={setDisplayedNote} setEditMode={setEditMode} setShowCreateForm={setShowCreateNoteForm}/>)}
                     </div>
                 </div>
