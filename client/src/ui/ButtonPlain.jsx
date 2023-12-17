@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion"
 
-const ButtonPlain = styled.button`
+const ButtonPlain = styled(motion.button)`
   cursor: pointer;
   border: none;
   width: 100%;

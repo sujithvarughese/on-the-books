@@ -1,7 +1,7 @@
 import classes from "../components/navigation/styles/Navbar.module.css"
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext.jsx";
-import {Fragment} from "react";
+import {Fragment, useState} from "react";
 import ButtonPlain from "../ui/ButtonPlain.jsx";
 
 const credentials = {
@@ -11,6 +11,7 @@ const credentials = {
 const Auth = () => {
 
 	const { user, logout, login } = useGlobalContext()
+	const [buttonText, setButtonText] = useState("Preview")
 
 	const previewAsAdmin = () => {
 		login(credentials)
@@ -41,7 +42,10 @@ const Auth = () => {
 						>
 							Register
 						</NavLink>
-						<ButtonPlain onClick={previewAsAdmin}>Preview</ButtonPlain>
+						<ButtonPlain
+							onClick={previewAsAdmin}
+						>{buttonText}
+						</ButtonPlain>
 					</div>
 
 			}
