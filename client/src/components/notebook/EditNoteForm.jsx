@@ -29,29 +29,29 @@ const EditNoteForm = ({ noteID, title, content, updateNote, closeForm, updateNot
     }
 
     return (
-        <div className={classes.container}>
-            <Form onSubmit={handleSubmit}>
-                <div className={classes.content}>
-                <Input
-                    htmlFor="noteTitle"
-                    type="text"
-                    name="noteTitle"
-                    value={noteTitle}
-                    onChange={(e)=>setNoteTitle(e.target.value)}
-                ></Input>
-                <Textarea
-                    placeholder="Type new note here..."
-                    name="noteContent"
-                    value={noteContent}
-                    onChange={(e)=>setNoteContent(e.target.value)}
-                ></Textarea>
-                    <div className={classes.buttons}>
-                        <Button type="submit">{buttonText}</Button>
-                        <Button onClick={closeForm}>Cancel</Button>
-                    </div>
+
+        <Form onSubmit={handleSubmit}>
+            <div className={classes.content}>
+            <Input
+                htmlFor="noteTitle"
+                type="text"
+                name="noteTitle"
+                value={noteTitle}
+                onChange={(e)=>setNoteTitle(e.target.value)}
+            ></Input>
+            <Textarea
+                placeholder="Type new note here..."
+                name="noteContent"
+                value={noteContent}
+                onChange={(e)=>setNoteContent(e.target.value)}
+            ></Textarea>
+                <div className={classes.buttons}>
+                    <Button type="submit">{buttonText}</Button>
+                    <Button onClick={closeForm}>Cancel</Button>
                 </div>
-            </Form>
-        </div>
+            </div>
+        </Form>
+
 
     );
 };

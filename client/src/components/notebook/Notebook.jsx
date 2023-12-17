@@ -2,6 +2,7 @@ import classes from "./styles/Notebook.module.css";
 import {CreateNoteForm, NoteContent, Note } from "../index.js";
 import {useState} from "react";
 import {Button, ButtonIcon} from "../../ui/index.js";
+import { AnimatePresence } from "framer-motion";
 import { IoIosCreate } from "react-icons/io";
 import ButtonPlain from "../../ui/ButtonPlain.jsx";
 import {axiosDB} from "../../utils/axios.js";
@@ -61,7 +62,11 @@ const Notebook = ({ notebook, book }) => {
                 </div>
 
                 <div className={cx(classes.right, !showCreateNoteForm && !displayedNote && classes.hidden)}>
-                    {showCreateNoteForm && <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>}
+                    <AnimatePresence>
+                        {showCreateNoteForm && <CreateNoteForm createNote={createNote} closeForm={()=>setShowCreateNoteForm(false)}/>}
+                    </AnimatePresence>
+
+
                     {displayedNote &&
                         <NoteContent
                             note={displayedNote}

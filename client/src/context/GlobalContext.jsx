@@ -6,14 +6,16 @@ import {
 	REGISTER_USER,
 	LOGIN_USER,
 	LOGOUT_USER,
-	SET_IS_LOADING
+	SET_IS_LOADING,
+	SET_AUTH_STATE
 } from "./actions.js";
 
 const initialState = {
 	user: null,
 	myLibrary: [],
 	book: null,
-	isLoading: false
+	isLoading: false,
+	authState: ""
 }
 
 const GlobalContext = createContext()
@@ -61,6 +63,13 @@ const GlobalProvider = ({ children }) => {
 		})
 	}
 
+	const setAuthState = (authState) => {
+		dispatch({
+			type: SET_AUTH_STATE,
+			payload: { authState: authState }
+		})
+	}
+
 	return (
 		<GlobalContext.Provider value={
 			{
@@ -68,7 +77,8 @@ const GlobalProvider = ({ children }) => {
 				register,
 				login,
 				logout,
-				setIsLoading
+				setIsLoading,
+				setAuthState
 			}
 		}>
 			{ children }

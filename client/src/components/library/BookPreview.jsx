@@ -56,7 +56,6 @@ const BookPreview = ({ book, setShowModal }) => {
 	}
 
 	return (
-		<div className={classes.container}>
 			<Modal closeFn={()=>setShowModal(false)}>
 				{/* X button on modal */}
 				<div className={classes.closeButton}>
@@ -79,7 +78,6 @@ const BookPreview = ({ book, setShowModal }) => {
 				<BookDescription description={description} />
 			</Modal>
 
-		</div>
 	);
 };
 

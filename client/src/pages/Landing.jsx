@@ -1,5 +1,5 @@
 import classes from "./styles/Landing.module.css"
-import { About } from "../components";
+import { About, Login, Register } from "../components";
 
 const Landing = () => {
 
@@ -7,6 +7,8 @@ const Landing = () => {
 	return (
 		<div className={classes.container}>
 			<About />
+			<Login />
+			<Register />
 		</div>
 	);
 };

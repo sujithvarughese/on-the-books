@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import {createPortal} from "react-dom";
+import { motion } from "framer-motion"
 
-const StyledModal = styled.div`
+const StyledModal = styled(motion.div)`
 	position: absolute;
 	right: 0;
 	left: 0;
@@ -39,7 +40,12 @@ const Backdrop = styled.div`
 const Modal = ({ closeFn, children}) => {
     return createPortal(
         <Backdrop onClick={closeFn}>
-            <StyledModal onClick={(e) => e.stopPropagation()}>
+            <StyledModal
+                onClick={(e) => e.stopPropagation()}
+                initial={{ y: -40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{y: -40, opacity: 0 }}
+            >
                 {children}
             </StyledModal>
         </Backdrop>

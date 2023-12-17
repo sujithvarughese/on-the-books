@@ -6,6 +6,7 @@ import { EditNoteForm } from "../../components"
 import {axiosDB} from "../../utils/axios.js";
 import { MdArrowBackIosNew } from "react-icons/md";
 import {useNavigate} from "react-router-dom";
+import {AnimatePresence} from "framer-motion";
 
 const NoteContent = ({ note, goBack, editMode, setEditMode, updateNotebookState }) => {
 
@@ -50,16 +51,19 @@ const NoteContent = ({ note, goBack, editMode, setEditMode, updateNotebookState 
 				</div>
 
 				{editMode ?
-				<div className={classes.form}>
-					<EditNoteForm
-						noteID={note._id}
-						title={title}
-						content={content}
-						updateNote={updateNote}
-						closeForm={()=>setEditMode(false)}
-						updateNotebookState={updateNotebookState}
-					/>
-				</div>
+				<AnimatePresence>
+					<div className={classes.form}>
+						<EditNoteForm
+							noteID={note._id}
+							title={title}
+							content={content}
+							updateNote={updateNote}
+							closeForm={()=>setEditMode(false)}
+							updateNotebookState={updateNotebookState}
+						/>
+					</div>
+				</AnimatePresence>
+
 				:
 				<div>
 					<div className={classes.title}>{title}</div>

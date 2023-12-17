@@ -1,3 +1,5 @@
+import Login from "../components/auth/Login.jsx"
+import Register from "./auth/Register.jsx";
 
 import BookCover from "./library/BookCover.jsx";
 import BookCoverArt from "./book/BookCoverArt.jsx";
@@ -16,14 +18,15 @@ import Note from "./notebook/Note.jsx"
 import NoteUpdateConfirm from "./notebook/NoteUpdateConfirm.jsx";
 import Navbar from "./navigation/Navbar.jsx";
 import About from "./About.jsx";
-import Auth from "./Auth.jsx";
+import AuthLinks from "./navigation/AuthLinks.jsx";
 
 import SearchLibrary from "./library/SearchLibrary.jsx";
 import SearchBar from "./library/SearchBar.jsx";
 import SearchResults from "./library/SearchResults.jsx";
 
 export {
-
+	Login,
+	Register,
 	BookCover,
 	BookCoverArt,
 	BookDescription,
@@ -41,7 +44,7 @@ export {
 	Note,
 	Notebook,
 	About,
-	Auth,
+	AuthLinks,
 	SearchBar,
 	SearchResults
 }

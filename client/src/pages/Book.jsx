@@ -3,6 +3,7 @@ import { axiosDB } from "../utils/axios.js";
 import {NavLink, useLoaderData} from "react-router-dom";
 import {BookInfo, BookCoverArt, BookDescription, BookRating, BookStatus, BookLinks, Notebook } from "../components";
 import {useEffect, useState} from "react";
+import { motion } from "framer-motion"
 
 const Book = () => {
 	const { bookDetails, notebook } = useLoaderData()
@@ -36,7 +37,10 @@ const Book = () => {
 	}, []);
 
 	return (
-		<div className={classes.container}>
+		<motion.div className={classes.container}
+			initial={{ scale: 0, opacity: 0 }}
+			animate={{ scale: 1, opacity: 1 }}
+		>
 			<div className={classes.coverContent}>
 				<div className={classes.cover}>
 					<BookCoverArt coverID={coverID} alt={title}/>
@@ -64,7 +68,7 @@ const Book = () => {
 
 			<Notebook notebook={notebook} book={_id}/>
 
-		</div>
+		</motion.div>
 	)
 
 

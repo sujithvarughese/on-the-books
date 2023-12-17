@@ -3,7 +3,8 @@ import {
 	REGISTER_USER,
 	LOGIN_USER,
 	LOGOUT_USER,
-	SET_IS_LOADING
+	SET_IS_LOADING,
+	SET_AUTH_STATE
 } from "./actions.js";
 
 const reducer = (state, action) => {
@@ -29,6 +30,12 @@ const reducer = (state, action) => {
 		return {
 			...state,
 			isLoading: action.payload.isLoading
+		}
+	}
+	if (action.type === SET_AUTH_STATE) {
+		return {
+			...state,
+			authState: action.payload.authState
 		}
 	}
 }

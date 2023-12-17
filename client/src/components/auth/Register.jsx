@@ -1,7 +1,7 @@
 import classes from "./styles/Auth.module.css";
-import { Input, Form, Button, Card } from "../ui";
+import { Input, Form, Button, Card } from "../../ui/index.js";
 import { useState } from "react";
-import { useGlobalContext } from "../context/GlobalContext.jsx";
+import { useGlobalContext } from "../../context/GlobalContext.jsx";
 
 const initialState = {
 	lastName: "",

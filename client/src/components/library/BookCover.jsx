@@ -1,5 +1,6 @@
 import classes from "./styles/BookLibrary.module.css";
 import { useState } from "react";
+import { AnimatePresence} from "framer-motion";
 import { axiosAPI, axiosDB } from "../../utils/axios.js";
 import { NavLink } from "react-router-dom";
 import Card from "../../ui/Card.jsx";
@@ -60,13 +61,16 @@ const BookCover = (book) => {
 
     return (
         <Card>
-            {   // if book is clicked, modal with preview will open
-                showModal &&
-                <BookPreview
-                    book={currentBook}
-                    setShowModal={setShowModal}
-                />
-            }
+            <AnimatePresence>
+                {   // if book is clicked, modal with preview will open
+                    showModal &&
+                    <BookPreview
+                        book={currentBook}
+                        setShowModal={setShowModal}
+                    />
+                }
+            </AnimatePresence>
+
         <div className={classes.container}>
 
             {  // book.status field only exists in book in myLibrary so if book in library, clicking will take user to book in library, if not(in Discover), then modal will open

@@ -1,6 +1,4 @@
-.container {
-    z-index: 10;
-}
+
 .info {
     display: flex;
     justify-content: space-between;

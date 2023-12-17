@@ -1,6 +1,6 @@
 import classes from "./styles/Navbar.module.css"
 import { NavLink } from "react-router-dom";
-import {Auth} from "../index.js";
+import {AuthLinks} from "../index.js";
 import logo from "../../assets/images/logo.png";
 
 const Navbar = ({ userLoggedIn }) => {
@@ -42,7 +42,7 @@ const Navbar = ({ userLoggedIn }) => {
                         </NavLink>
                     </div>
             }
-            <Auth />
+            <AuthLinks />
         </div>
     );
 };

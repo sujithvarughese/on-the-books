@@ -33,33 +33,33 @@ const CreateNoteForm = ({ createNote, closeForm }) => {
 	}
 
 	return (
-		<div className={classes.container}>
-			<Form onSubmit={handleSubmit} title="Create Note" color="black">
-				<div className={classes.form}>
-					<Input
-						htmlFor="title"
-						placeholder="Title"
-						type="text"
-						name="title"
-						value={newNote.title}
-						onChange={handleChange}
-					></Input>
 
-					<Textarea
-						placeholder="Type new note here..."
-						name="content"
-						value={newNote.content}
-						onChange={handleChange}
-						rows="20"
-					></Textarea>
+		<Form onSubmit={handleSubmit} title="Create Note" color="black">
+			<div className={classes.form}>
+				<Input
+					htmlFor="title"
+					placeholder="Title"
+					type="text"
+					name="title"
+					value={newNote.title}
+					onChange={handleChange}
+				></Input>
 
-					<div className={classes.buttons}>
-						<Button type="submit">{buttonText}</Button>
-						<Button onClick={closeForm}>Cancel</Button>
-					</div>
+				<Textarea
+					placeholder="Type new note here..."
+					name="content"
+					value={newNote.content}
+					onChange={handleChange}
+					rows="20"
+				></Textarea>
+
+				<div className={classes.buttons}>
+					<Button type="submit">{buttonText}</Button>
+					<Button onClick={closeForm}>Cancel</Button>
 				</div>
-			</Form>
-		</div>
+			</div>
+		</Form>
+
 
 
 

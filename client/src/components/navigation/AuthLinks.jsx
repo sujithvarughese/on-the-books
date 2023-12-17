@@ -1,16 +1,16 @@
-import classes from "../components/navigation/styles/Navbar.module.css"
+import classes from "./styles/Navbar.module.css"
 import { NavLink } from "react-router-dom";
-import { useGlobalContext } from "../context/GlobalContext.jsx";
+import { useGlobalContext } from "../../context/GlobalContext.jsx";
 import {Fragment, useState} from "react";
-import ButtonPlain from "../ui/ButtonPlain.jsx";
+import ButtonPlain from "../../ui/ButtonPlain.jsx";
 
 const credentials = {
 	email: import.meta.env.VITE_ADMIN_LOGIN,
 	password: import.meta.env.VITE_ADMIN_PASSWORD
 }
-const Auth = () => {
+const AuthLinks = () => {
 
-	const { user, logout, login } = useGlobalContext()
+	const { user, logout, login, setAuthState } = useGlobalContext()
 	const [buttonText, setButtonText] = useState("Preview")
 
 	const previewAsAdmin = () => {
@@ -56,4 +56,4 @@ const Auth = () => {
 	);
 };
 
-export default Auth;
+export default AuthLinks;
