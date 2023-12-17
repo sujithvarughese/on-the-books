@@ -13,3 +13,10 @@ Library -> will use loader to fetch and load user's library and data before load
 Each book will have the link "/library/_id" (based on _id assigned from mongoDB)
 
 Discover -> will use loader to fetch from OpenLibrary API (default to editor's picks)
+
+### Application Details
+* MERN Stack
+* Integrated API from OpenLibrary to search books by subject
+* User can view preview of the book or get reviews straight from the search, then can choose to add book to library
+* Automatically recommends books of similar genres in user’s library
+* Rate books, create notebook to record thoughts or take notes
