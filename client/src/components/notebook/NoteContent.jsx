@@ -27,11 +27,13 @@ const NoteContent = ({ note, goBack, editMode, setEditMode, updateNotebookState 
 
 	return (
 		<div className={classes.container}>
+
 			<div className={classes.backButton}>
+				{!editMode &&
 				<ButtonIcon onClick={goBack}>
 					<MdArrowBackIosNew />
 				</ButtonIcon>
-
+				}
 			</div>
 			<div className={classes.editButton}>
 				{

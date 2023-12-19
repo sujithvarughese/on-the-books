@@ -74,6 +74,7 @@ const Notebook = ({ notebook, book }) => {
                             editMode={editMode}
                             setEditMode={setEditMode}
                             updateNotebookState={updateNotebookState}
+
                         />
                     }
                 </div>

@@ -7,4 +7,11 @@
 .buttons {
     display: flex;
     justify-content: space-around;
+    gap: 2rem;
+}
+
+@media (min-width: 600px) {
+    .buttons {
+        gap: 0;
+    }
 }
