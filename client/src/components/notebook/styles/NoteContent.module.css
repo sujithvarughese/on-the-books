@@ -1,9 +1,12 @@
-
+.container {
+    color: var(--COLOR-TEXT)
+}
 .backButton {
     position: absolute;
     font-size: 48px;
     top: 1rem;
     z-index: 10;
+    color: var(--COLOR-DARK);
 }
 .editButton {
     position: absolute;
@@ -11,6 +14,7 @@
     top: 0.4rem;
     right: 1rem;
     z-index: 10;
+    color: var(--COLOR-DARK);
 }
 .dates {
     font-size: 14px;

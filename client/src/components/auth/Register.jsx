@@ -38,6 +38,7 @@ const Register = () => {
 							name="lastName"
 							value={values.lastName}
 							onChange={handleChange}
+							backgroundColor="var(--COLOR-BACKGROUND)"
 						></Input>
 						<Input
 							htmlFor="firstName"
@@ -46,6 +47,7 @@ const Register = () => {
 							name="firstName"
 							value={values.firstName}
 							onChange={handleChange}
+							backgroundColor="var(--COLOR-BACKGROUND)"
 						></Input>
 						<Input
 							htmlFor="email"
@@ -54,6 +56,7 @@ const Register = () => {
 							name="email"
 							value={values.email}
 							onChange={handleChange}
+							backgroundColor="var(--COLOR-BACKGROUND)"
 						></Input>
 						<Input
 							htmlFor="password"
@@ -62,6 +65,7 @@ const Register = () => {
 							name="password"
 							value={values.password}
 							onChange={handleChange}
+							backgroundColor="var(--COLOR-BACKGROUND)"
 						></Input>
 					</div>
 					<div className={classes.button}>

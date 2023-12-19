@@ -36,6 +36,7 @@ const Login = () => {
 							name="email"
 							value={values.email}
 							onChange={handleChange}
+							backgroundColor="var(--COLOR-BACKGROUND)"
 						></Input>
 						<Input
 							htmlFor="password"
@@ -44,6 +45,7 @@ const Login = () => {
 							name="password"
 							value={values.password}
 							onChange={handleChange}
+							backgroundColor="var(--COLOR-BACKGROUND)"
 						></Input>
 					</div>
 					<div className={classes.button}>

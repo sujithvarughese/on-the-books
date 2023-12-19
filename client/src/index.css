@@ -12,7 +12,9 @@
     --COLOR-LIGHT: #F2EDE1;
     --COLOR: #9F6B4E;
     --COLOR-ALT: #F99052;
-    --COLOR-DARK: #54433A;
+    --COLOR-DARK: #005B46;
+    --COLOR-TEXT: black;
+    --COLOR-BACKGROUND: #FEF0CA;
     --COLOR-GRADIENT: radial-gradient(var(--COLOR), var(--COLOR-LIGHT));
     --BACKGROUND: linear-gradient(to right, #434343 0%, black 100%);
 
