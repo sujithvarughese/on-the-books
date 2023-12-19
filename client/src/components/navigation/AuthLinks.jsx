@@ -2,7 +2,8 @@ import classes from "./styles/Navbar.module.css"
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../../context/GlobalContext.jsx";
 import {Fragment, useState} from "react";
-import ButtonPlain from "../../ui/ButtonPlain.jsx";
+import {ButtonPlain, ButtonLink} from "../../ui";
+import cx from "classnames"
 
 const credentials = {
 	email: import.meta.env.VITE_ADMIN_LOGIN,
@@ -10,7 +11,7 @@ const credentials = {
 }
 const AuthLinks = () => {
 
-	const { user, logout, login, setAuthState } = useGlobalContext()
+	const { user, logout, login, authState, setAuthState } = useGlobalContext()
 	const [buttonText, setButtonText] = useState("Preview")
 
 	const previewAsAdmin = () => {
@@ -20,7 +21,7 @@ const AuthLinks = () => {
 		setButtonText("Logging in...")
 		login(credentials)
 	}
-
+	console.log(authState)
 	return (
 		<Fragment>
 			{
@@ -38,25 +39,19 @@ const AuthLinks = () => {
 							onClick={previewAsAdmin}
 						>{buttonText}
 						</ButtonPlain>
-						<NavLink
-							to="/login"
-							className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
-						>
-							Login
-						</NavLink>
-						<NavLink
-							to="/register"
-							className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
-						>
-							Register
-						</NavLink>
-
+						<ButtonLink
+							onClick={()=>setAuthState("login")}
+							className={`${classes.link} ${authState === "login" && classes.active}`}
+						>Login
+						</ButtonLink>
+						<ButtonLink
+							onClick={()=>setAuthState("register")}
+							className={`${classes.link} ${authState === "register" && classes.active}`}
+						>Register
+						</ButtonLink>
 					</div>
 
 			}
-
-
-
 		</Fragment>
 	);
 };

@@ -1,5 +1,5 @@
 import classes from "./styles/Auth.module.css";
-import { Input, Form, Button, Card } from "../../ui/index.js";
+import {Input, Form, Button, Card, AuthCard} from "../../ui/index.js";
 import { useState } from "react";
 import { useGlobalContext } from "../../context/GlobalContext.jsx";
 
@@ -13,7 +13,7 @@ const initialState = {
 const Register = () => {
 
 	const [values, setValues] = useState(initialState)
-	const { register } = useGlobalContext()
+	const { register, setAuthState } = useGlobalContext()
 
 	const handleChange = (e) => {
 		setValues({ ...values, [e.target.name]: e.target.value });
@@ -23,10 +23,11 @@ const Register = () => {
 		e.preventDefault()
 		register(values)
 		setValues(initialState)
+		setAuthState("")
 	}
 
 	return (
-		<div className={classes.container}>
+		<AuthCard closeFn={()=>setAuthState("")}>
 			<div className={classes.content}>
 				<Form onSubmit={handleSubmit} title="Register">
 					<div className={classes.form}>
@@ -68,7 +69,7 @@ const Register = () => {
 					</div>
 				</Form>
 			</div>
-		</div>
+		</AuthCard>
 
 	);
 };

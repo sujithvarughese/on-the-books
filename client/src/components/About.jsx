@@ -8,9 +8,7 @@ import {Card} from "../ui/index.js";
 const About = () => {
 
 	return (
-
 		<div className={classes.content}>
-
 			<div className={classes.card}>
 				<div className={classes.text}>
 					Discover new reading.
@@ -45,7 +43,6 @@ const About = () => {
 				</div>
 				<img src={img5} alt="img5" className={classes.image}/>
 			</div>
-
 		</div>
 	);
 };

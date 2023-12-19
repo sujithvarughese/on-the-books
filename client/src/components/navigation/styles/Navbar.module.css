@@ -31,6 +31,7 @@
 }
 .link {
     transition: 0.2s ease-in-out all;
+    color: var(--COLOR-LIGHTER)
 }
 .active {
     color: var(--COLOR-LIGHT);

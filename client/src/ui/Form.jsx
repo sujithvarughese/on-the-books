@@ -14,7 +14,7 @@ const Title = styled.div`
 const Form = ({ title, ...props }) => {
 	return (
 		<StyledForm {...props}
-			initial={{ scale: 0, opacity: 0 }}
+			initial={{ scale: 0.5, opacity: 0.5 }}
 			animate={{ scale: 1, opacity: 1 }}
 			exit={{ scale: 0, opacity: 0 }}
 		>
