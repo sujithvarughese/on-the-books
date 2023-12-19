@@ -15,19 +15,27 @@
 }
 .info {
     display: flex;
-    justify-content: space-between;
-    align-items: end;
-    padding-right: 1rem;
+    flex-direction: column;
 }
 .statusRating {
     display: flex;
     flex-direction: column;
-    align-items: end;
 }
 .buttons {
     display: flex;
     gap: 3rem;
     padding: 1rem 2rem;
+}
+@media (min-width: 600px) {
+    .info {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-right: 1rem;
+    }
+    .statusRating {
+        align-items: end;
+    }
 }
 @media (min-width: 800px) {
     .coverContent {
@@ -39,4 +47,5 @@
     .cover {
         padding: 2rem;
     }
+
 }
