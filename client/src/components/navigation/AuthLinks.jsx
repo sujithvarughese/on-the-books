@@ -14,6 +14,10 @@ const AuthLinks = () => {
 	const [buttonText, setButtonText] = useState("Preview")
 
 	const previewAsAdmin = () => {
+		setTimeout(() => {
+			setButtonText("Preview")
+		})
+		setButtonText("Logging in...")
 		login(credentials)
 	}
 
@@ -30,6 +34,10 @@ const AuthLinks = () => {
 					:
 
 					<div className={classes.links}>
+						<ButtonPlain
+							onClick={previewAsAdmin}
+						>{buttonText}
+						</ButtonPlain>
 						<NavLink
 							to="/login"
 							className={({ isActive }) => isActive ? `${classes.active} ${classes.link}` : `${classes.link}` }
@@ -42,10 +50,7 @@ const AuthLinks = () => {
 						>
 							Register
 						</NavLink>
-						<ButtonPlain
-							onClick={previewAsAdmin}
-						>{buttonText}
-						</ButtonPlain>
+
 					</div>
 
 			}
