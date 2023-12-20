@@ -27,7 +27,7 @@ const Login = () => {
 	return (
 		<AuthCard closeFn={()=>setAuthState("")}>
 			<div className={classes.content}>
-				<Form onSubmit={handleSubmit} title="Login">
+				<Form onSubmit={handleSubmit} title="Login" color="black">
 					<div className={classes.form}>
 						<Input
 							htmlFor="email"

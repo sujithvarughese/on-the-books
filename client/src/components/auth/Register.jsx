@@ -29,7 +29,7 @@ const Register = () => {
 	return (
 		<AuthCard closeFn={()=>setAuthState("")}>
 			<div className={classes.content}>
-				<Form onSubmit={handleSubmit} title="Register">
+				<Form onSubmit={handleSubmit} title="Register" color="black">
 					<div className={classes.form}>
 						<Input
 							htmlFor="lastName"
