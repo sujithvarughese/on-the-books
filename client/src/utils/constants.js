@@ -1,6 +1,6 @@
 const prod = {
 	url: {
-		API_URL: "https://jungle-green-pig-gown.cyclic.app/api/v1"
+		API_URL: "https://otbapi.sujithvarughese.com"
 	}
 };
 
