@@ -1,6 +1,6 @@
 const prod = {
 	url: {
-		API_URL: "https://otbapi.sujithvarughese.com"
+		API_URL: "https://otbapi.sujithvarughese.com/api/v1"
 	}
 };
 
