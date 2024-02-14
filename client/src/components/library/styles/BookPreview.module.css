@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 6px;
 }
 .closeButton {
     position: absolute;

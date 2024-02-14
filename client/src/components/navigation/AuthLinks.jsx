@@ -21,7 +21,6 @@ const AuthLinks = () => {
 		setButtonText("Logging in...")
 		login(credentials)
 	}
-	console.log(authState)
 	return (
 		<Fragment>
 			{
