@@ -1,6 +1,6 @@
 const prod = {
 	url: {
-		API_URL: "https://otbapi.sujithvarughese.com/api/v1"
+		API_URL: "https://on-the-books-api-2593d684c387.herokuapp.com/api/v1"
 	}
 };
 
